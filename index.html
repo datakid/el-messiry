@@ -9,18 +9,18 @@
         @import url('https://fonts.googleapis.com/css2?family=Amiri:wght@700&family=Tajawal:wght@400;500;700;800&display=swap');
         
         :root {
-            --paper-color: #FBF9F6; 
-            --text-color: #6a6a6a; 
-            --main-accent: #87A9A8; 
-            --main-accent-dark: #5B7B7A; 
-            --secondary-accent: #E8DCC9; 
-            --secondary-accent-text: #716253; 
-            --border-color: #EAE3D9; 
-            --header-footer-bg: #F9F6F2; 
+            --paper-color: #FDFCF9;
+            --text-color: #4A4A4A;
+            --main-accent: #3A5A70;
+            --main-accent-dark: #2C4353;
+            --secondary-accent: #E0D6C3;
+            --secondary-accent-text: #605448;
+            --border-color: #D6CEC2;
+            --header-footer-bg: #F7F4EF;
 
-            --status-available-color: #6aaa64; 
-            --status-unavailable-color: #d36e70; 
-            --status-text-muted: #888;
+            --status-available-color: #5F8B5A;
+            --status-unavailable-color: #B95C5C;
+            --status-text-muted: #777777;
         }
 
         * {
@@ -37,7 +37,7 @@
 
         body {
             font-family: 'Tajawal', sans-serif;
-            background-color: #e8e3dc; 
+            background-color: #e0d9d2;
             min-height: 100vh;
             display: flex;
             align-items: center;
@@ -51,11 +51,11 @@
             max-width: 820px;
             background-color: var(--paper-color);
             border-radius: 10px; 
-            box-shadow: 0 15px 40px -15px rgba(0,0,0,0.15); 
+            box-shadow: 0 15px 40px -15px rgba(0,0,0,0.1);
             padding: 4.5rem; 
             display: flex;
             flex-direction: column;
-            border: 1px solid #fff; 
+            border: 1px solid var(--border-color);
         }
 
         .header-section {
@@ -94,7 +94,7 @@
         
         .profile-image:hover {
             transform: translateY(-2px);
-            box-shadow: 0 8px 25px rgba(74, 108, 107, 0.15);
+            box-shadow: 0 8px 25px rgba(44, 67, 83, 0.15);
             border-color: var(--main-accent);
         }
         
@@ -245,15 +245,7 @@
             border: 1px solid var(--border-color);
             box-shadow: 0 2px 8px rgba(0,0,0,0.04);
         }
-        .schedule-grid th {
-            background: var(--header-footer-bg);
-            color: var(--main-accent-dark);
-            padding: 1.4rem 1.2rem; 
-            font-weight: 700;
-            font-size: 1.5rem;
-            border-bottom: 1px solid var(--border-color);
-            text-align: center;
-        }
+
         .schedule-grid td {
             padding: 1.6rem 1rem; 
             text-align: center;
@@ -263,12 +255,17 @@
             color: var(--text-color);
         }
         .schedule-grid tr:last-child td { border-bottom: none; }
+        
         .day-column { 
             background: var(--header-footer-bg); 
             font-weight: 700;
             color: var(--main-accent-dark); 
             font-size: 1.6rem;
             border-right: 1px solid var(--border-color); 
+        }
+
+        .slot-unavailable {
+            color: var(--status-unavailable-color);
         }
 
         .status-badge { 
@@ -280,6 +277,9 @@
         .status-unavailable-icon { color: var(--status-unavailable-color); }
         
         @media print {
+            body {
+                background-color: #fff;
+            }
         }
     </style>
 </head>
@@ -287,13 +287,13 @@
     <div class="announcement-card">
         <header class="header-section">
             <div class="profile-image-container">
-                <div class="profile-image">
+                <label for="imageUpload" class="profile-image">
                     <div class="image-placeholder">
                         <div class="upload-icon">👤</div>
                         <div class="upload-text">إضافة صورة</div>
                         <div class="upload-hint">اضغط</div>
                     </div>
-                </div>
+                </label>
                 <input type="file" id="imageUpload" class="image-upload" accept="image/*">
             </div>
             <div class="header-text">
@@ -321,25 +321,17 @@
         <div class="schedule-container">
             <h2 class="schedule-header">مواعيد المجموعات</h2>
             <table class="schedule-grid">
-                <thead>
-                    <tr>
-                        <th>4:00 - 5:30 م</th>
-                        <th>2:00 - 3:30 م</th>
-                        <th>12:30 - 2:00 م</th>
-                        <th>الأيام</th>
-                    </tr>
-                </thead>
                 <tbody>
                     <tr>
-                        <td><span class="status-badge status-available-icon">✓</span></td>
-                        <td><span class="status-badge status-available-icon">✓</span></td>
-                        <td><span class="status-badge status-available-icon">✓</span></td>
+                        <td>4:00 - 5:30 م</td>
+                        <td>2:00 - 3:30 م</td>
+                        <td>12:30 - 2:00 م</td>
                         <td class="day-column">سبت واثنين وأربعاء</td>
                     </tr>
                     <tr>
-                        <td><span class="status-badge status-unavailable-icon">✗</span></td>
-                        <td><span class="status-badge status-available-icon">✓</span></td>
-                        <td><span class="status-badge status-available-icon">✓</span></td>
+                        <td class="slot-unavailable">---</td>
+                        <td>2:00 - 3:30 م</td>
+                        <td>12:30 - 2:00 م</td>
                         <td class="day-column">أحد وثلاثاء وخميس</td>
                     </tr>
                 </tbody>
@@ -349,7 +341,10 @@
     </div>
     
     <script>
-        document.getElementById('imageUpload').addEventListener('change', function(e) {
+        const imageUploadInput = document.getElementById('imageUpload');
+        const profileImageContainer = document.querySelector('.profile-image');
+
+        imageUploadInput.addEventListener('change', function(e) {
             const file = e.target.files[0];
             if (file) {
                 const reader = new FileReader();
@@ -360,16 +355,11 @@
                     img.style.height = '100%';
                     img.style.objectFit = 'cover';
                     
-                    const container = document.querySelector('.profile-image');
-                    container.innerHTML = '';
-                    container.appendChild(img);
+                    profileImageContainer.innerHTML = '';
+                    profileImageContainer.appendChild(img);
                 };
                 reader.readAsDataURL(file);
             }
-        });
-
-        document.querySelector('.profile-image').addEventListener('click', function() {
-            document.getElementById('imageUpload').click();
         });
     </script>
 </body>
