@@ -1,366 +1,515 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>el-messiry</title>
-    <link rel="icon" type="image/x-icon" href="favicon.ico">
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Amiri:wght@700&family=Tajawal:wght@400;500;700;800&display=swap');
-        
-        :root {
-            --paper-color: #FDFCF9;
-            --text-color: #4A4A4A;
-            --main-accent: #3A5A70;
-            --main-accent-dark: #2C4353;
-            --secondary-accent: #E0D6C3;
-            --secondary-accent-text: #605448;
-            --border-color: #D6CEC2;
-            --header-footer-bg: #F7F4EF;
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>د. محمد المسيري - حجز 2026</title>
+<link rel="icon" type="image/x-icon" href="favicon.ico">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Alexandria:wght@300;400;500;700;800&family=Aref+Ruqaa:wght@400;700&display=swap');
 
-            --status-available-color: #5F8B5A;
-            --status-unavailable-color: #B95C5C;
-            --status-text-muted: #777777;
-        }
+:root {
+    --bg-base: #050a0a;
+    --bg-glow-1: #0a1f1c;
+    --bg-glow-2: #05141b;
+    --card-bg: rgba(10, 18, 17, 0.7);
+    --card-border: rgba(212, 175, 55, 0.15);
+    --text-main: #f0f4f4;
+    --text-muted: #8ba3a0;
+    --accent-gold: #d4af37;
+    --accent-gold-light: #f3e5ab;
+    --accent-gold-dark: #aa8620;
+    --bio-green: #10b981;
+    --pill-bg: rgba(255, 255, 255, 0.03);
+    --pill-border: rgba(255, 255, 255, 0.08);
+}
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            -webkit-print-color-adjust: exact !important;
-            color-adjust: exact !important;
-        }
-        
-        html {
-            font-size: 10px;
-        }
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-print-color-adjust: exact !important;
+    color-adjust: exact !important;
+}
 
-        body {
-            font-family: 'Tajawal', sans-serif;
-            background-color: #e0d9d2;
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 2rem;
-            color: var(--text-color);
-        }
-        
-        .announcement-card {
-            width: 90vw;
-            max-width: 820px;
-            background-color: var(--paper-color);
-            border-radius: 10px; 
-            box-shadow: 0 15px 40px -15px rgba(0,0,0,0.1);
-            padding: 4.5rem; 
-            display: flex;
-            flex-direction: column;
-            border: 1px solid var(--border-color);
-        }
+html {
+    font-size: 10px;
+}
 
-        .header-section {
-            padding-bottom: 3rem; 
-            margin-bottom: 3rem; 
-            display: flex;
-            flex-direction: row-reverse; 
-            align-items: center;
-            gap: 3.5rem; 
-            position: relative;
-        }
-        
-        .profile-image-container {
-            flex-shrink: 0;
-            position: relative;
-        }
-        
-        .profile-image {
-            width: 140px;
-            height: 140px;
-            border-radius: 50%;
-            border: 2px solid var(--border-color); 
-            object-fit: cover;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            background-color: #fff;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.4rem;
-            color: var(--main-accent);
-            box-shadow: 0 4px 15px rgba(0,0,0,0.07);
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .profile-image:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 25px rgba(44, 67, 83, 0.15);
-            border-color: var(--main-accent);
-        }
-        
-        .image-placeholder {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            gap: 1rem;
-            height: 100%;
-            width: 100%;
-            text-align: center;
-            padding: 1rem;
-        }
-        
-        .upload-icon {
-            font-size: 3.2rem;
-            color: var(--main-accent);
-            opacity: 0.8;
-        }
-        
-        .upload-text {
-            font-size: 1.3rem;
-            color: var(--main-accent);
-            font-weight: 500;
-            line-height: 1.3;
-        }
-        
-        .upload-hint {
-            font-size: 1rem;
-            color: var(--status-text-muted);
-            margin-top: 0.5rem;
-            font-weight: 400;
-        }
-        
-        .image-upload { display: none; }
-        
-        .header-text {
-            flex: 1;
-            text-align: right; 
-        }
-        
-        .announcement-label {
-            font-size: 1.8rem;
-            font-weight: 500;
-            color: var(--main-accent);
-            margin-bottom: 0.5rem; 
-        }
-        .doctor-name {
-            font-family: 'Amiri', serif;
-            font-size: 5.2rem; 
-            font-weight: 700;
-            color: var(--main-accent-dark);
-            text-shadow: none;
-            line-height: 1.1; 
-            margin-bottom: 0.8rem;
-        }
-        .profession-title {
-            font-size: 2rem; 
-            font-weight: 500;
-            color: var(--text-color);
-        }
-        .decorative-line {
-            width: 9rem; 
-            height: 1.5px; 
-            background: var(--secondary-accent); 
-            border: 0;
-            margin: 1.5rem 0 0; 
-        }
+@keyframes gradientMove {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
 
-        .main-announcement-box, .contact-section {
-            text-align: center;
-            padding: 3rem;
-            background-color: var(--header-footer-bg); 
-            border: 1px solid var(--border-color);
-            border-radius: 8px;
-            margin-bottom: 3rem;
-        }
-        .announcement-main-text {
-            font-size: 2.6rem;
-            font-weight: 700;
-            color: var(--main-accent-dark);
-            margin-bottom: 2.5rem; 
-            line-height: 1.5; 
-        }
-        .year-badge {
-            background: var(--secondary-accent);
-            color: var(--secondary-accent-text);
-            padding: 0.8rem 2.8rem; 
-            border-radius: 50px;
-            font-weight: 800;
-            font-size: 2.4rem;
-            display: inline-block;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-            text-shadow: none;
-        }
-        .grade-text {
-            color: var(--main-accent-dark);
-            font-weight: 700;
-            font-size: 2.2rem;
-            margin-top: 2.5rem; 
-        }
-        
-        .contact-section { margin-bottom: 4rem; }
-        .contact-label {
-            font-size: 1.8rem;
-            font-weight: 500;
-            color: var(--text-color);
-            margin-bottom: 2rem; 
-            line-height: 1.6; 
-        }
-        .phone-display {
-            font-size: 3.4rem;
-            font-weight: 700;
-            color: var(--main-accent-dark);
-            direction: ltr; 
-            letter-spacing: 1px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 1.2rem; 
-        }
-        .whatsapp-logo { 
-            width: 2.8rem; 
-            height: 2.8rem;
-            vertical-align: middle; 
-        }
+@keyframes fadeUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
 
-        .schedule-container {
-            display: flex;
-            flex-direction: column;
-        }
-        .schedule-header {
-            font-family: 'Amiri', serif;
-            font-size: 2.8rem;
-            font-weight: 700;
-            color: var(--main-accent-dark);
-            text-align: center;
-            margin-bottom: 2rem; 
-        }
-        .schedule-grid {
-            width: 100%;
-            border-collapse: separate; 
-            border-spacing: 0;
-            background: #fff;
-            border-radius: 8px;
-            overflow: hidden; 
-            border: 1px solid var(--border-color);
-            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
-        }
+@keyframes pulseGlow {
+    0% { box-shadow: 0 0 0 0 rgba(212, 175, 55, 0.4); }
+    70% { box-shadow: 0 0 0 15px rgba(212, 175, 55, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(212, 175, 55, 0); }
+}
 
-        .schedule-grid td {
-            padding: 1.6rem 1rem; 
-            text-align: center;
-            border-bottom: 1px solid var(--border-color); 
-            vertical-align: middle;
-            font-size: 1.6rem;
-            color: var(--text-color);
-        }
-        .schedule-grid tr:last-child td { border-bottom: none; }
-        
-        .day-column { 
-            background: var(--header-footer-bg); 
-            font-weight: 700;
-            color: var(--main-accent-dark); 
-            font-size: 1.6rem;
-            border-right: 1px solid var(--border-color); 
-        }
+body {
+    font-family: 'Alexandria', sans-serif;
+    background: linear-gradient(-45deg, var(--bg-base), var(--bg-glow-1), var(--bg-base), var(--bg-glow-2));
+    background-size: 400% 400%;
+    animation: gradientMove 20s ease infinite;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 3rem 2rem;
+    color: var(--text-main);
+    position: relative;
+    overflow-x: hidden;
+}
 
-        .slot-unavailable {
-            color: var(--status-unavailable-color);
-        }
+body::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.04'/%3E%3C/svg%3E");
+    pointer-events: none;
+    z-index: 0;
+}
 
-        .status-badge { 
-            font-weight: bold;
-            font-size: 2.2rem; 
-            line-height: 1;
-        }
-        .status-available-icon { color: var(--status-available-color); }
-        .status-unavailable-icon { color: var(--status-unavailable-color); }
-        
-        @media print {
-            body {
-                background-color: #fff;
-            }
-        }
-    </style>
+.announcement-card {
+    width: 100%;
+    max-width: 780px;
+    background: var(--card-bg);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-radius: 24px;
+    border: 1px solid var(--card-border);
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255,255,255,0.05);
+    padding: 5rem;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+}
+
+.announcement-card::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 200px;
+    height: 200px;
+    background: radial-gradient(circle, rgba(212, 175, 55, 0.15) 0%, transparent 70%);
+    border-radius: 50%;
+    transform: translate(30%, -30%);
+    pointer-events: none;
+}
+
+.stagger-1 { animation: fadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.1s forwards; opacity: 0; }
+.stagger-2 { animation: fadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.2s forwards; opacity: 0; }
+.stagger-3 { animation: fadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.3s forwards; opacity: 0; }
+.stagger-4 { animation: fadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.4s forwards; opacity: 0; }
+
+.header-section {
+    display: flex;
+    align-items: center;
+    gap: 4rem;
+    margin-bottom: 4rem;
+}
+
+.profile-image-container {
+    flex-shrink: 0;
+    position: relative;
+}
+
+.profile-image-container::before {
+    content: '';
+    position: absolute;
+    inset: -4px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--accent-gold), transparent, var(--accent-gold-dark));
+    z-index: -1;
+    opacity: 0.5;
+    transition: opacity 0.4s ease;
+}
+
+.profile-image {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background: var(--bg-base);
+    border: 2px solid rgba(212, 175, 55, 0.3);
+    object-fit: cover;
+    cursor: pointer;
+    transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+.profile-image:hover {
+    transform: scale(1.05) rotate(2deg);
+    border-color: var(--accent-gold);
+}
+
+.profile-image:hover ~ .profile-image-container::before {
+    opacity: 1;
+    animation: pulseGlow 2s infinite;
+}
+
+.image-placeholder {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.8rem;
+    color: var(--accent-gold);
+    transition: transform 0.3s ease;
+}
+
+.profile-image:hover .image-placeholder {
+    transform: scale(1.1);
+}
+
+.upload-icon {
+    font-size: 3.6rem;
+}
+
+.upload-text {
+    font-size: 1.2rem;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+}
+
+.image-upload { display: none; }
+
+.header-text {
+    flex: 1;
+}
+
+.announcement-label {
+    font-size: 1.6rem;
+    font-weight: 300;
+    color: var(--accent-gold);
+    letter-spacing: 2px;
+    margin-bottom: -1rem;
+    display: block;
+}
+
+.doctor-name {
+    font-family: 'Aref Ruqaa', serif;
+    font-size: 6.5rem;
+    font-weight: 700;
+    line-height: 1.2;
+    background: linear-gradient(to left, var(--text-main), var(--accent-gold-light));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 0.5rem;
+    text-shadow: 0 4px 20px rgba(212, 175, 55, 0.1);
+}
+
+.profession-title {
+    font-size: 2rem;
+    font-weight: 300;
+    color: var(--text-muted);
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.profession-title::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(to left, var(--card-border), transparent);
+}
+
+.hero-announcement {
+    background: linear-gradient(145deg, rgba(212, 175, 55, 0.08), rgba(0,0,0,0.2));
+    border: 1px solid var(--card-border);
+    border-radius: 16px;
+    padding: 4rem;
+    text-align: center;
+    margin-bottom: 4rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-announcement::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--accent-gold), transparent);
+    opacity: 0.5;
+}
+
+.announcement-main-text {
+    font-size: 2.8rem;
+    font-weight: 500;
+    color: var(--text-main);
+    margin-bottom: 2rem;
+}
+
+.year-badge-wrapper {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    margin: 1.5rem 0;
+}
+
+.year-badge {
+    font-family: 'Alexandria', sans-serif;
+    font-size: 4rem;
+    font-weight: 800;
+    color: var(--bg-base);
+    background: linear-gradient(135deg, var(--accent-gold-light), var(--accent-gold-dark));
+    padding: 0.5rem 3.5rem;
+    border-radius: 100px;
+    box-shadow: 0 10px 20px rgba(212, 175, 55, 0.2), inset 0 2px 0 rgba(255,255,255,0.4);
+    letter-spacing: 2px;
+}
+
+.grade-text {
+    display: block;
+    font-size: 2.2rem;
+    font-weight: 300;
+    color: var(--accent-gold-light);
+    margin-top: 1.5rem;
+    letter-spacing: 1px;
+}
+
+.schedule-container {
+    margin-bottom: 4rem;
+}
+
+.section-title {
+    font-size: 2rem;
+    font-weight: 500;
+    color: var(--accent-gold);
+    margin-bottom: 2.5rem;
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.section-title::before {
+    content: '';
+    width: 8px;
+    height: 8px;
+    background: var(--accent-gold);
+    transform: rotate(45deg);
+}
+
+.schedule-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.schedule-row {
+    display: flex;
+    align-items: center;
+    background: var(--pill-bg);
+    border: 1px solid var(--pill-border);
+    border-radius: 12px;
+    padding: 1.5rem 2rem;
+    transition: all 0.3s ease;
+}
+
+.schedule-row:hover {
+    background: rgba(255, 255, 255, 0.05);
+    border-color: rgba(212, 175, 55, 0.3);
+    transform: translateX(-5px);
+}
+
+.day-name {
+    flex: 0 0 35%;
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--text-main);
+}
+
+.times-wrapper {
+    flex: 1;
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.time-pill {
+    background: rgba(0, 0, 0, 0.4);
+    border: 1px solid rgba(255,255,255,0.05);
+    padding: 0.8rem 1.8rem;
+    border-radius: 50px;
+    font-size: 1.4rem;
+    font-weight: 500;
+    color: var(--text-muted);
+    transition: all 0.3s ease;
+    cursor: default;
+}
+
+.schedule-row:hover .time-pill {
+    color: var(--accent-gold-light);
+    border-color: rgba(212, 175, 55, 0.2);
+}
+
+.time-pill.unavailable {
+    opacity: 0.3;
+    text-decoration: line-through;
+}
+
+.contact-action {
+    background: linear-gradient(to right, rgba(16, 185, 129, 0.1), rgba(0,0,0,0.2));
+    border: 1px solid rgba(16, 185, 129, 0.2);
+    border-radius: 16px;
+    padding: 3rem;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.contact-action::before {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--bio-green), transparent);
+}
+
+.contact-date {
+    font-size: 1.6rem;
+    font-weight: 300;
+    color: var(--text-muted);
+    margin-bottom: 2rem;
+}
+
+.whatsapp-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+    background: var(--bio-green);
+    color: #fff;
+    padding: 1.5rem 4rem;
+    border-radius: 50px;
+    text-decoration: none;
+    font-size: 2.8rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    direction: ltr;
+    transition: all 0.3s ease;
+    box-shadow: 0 10px 25px rgba(16, 185, 129, 0.3);
+}
+
+.whatsapp-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 35px rgba(16, 185, 129, 0.4);
+    background: #0ea5e9; 
+    background: #11a372;
+}
+
+.whatsapp-icon {
+    width: 3.2rem;
+    height: 3.2rem;
+    fill: currentColor;
+}
+
+@media (max-width: 768px) {
+    .announcement-card { padding: 3rem 2rem; }
+    .header-section { flex-direction: column; text-align: center; gap: 2.5rem; }
+    .profession-title { justify-content: center; }
+    .profession-title::after { display: none; }
+    .doctor-name { font-size: 4.5rem; }
+    .schedule-row { flex-direction: column; align-items: flex-start; gap: 1.5rem; }
+    .day-name { flex: none; }
+    .whatsapp-button { font-size: 2.2rem; padding: 1.2rem 2.5rem; width: 100%; }
+}
+</style>
 </head>
 <body>
-    <div class="announcement-card">
-        <header class="header-section">
-            <div class="profile-image-container">
-                <label for="imageUpload" class="profile-image">
-                    <div class="image-placeholder">
-                        <div class="upload-icon">👤</div>
-                        <div class="upload-text">إضافة صورة</div>
-                        <div class="upload-hint">اضغط</div>
-                    </div>
-                </label>
-                <input type="file" id="imageUpload" class="image-upload" accept="image/*">
-            </div>
-            <div class="header-text">
-                <div class="announcement-label">يعلن</div>
-                <h1 class="doctor-name">دكتور محمد المسيري</h1>
-                <p class="profession-title">أستاذ علم الأحياء</p>
-                <hr class="decorative-line">
-            </div>
-        </header>
 
-        <div class="main-announcement-box">
-            <div class="announcement-main-text">عن فتح باب الحجز للعام الدراسي الجديد</div>
-            <div class="year-badge">2026</div>
-            <div class="grade-text">للصف الثالث الثانوي</div>
-        </div>
-
-        <div class="contact-section">
-            <div class="contact-label">📅 الحجز يبدأ من السبت 14/6/2025 عن طريق الواتساب</div>
-            <div class="phone-display">
-                <img src="data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%2325D366'%3e%3cpath d='M19.002 4.908A9.818 9.818 0 0012.001 2C6.478 2 2 6.477 2 11.999c0 1.83.504 3.551 1.368 5.066L2.071 22l5.132-1.291a9.948 9.948 0 004.798 1.228h.001c5.522 0 9.999-4.477 9.999-9.998s-4.477-9.999-9.999-9.999zm-7.001 13.018c-1.353 0-2.616-.445-3.632-1.229l-.26-.153-2.705.686.7-2.637-.17-.271a7.948 7.948 0 01-1.272-4.011c0-4.383 3.559-7.941 7.941-7.941s7.941 3.558 7.941 7.941-3.559 7.941-7.941 7.941zm4.496-5.832c-.246-.123-1.454-.717-1.68-.799-.226-.082-.391-.123-.555.123-.164.246-.635.799-.779.963s-.289.184-.535.062c-.246-.123-1.042-.451-2.029-1.249s-1.58-1.559-1.806-2.181c-.226-.622-.025-.963.1-.1253.11-.11.246-.288.37-.432s.164-.246.246-.41c.082-.164.041-.307-.021-.432-.062-.123-.555-1.328-.76-1.818-.2-.48-.409-.419-.555-.426h-.473c-.164 0-.432.062-.658.307s-.865.84-1.065 2.029-.289 2.215.307 3.653c.184.451.905 1.763 2.622 3.279 2.066 1.781 3.492 2.308 4.729 2.308.835 0 1.556-.269 1.943-.889.43-.661.43-1.229.307-1.352s-.164-.184-.41-.307z'/%3e%3c/svg%3e" alt="WhatsApp" class="whatsapp-logo">
-                <span>01066026409</span>
-            </div>
-        </div>
-        
-        <div class="schedule-container">
-            <h2 class="schedule-header">مواعيد المجموعات</h2>
-            <table class="schedule-grid">
-                <tbody>
-                    <tr>
-                        <td>4:00 - 5:30 م</td>
-                        <td>2:00 - 3:30 م</td>
-                        <td>12:30 - 2:00 م</td>
-                        <td class="day-column">سبت واثنين وأربعاء</td>
-                    </tr>
-                    <tr>
-                        <td class="slot-unavailable">---</td>
-                        <td>2:00 - 3:30 م</td>
-                        <td>12:30 - 2:00 م</td>
-                        <td class="day-column">أحد وثلاثاء وخميس</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-        
-    </div>
+<main class="announcement-card">
     
-    <script>
-        const imageUploadInput = document.getElementById('imageUpload');
-        const profileImageContainer = document.querySelector('.profile-image');
+    <header class="header-section stagger-1">
+        <div class="profile-image-container">
+            <label for="imageUpload" class="profile-image" id="profileImageWrapper">
+                <div class="image-placeholder">
+                    <span class="upload-icon">✦</span>
+                    <span class="upload-text">إضافة صورة</span>
+                </div>
+            </label>
+            <input type="file" id="imageUpload" class="image-upload" accept="image/*">
+        </div>
+        
+        <div class="header-text">
+            <span class="announcement-label">يعلن</span>
+            <h1 class="doctor-name">د. محمد المسيري</h1>
+            <div class="profession-title">أستاذ علم الأحياء</div>
+        </div>
+    </header>
 
-        imageUploadInput.addEventListener('change', function(e) {
-            const file = e.target.files[0];
-            if (file) {
-                const reader = new FileReader();
-                reader.onload = function(e) {
-                    const img = document.createElement('img');
-                    img.src = e.target.result;
-                    img.style.width = '100%';
-                    img.style.height = '100%';
-                    img.style.objectFit = 'cover';
-                    
-                    profileImageContainer.innerHTML = '';
-                    profileImageContainer.appendChild(img);
-                };
-                reader.readAsDataURL(file);
-            }
-        });
-    </script>
+    <section class="hero-announcement stagger-2">
+        <h2 class="announcement-main-text">عن فتح باب الحجز للعام الدراسي الجديد</h2>
+        <div class="year-badge-wrapper">
+            <div class="year-badge">2026</div>
+        </div>
+        <span class="grade-text">للصف الثالث الثانوي</span>
+    </section>
+
+    <section class="schedule-container stagger-3">
+        <h3 class="section-title">مواعيد المجموعات</h3>
+        <div class="schedule-grid">
+            <div class="schedule-row">
+                <div class="day-name">السبت، الإثنين، الأربعاء</div>
+                <div class="times-wrapper">
+                    <span class="time-pill">12:30 - 2:00 م</span>
+                    <span class="time-pill">2:00 - 3:30 م</span>
+                    <span class="time-pill">4:00 - 5:30 م</span>
+                </div>
+            </div>
+            
+            <div class="schedule-row">
+                <div class="day-name">الأحد، الثلاثاء، الخميس</div>
+                <div class="times-wrapper">
+                    <span class="time-pill">12:30 - 2:00 م</span>
+                    <span class="time-pill">2:00 - 3:30 م</span>
+                    <span class="time-pill unavailable">---</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact-action stagger-4">
+        <p class="contact-date">يبدأ الحجز من السبت ١٤ / ٦ / ٢٠٢٥ عبر الواتساب</p>
+        <a href="javascript:void(0)" class="whatsapp-button">
+            <svg class="whatsapp-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path d="M19.002 4.908A9.818 9.818 0 0012.001 2C6.478 2 2 6.477 2 11.999c0 1.83.504 3.551 1.368 5.066L2.071 22l5.132-1.291a9.948 9.948 0 004.798 1.228h.001c5.522 0 9.999-4.477 9.999-9.998s-4.477-9.999-9.999-9.999zm-7.001 13.018c-1.353 0-2.616-.445-3.632-1.229l-.26-.153-2.705.686.7-2.637-.17-.271a7.948 7.948 0 01-1.272-4.011c0-4.383 3.559-7.941 7.941-7.941s7.941 3.558 7.941 7.941-3.559 7.941-7.941 7.941zm4.496-5.832c-.246-.123-1.454-.717-1.68-.799-.226-.082-.391-.123-.555.123-.164.246-.635.799-.779.963s-.289.184-.535.062c-.246-.123-1.042-.451-2.029-1.249s-1.58-1.559-1.806-2.181c-.226-.622-.025-.963.1-.1253.11-.11.246-.288.37-.432s.164-.246.246-.41c.082-.164.041-.307-.021-.432-.062-.123-.555-1.328-.76-1.818-.2-.48-.409-.419-.555-.426h-.473c-.164 0-.432.062-.658.307s-.865.84-1.065 2.029-.289 2.215.307 3.653c.184.451.905 1.763 2.622 3.279 2.066 1.781 3.492 2.308 4.729 2.308.835 0 1.556-.269 1.943-.889.43-.661.43-1.229.307-1.352s-.164-.184-.41-.307z"/>
+            </svg>
+            01066026409
+        </a>
+    </section>
+</main>
+
+<script>
+    const imageInput = document.getElementById('imageUpload');
+    const imageWrapper = document.getElementById('profileImageWrapper');
+
+    imageInput.addEventListener('change', function(e) {
+        const file = e.target.files[0];
+        if (file) {
+            const reader = new FileReader();
+            reader.onload = function(event) {
+                imageWrapper.innerHTML = `<img src="${event.target.result}" style="width: 100%; height: 100%; object-fit: cover; z-index: 2; position: relative;">`;
+                imageWrapper.style.border = '2px solid var(--accent-gold)';
+            };
+            reader.readAsDataURL(file);
+        }
+    });
+</script>
 </body>
 </html>
