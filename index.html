@@ -3,33 +3,33 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>د. محمد المسيري - حجز 2026</title>
+<title>د. محمد المسيري</title>
 <link rel="icon" type="image/x-icon" href="favicon.ico">
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Alexandria:wght@300;400;500;600;700;800&family=Aref+Ruqaa:wght@400;700&display=swap');
 
 :root {
     --bg-base: #F3EEE7;
-    --bg-glow-1: #E8DFD3;
-    --bg-glow-2: #F7F4F0;
-    --card-bg: rgba(255, 255, 255, 0.65);
-    --card-border: rgba(255, 255, 255, 0.85);
-    --text-main: #2D2D2A;
-    --text-muted: #6B6B66;
-    --accent: #D97757;
-    --accent-light: #F0A98C;
-    --accent-dark: #B85C3E;
-    --bio-green: #0d9488;
-    --pill-bg: rgba(255, 255, 255, 0.5);
-    --pill-border: rgba(217, 119, 87, 0.25);
-    --pill-hover-bg: rgba(217, 119, 87, 0.08);
-    --pill-focus-bg: rgba(217, 119, 87, 0.14);
-    --danger: #ef4444;
+    --bg-glow-1: #EAE0D2;
+    --bg-glow-2: #F8F5F0;
+    --card-bg: rgba(255, 255, 255, 0.68);
+    --card-border: rgba(255, 255, 255, 0.9);
+    --text-main: #292824;
+    --text-muted: #6B685F;
+    --accent: #C2603C;
+    --accent-light: #E0A57D;
+    --accent-dark: #8F4429;
+    --bio-green: #0d8f7f;
+    --pill-bg: rgba(255, 255, 255, 0.55);
+    --pill-border: rgba(194, 96, 60, 0.22);
+    --pill-hover-bg: rgba(194, 96, 60, 0.08);
+    --pill-focus-bg: rgba(194, 96, 60, 0.14);
+    --danger: #d1493a;
     --radius-card: 32px;
     --radius-row: 16px;
     --radius-pill: 100px;
-    --shadow-card: 0 25px 50px -12px rgba(45, 30, 20, 0.08);
-    --shadow-hover: 0 15px 30px -5px rgba(45, 30, 20, 0.1);
+    --shadow-card: 0 25px 50px -12px rgba(41, 28, 18, 0.1);
+    --shadow-hover: 0 15px 30px -5px rgba(41, 28, 18, 0.12);
     --glass-blur: saturate(180%) blur(20px);
 }
 
@@ -44,7 +44,7 @@ body.dark-mode {
     --accent: #D4A359;
     --accent-light: #E6C088;
     --accent-dark: #9A7233;
-    --bio-green: #10b981;
+    --bio-green: #1cba9b;
     --pill-bg: rgba(255, 255, 255, 0.04);
     --pill-border: rgba(255, 255, 255, 0.12);
     --pill-hover-bg: rgba(255, 255, 255, 0.08);
@@ -73,7 +73,7 @@ html {
 body {
     font-family: 'Alexandria', sans-serif;
     background: var(--bg-base);
-    background-image: 
+    background-image:
         radial-gradient(circle at 0% 0%, var(--bg-glow-1) 0%, transparent 45%),
         radial-gradient(circle at 100% 100%, var(--bg-glow-2) 0%, transparent 45%);
     min-height: 100vh;
@@ -101,21 +101,30 @@ body::before {
     transition: background 0.2s ease, box-shadow 0.2s ease;
     border-radius: 4px;
     padding: 0.1em 0.3em;
+    cursor: text;
 }
 
 [contenteditable="true"]:hover {
-    background: rgba(217, 119, 87, 0.08);
+    background: var(--pill-hover-bg);
 }
 
+[contenteditable="true"]:focus-visible,
 [contenteditable="true"]:focus {
-    background: rgba(217, 119, 87, 0.12);
+    background: var(--pill-focus-bg);
     box-shadow: 0 0 0 2px var(--accent);
 }
 
-.theme-toggle {
+.top-controls {
     position: fixed;
     top: 2.5rem;
     left: 2.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    z-index: 100;
+}
+
+.icon-btn {
     width: 48px;
     height: 48px;
     background: var(--card-bg);
@@ -124,22 +133,26 @@ body::before {
     border: 1px solid var(--card-border);
     border-radius: 50%;
     cursor: pointer;
-    z-index: 100;
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
     box-shadow: var(--shadow-card);
 }
 
-.theme-toggle:hover {
-    transform: scale(1.1) rotate(15deg);
+.icon-btn:hover {
+    transform: scale(1.08) rotate(8deg);
     border-color: var(--accent);
 }
 
-.theme-toggle svg {
-    width: 22px;
-    height: 22px;
+.icon-btn:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 3px;
+}
+
+.icon-btn svg {
+    width: 20px;
+    height: 20px;
     fill: var(--accent);
     transition: all 0.4s ease;
 }
@@ -170,15 +183,35 @@ body:not(.dark-mode) .announcement-card::after {
     right: 0;
     width: 320px;
     height: 320px;
-    background: radial-gradient(circle, rgba(217, 119, 87, 0.12) 0%, transparent 70%);
+    background: radial-gradient(circle, rgba(194, 96, 60, 0.12) 0%, transparent 70%);
     border-radius: 50%;
     transform: translate(30%, -30%);
     pointer-events: none;
 }
 
+.dna-motif {
+    position: absolute;
+    left: -40px;
+    bottom: -40px;
+    width: 220px;
+    height: 220px;
+    opacity: 0.05;
+    pointer-events: none;
+    z-index: 0;
+}
+
+body.dark-mode .dna-motif { opacity: 0.07; }
+
+.dna-motif svg { width: 100%; height: 100%; stroke: var(--bio-green); }
+
 @keyframes fadeUp {
     from { opacity: 0; transform: translateY(20px); }
     to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes popIn {
+    from { opacity: 0; transform: scale(0.92); }
+    to { opacity: 1; transform: scale(1); }
 }
 
 .stagger-1 { animation: fadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.1s forwards; opacity: 0; }
@@ -186,11 +219,21 @@ body:not(.dark-mode) .announcement-card::after {
 .stagger-3 { animation: fadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.3s forwards; opacity: 0; }
 .stagger-4 { animation: fadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.4s forwards; opacity: 0; }
 
+@media (prefers-reduced-motion: reduce) {
+    .stagger-1, .stagger-2, .stagger-3, .stagger-4, .schedule-row, .time-pill {
+        animation: none !important;
+        opacity: 1 !important;
+        transition: none !important;
+    }
+}
+
 .header-section {
     display: flex;
     align-items: center;
     gap: 4rem;
     margin-bottom: 4rem;
+    position: relative;
+    z-index: 1;
 }
 
 .profile-image-container {
@@ -223,6 +266,11 @@ body.dark-mode .profile-image {
     border-color: var(--accent);
 }
 
+.profile-image:focus-within {
+    outline: 2px solid var(--accent);
+    outline-offset: 3px;
+}
+
 .profile-image img {
     width: 100%;
     height: 100%;
@@ -253,10 +301,17 @@ body.dark-mode .profile-image {
     font-weight: 600;
 }
 
-.image-upload { display: none; }
+.image-upload {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    opacity: 0;
+}
 
 .header-text {
     flex: 1;
+    min-width: 0;
 }
 
 .announcement-label {
@@ -303,6 +358,7 @@ body.dark-mode .profile-image {
     margin-bottom: 3.5rem;
     position: relative;
     overflow: hidden;
+    z-index: 1;
 }
 
 .announcement-main-text {
@@ -337,7 +393,7 @@ body:not(.dark-mode) .year-badge {
     background: var(--accent);
     color: #fff;
     border: none;
-    box-shadow: 0 10px 20px rgba(217, 119, 87, 0.25);
+    box-shadow: 0 10px 20px rgba(194, 96, 60, 0.28);
 }
 
 .grade-text {
@@ -350,6 +406,8 @@ body:not(.dark-mode) .year-badge {
 
 .schedule-container {
     margin-bottom: 3.5rem;
+    position: relative;
+    z-index: 1;
 }
 
 .section-header {
@@ -357,6 +415,8 @@ body:not(.dark-mode) .year-badge {
     align-items: center;
     justify-content: space-between;
     margin-bottom: 2rem;
+    flex-wrap: wrap;
+    gap: 1rem;
 }
 
 .section-title {
@@ -394,10 +454,24 @@ body:not(.dark-mode) .year-badge {
     transform: translateY(-1px);
 }
 
+.add-day-btn:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+}
+
 .schedule-grid {
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
+}
+
+.empty-schedule {
+    text-align: center;
+    padding: 2.5rem 1.5rem;
+    color: var(--text-muted);
+    font-size: 1.4rem;
+    border: 1px dashed var(--pill-border);
+    border-radius: var(--radius-row);
 }
 
 .schedule-row {
@@ -410,10 +484,17 @@ body:not(.dark-mode) .year-badge {
     padding: 1.8rem 2.2rem;
     transition: all 0.3s ease;
     position: relative;
+    animation: popIn 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.schedule-row.removing,
+.time-pill.removing {
+    opacity: 0;
+    transform: scale(0.9);
 }
 
 .schedule-row:hover {
-    border-color: rgba(217, 119, 87, 0.4);
+    border-color: rgba(194, 96, 60, 0.4);
     box-shadow: var(--shadow-hover);
 }
 
@@ -445,7 +526,12 @@ body:not(.dark-mode) .year-badge {
 
 .delete-row-btn:hover {
     color: var(--danger);
-    background: rgba(239, 68, 68, 0.1);
+    background: rgba(209, 73, 58, 0.1);
+}
+
+.delete-row-btn:focus-visible {
+    outline: 2px solid var(--danger);
+    outline-offset: 1px;
 }
 
 .times-wrapper {
@@ -467,6 +553,7 @@ body:not(.dark-mode) .year-badge {
     align-items: center;
     gap: 0.8rem;
     transition: all 0.2s ease;
+    animation: popIn 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 body.dark-mode .time-pill {
@@ -499,6 +586,11 @@ body.dark-mode .time-pill {
     color: var(--danger);
 }
 
+.remove-time:focus-visible {
+    outline: 2px solid var(--danger);
+    outline-offset: 1px;
+}
+
 .add-time-btn {
     background: transparent;
     border: 1px dashed var(--pill-border);
@@ -517,19 +609,25 @@ body.dark-mode .time-pill {
     background: var(--pill-focus-bg);
 }
 
+.add-time-btn:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+}
+
 .contact-action {
-    background: linear-gradient(to right, rgba(13, 148, 136, 0.08), transparent);
-    border: 1px solid rgba(13, 148, 136, 0.2);
+    background: linear-gradient(to right, rgba(13, 143, 127, 0.08), transparent);
+    border: 1px solid rgba(13, 143, 127, 0.2);
     border-radius: var(--radius-row);
     padding: 3rem 2rem;
     text-align: center;
     position: relative;
     overflow: hidden;
+    z-index: 1;
 }
 
 body.dark-mode .contact-action {
-    background: linear-gradient(to right, rgba(16, 185, 129, 0.1), transparent);
-    border-color: rgba(16, 185, 129, 0.25);
+    background: linear-gradient(to right, rgba(28, 186, 155, 0.1), transparent);
+    border-color: rgba(28, 186, 155, 0.25);
 }
 
 .contact-date {
@@ -543,6 +641,8 @@ body.dark-mode .contact-action {
     display: inline-flex;
     align-items: center;
     justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
 }
 
 .whatsapp-button {
@@ -558,7 +658,13 @@ body.dark-mode .contact-action {
     font-weight: 700;
     letter-spacing: 1px;
     direction: ltr;
-    box-shadow: 0 10px 25px rgba(13, 148, 136, 0.25);
+    box-shadow: 0 10px 25px rgba(13, 143, 127, 0.28);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.whatsapp-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 14px 30px rgba(13, 143, 127, 0.34);
 }
 
 .whatsapp-icon {
@@ -572,9 +678,63 @@ body.dark-mode .contact-action {
     outline: none;
 }
 
+.copy-btn {
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    color: var(--text-muted);
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.25s ease;
+    box-shadow: var(--shadow-hover);
+}
+
+.copy-btn:hover {
+    color: var(--bio-green);
+    border-color: var(--bio-green);
+}
+
+.copy-btn:focus-visible {
+    outline: 2px solid var(--bio-green);
+    outline-offset: 2px;
+}
+
+.copy-btn svg {
+    width: 20px;
+    height: 20px;
+    fill: currentColor;
+}
+
+.copy-toast {
+    position: fixed;
+    bottom: 3rem;
+    left: 50%;
+    transform: translateX(-50%) translateY(20px);
+    background: var(--text-main);
+    color: var(--bg-base);
+    padding: 1rem 2.2rem;
+    border-radius: var(--radius-pill);
+    font-size: 1.3rem;
+    font-weight: 600;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    z-index: 200;
+}
+
+.copy-toast.visible {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+}
+
 @media (max-width: 768px) {
     body { padding: 2rem 1.5rem; }
-    .theme-toggle { top: 1.5rem; left: 1.5rem; width: 42px; height: 42px; }
+    .top-controls { top: 1.5rem; left: 1.5rem; }
+    .icon-btn { width: 42px; height: 42px; }
     .announcement-card { padding: 3.5rem 2rem; }
     .header-section { flex-direction: column; text-align: center; gap: 2rem; }
     .profession-title { justify-content: center; }
@@ -588,17 +748,57 @@ body.dark-mode .contact-action {
     .times-wrapper { justify-content: flex-start; }
     .whatsapp-button { font-size: 1.9rem; padding: 1rem 2rem; width: 100%; }
 }
+
+@media print {
+    body {
+        background: #fff !important;
+        padding: 0;
+        min-height: auto;
+        display: block;
+    }
+    body::before, .dna-motif, .announcement-card::after { display: none !important; }
+    .top-controls, .add-day-btn, .delete-row-btn, .remove-time, .add-time-btn,
+    .upload-icon, .upload-text, .copy-btn, .copy-toast { display: none !important; }
+    .announcement-card {
+        max-width: 100%;
+        background: #fff;
+        backdrop-filter: none;
+        -webkit-backdrop-filter: none;
+        box-shadow: none;
+        border: 1px solid #e5e0d6;
+        border-radius: 12px;
+        padding: 1.5cm 1.4cm;
+    }
+    .doctor-name, .announcement-main-text, .day-name, .section-title, .contact-date { color: #1a1a18 !important; }
+    .year-badge { background: #fff !important; color: #1a1a18 !important; border: 2px solid #C2603C !important; box-shadow: none !important; }
+    .whatsapp-button { box-shadow: none !important; }
+    .schedule-row, .time-pill { break-inside: avoid; animation: none !important; background: #faf8f4 !important; border-color: #e5e0d6 !important; }
+    [contenteditable="true"] { background: transparent !important; box-shadow: none !important; }
+    .stagger-1, .stagger-2, .stagger-3, .stagger-4 { animation: none !important; opacity: 1 !important; }
+    @page { size: A4; margin: 1cm; }
+}
 </style>
 </head>
 <body>
 
-<button class="theme-toggle" id="themeToggle" aria-label="تبديل المظهر">
-    <svg class="sun-icon" viewBox="0 0 24 24"><path d="M12 7c-2.76 0-5 2.24-5 5s2.24 5 5 5 5-2.24 5-5-2.24-5-5-5zM2 13h2c.55 0 1-.45 1-1s-.45-1-1-1H2c-.55 0-1 .45-1 1s.45 1 1 1zm18 0h2c.55 0 1-.45 1-1s-.45-1-1-1h-2c-.55 0-1 .45-1 1s.45 1 1 1zM11 2v2c0 .55.45 1 1 1s1-.45 1-1V2c0-.55-.45-1-1-1s-1 .45-1 1zm0 18v2c0 .55.45 1 1 1s1-.45 1-1v-2c0-.55-.45-1-1-1s-1 .45-1 1zM5.99 4.58c-.39-.39-1.03-.39-1.41 0-.39.39-.39 1.03 0 1.41l1.06 1.06c.39.39 1.03.39 1.41 0s.39-1.03 0-1.41L5.99 4.58zm12.37 12.37c-.39-.39-1.03-.39-1.41 0-.39.39-.39 1.03 0 1.41l1.06 1.06c.39.39 1.03.39 1.41 0 .39-.39.39-1.03 0-1.41l-1.06-1.06zm1.06-10.96c.39-.39.39-1.03 0-1.41-.39-.39-1.03-.39-1.41 0l-1.06 1.06c-.39.39-.39 1.03 0 1.41s1.03.39 1.41 0l1.06-1.06zM7.05 18.36c.39-.39.39-1.03 0-1.41-.39-.39-1.03-.39-1.41 0l-1.06 1.06c-.39.39-.39 1.03 0 1.41s1.03.39 1.41 0l1.06-1.06z"/></svg>
-    <svg class="moon-icon" viewBox="0 0 24 24"><path d="M12 3c-4.97 0-9 4.03-9 9s4.03 9 9 9 9-4.03 9-9c0-.46-.04-.92-.1-1.36-.98 1.37-2.58 2.26-4.4 2.26-2.98 0-5.4-2.42-5.4-5.4 0-1.81.89-3.42 2.26-4.4C12.92 3.04 12.46 3 12 3z"/></svg>
-</button>
+<div class="top-controls">
+    <button class="icon-btn" id="themeToggle" aria-label="تبديل المظهر" title="تبديل المظهر">
+        <svg class="sun-icon" viewBox="0 0 24 24"><path d="M12 7c-2.76 0-5 2.24-5 5s2.24 5 5 5 5-2.24 5-5-2.24-5-5-5zM2 13h2c.55 0 1-.45 1-1s-.45-1-1-1H2c-.55 0-1 .45-1 1s.45 1 1 1zm18 0h2c.55 0 1-.45 1-1s-.45-1-1-1h-2c-.55 0-1 .45-1 1s.45 1 1 1zM11 2v2c0 .55.45 1 1 1s1-.45 1-1V2c0-.55-.45-1-1-1s-1 .45-1 1zm0 18v2c0 .55.45 1 1 1s1-.45 1-1v-2c0-.55-.45-1-1-1s-1 .45-1 1zM5.99 4.58c-.39-.39-1.03-.39-1.41 0-.39.39-.39 1.03 0 1.41l1.06 1.06c.39.39 1.03.39 1.41 0s.39-1.03 0-1.41L5.99 4.58zm12.37 12.37c-.39-.39-1.03-.39-1.41 0-.39.39-.39 1.03 0 1.41l1.06 1.06c.39.39 1.03.39 1.41 0 .39-.39.39-1.03 0-1.41l-1.06-1.06zm1.06-10.96c.39-.39.39-1.03 0-1.41-.39-.39-1.03-.39-1.41 0l-1.06 1.06c-.39.39-.39 1.03 0 1.41s1.03.39 1.41 0l1.06-1.06zM7.05 18.36c.39-.39.39-1.03 0-1.41-.39-.39-1.03-.39-1.41 0l-1.06 1.06c-.39.39-.39 1.03 0 1.41s1.03.39 1.41 0l1.06-1.06z"/></svg>
+        <svg class="moon-icon" viewBox="0 0 24 24"><path d="M12 3c-4.97 0-9 4.03-9 9s4.03 9 9 9 9-4.03 9-9c0-.46-.04-.92-.1-1.36-.98 1.37-2.58 2.26-4.4 2.26-2.98 0-5.4-2.42-5.4-5.4 0-1.81.89-3.42 2.26-4.4C12.92 3.04 12.46 3 12 3z"/></svg>
+    </button>
+    <button class="icon-btn" id="printBtn" aria-label="طباعة الإعلان" title="طباعة الإعلان">
+        <svg viewBox="0 0 24 24"><path d="M19 8H5c-1.66 0-3 1.34-3 3v6h4v4h12v-4h4v-6c0-1.66-1.34-3-3-3zm-3 11H8v-5h8v5zm3-7c-.55 0-1-.45-1-1s.45-1 1-1 1 .45 1 1-.45 1-1 1zm-1-9H6v4h12V3z"/></svg>
+    </button>
+</div>
 
 <main class="announcement-card">
-    
+    <div class="dna-motif" aria-hidden="true">
+        <svg viewBox="0 0 100 200" fill="none" stroke-width="3">
+            <path d="M20 0 C20 30 80 30 80 60 C80 90 20 90 20 120 C20 150 80 150 80 180" />
+            <path d="M80 0 C80 30 20 30 20 60 C20 90 80 90 80 120 C80 150 20 150 20 180" />
+        </svg>
+    </div>
+
     <header class="header-section stagger-1">
         <div class="profile-image-container">
             <label for="imageUpload" class="profile-image" id="profileImageWrapper" title="انقر لتغيير الصورة">
@@ -609,7 +809,7 @@ body.dark-mode .contact-action {
             </label>
             <input type="file" id="imageUpload" class="image-upload" accept="image/*">
         </div>
-        
+
         <div class="header-text">
             <span class="announcement-label" contenteditable="true" spellcheck="false">يعلن</span>
             <h1 class="doctor-name" contenteditable="true" spellcheck="false">د. محمد المسيري</h1>
@@ -632,24 +832,24 @@ body.dark-mode .contact-action {
         </div>
 
         <div class="schedule-grid" id="scheduleGrid">
-            
+
             <div class="schedule-row">
                 <div class="row-top">
                     <span class="day-name" contenteditable="true" spellcheck="false">السبت، الإثنين، الأربعاء</span>
-                    <button class="delete-row-btn" title="حذف المجموعة">×</button>
+                    <button class="delete-row-btn" title="حذف المجموعة" aria-label="حذف المجموعة">×</button>
                 </div>
                 <div class="times-wrapper">
                     <div class="time-pill">
                         <span class="time-text" contenteditable="true" spellcheck="false">12:30 - 2:00 م</span>
-                        <button class="remove-time" title="حذف الوقت">×</button>
+                        <button class="remove-time" title="حذف الوقت" aria-label="حذف الوقت">×</button>
                     </div>
                     <div class="time-pill">
                         <span class="time-text" contenteditable="true" spellcheck="false">2:00 - 3:30 م</span>
-                        <button class="remove-time" title="حذف الوقت">×</button>
+                        <button class="remove-time" title="حذف الوقت" aria-label="حذف الوقت">×</button>
                     </div>
                     <div class="time-pill">
                         <span class="time-text" contenteditable="true" spellcheck="false">4:00 - 5:30 م</span>
-                        <button class="remove-time" title="حذف الوقت">×</button>
+                        <button class="remove-time" title="حذف الوقت" aria-label="حذف الوقت">×</button>
                     </div>
                     <button class="add-time-btn">+ إضافة وقت</button>
                 </div>
@@ -658,16 +858,16 @@ body.dark-mode .contact-action {
             <div class="schedule-row">
                 <div class="row-top">
                     <span class="day-name" contenteditable="true" spellcheck="false">الأحد، الثلاثاء، الخميس</span>
-                    <button class="delete-row-btn" title="حذف المجموعة">×</button>
+                    <button class="delete-row-btn" title="حذف المجموعة" aria-label="حذف المجموعة">×</button>
                 </div>
                 <div class="times-wrapper">
                     <div class="time-pill">
                         <span class="time-text" contenteditable="true" spellcheck="false">12:30 - 2:00 م</span>
-                        <button class="remove-time" title="حذف الوقت">×</button>
+                        <button class="remove-time" title="حذف الوقت" aria-label="حذف الوقت">×</button>
                     </div>
                     <div class="time-pill">
                         <span class="time-text" contenteditable="true" spellcheck="false">2:00 - 3:30 م</span>
-                        <button class="remove-time" title="حذف الوقت">×</button>
+                        <button class="remove-time" title="حذف الوقت" aria-label="حذف الوقت">×</button>
                     </div>
                     <button class="add-time-btn">+ إضافة وقت</button>
                 </div>
@@ -685,95 +885,136 @@ body.dark-mode .contact-action {
                 </svg>
                 <span class="phone-editable" contenteditable="true" spellcheck="false">01066026409</span>
             </div>
+            <button class="copy-btn" id="copyPhoneBtn" aria-label="نسخ الرقم" title="نسخ الرقم">
+                <svg viewBox="0 0 24 24"><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></svg>
+            </button>
         </div>
     </section>
 </main>
 
+<div class="copy-toast" id="copyToast">تم نسخ الرقم</div>
+
 <script>
-    const themeToggle = document.getElementById('themeToggle');
-    const imageInput = document.getElementById('imageUpload');
-    const imageWrapper = document.getElementById('profileImageWrapper');
-    const scheduleGrid = document.getElementById('scheduleGrid');
-    const addDayBtn = document.getElementById('addDayBtn');
+const themeToggle = document.getElementById('themeToggle');
+const printBtn = document.getElementById('printBtn');
+const imageInput = document.getElementById('imageUpload');
+const imageWrapper = document.getElementById('profileImageWrapper');
+const scheduleGrid = document.getElementById('scheduleGrid');
+const addDayBtn = document.getElementById('addDayBtn');
+const copyPhoneBtn = document.getElementById('copyPhoneBtn');
+const copyToast = document.getElementById('copyToast');
 
-    themeToggle.addEventListener('click', () => {
-        document.body.classList.toggle('dark-mode');
-    });
+themeToggle.addEventListener('click', () => {
+    document.body.classList.toggle('dark-mode');
+});
 
-    imageInput.addEventListener('change', function(e) {
-        const file = e.target.files[0];
-        if (file) {
-            const reader = new FileReader();
-            reader.onload = function(event) {
-                let existingImg = imageWrapper.querySelector('img');
-                if (!existingImg) {
-                    existingImg = document.createElement('img');
-                    imageWrapper.appendChild(existingImg);
-                }
-                existingImg.src = event.target.result;
-                const placeholder = document.getElementById('imagePlaceholder');
-                if (placeholder) placeholder.style.display = 'none';
-            };
-            reader.readAsDataURL(file);
-        }
-    });
+printBtn.addEventListener('click', () => {
+    window.print();
+});
 
-    addDayBtn.addEventListener('click', () => {
-        const row = document.createElement('div');
-        row.className = 'schedule-row';
-        row.innerHTML = `
-            <div class="row-top">
-                <span class="day-name" contenteditable="true" spellcheck="false">أيام جديدة</span>
-                <button class="delete-row-btn" title="حذف المجموعة">×</button>
+imageInput.addEventListener('change', function(e) {
+    const file = e.target.files[0];
+    if (file) {
+        const reader = new FileReader();
+        reader.onload = function(event) {
+            let existingImg = imageWrapper.querySelector('img');
+            if (!existingImg) {
+                existingImg = document.createElement('img');
+                imageWrapper.appendChild(existingImg);
+            }
+            existingImg.src = event.target.result;
+            const placeholder = document.getElementById('imagePlaceholder');
+            if (placeholder) placeholder.style.display = 'none';
+        };
+        reader.readAsDataURL(file);
+    }
+});
+
+function createRow() {
+    const row = document.createElement('div');
+    row.className = 'schedule-row';
+    row.innerHTML = `
+        <div class="row-top">
+            <span class="day-name" contenteditable="true" spellcheck="false">أيام جديدة</span>
+            <button class="delete-row-btn" title="حذف المجموعة" aria-label="حذف المجموعة">×</button>
+        </div>
+        <div class="times-wrapper">
+            <div class="time-pill">
+                <span class="time-text" contenteditable="true" spellcheck="false">12:00 - 1:30 م</span>
+                <button class="remove-time" title="حذف الوقت" aria-label="حذف الوقت">×</button>
             </div>
-            <div class="times-wrapper">
-                <div class="time-pill">
-                    <span class="time-text" contenteditable="true" spellcheck="false">12:00 - 1:30 م</span>
-                    <button class="remove-time" title="حذف الوقت">×</button>
-                </div>
-                <button class="add-time-btn">+ إضافة وقت</button>
-            </div>
+            <button class="add-time-btn">+ إضافة وقت</button>
+        </div>
+    `;
+    return row;
+}
+
+addDayBtn.addEventListener('click', () => {
+    scheduleGrid.appendChild(createRow());
+});
+
+function focusAndSelect(el) {
+    el.focus();
+    const range = document.createRange();
+    range.selectNodeContents(el);
+    const sel = window.getSelection();
+    sel.removeAllRanges();
+    sel.addRange(range);
+}
+
+function removeWithAnimation(el) {
+    el.classList.add('removing');
+    el.addEventListener('transitionend', () => el.remove(), { once: true });
+    setTimeout(() => { if (el.parentNode) el.remove(); }, 350);
+}
+
+scheduleGrid.addEventListener('click', (e) => {
+    if (e.target.classList.contains('delete-row-btn')) {
+        const row = e.target.closest('.schedule-row');
+        if (row) removeWithAnimation(row);
+    }
+
+    if (e.target.classList.contains('remove-time')) {
+        const pill = e.target.closest('.time-pill');
+        if (pill) removeWithAnimation(pill);
+    }
+
+    if (e.target.classList.contains('add-time-btn')) {
+        const wrapper = e.target.closest('.times-wrapper');
+        const newPill = document.createElement('div');
+        newPill.className = 'time-pill';
+        newPill.innerHTML = `
+            <span class="time-text" contenteditable="true" spellcheck="false">وقت جديد</span>
+            <button class="remove-time" title="حذف الوقت" aria-label="حذف الوقت">×</button>
         `;
-        scheduleGrid.appendChild(row);
-    });
+        wrapper.insertBefore(newPill, e.target);
+        focusAndSelect(newPill.querySelector('.time-text'));
+    }
+});
 
-    scheduleGrid.addEventListener('click', (e) => {
-        if (e.target.classList.contains('delete-row-btn')) {
-            const row = e.target.closest('.schedule-row');
-            if (row) row.remove();
-        }
+copyPhoneBtn.addEventListener('click', async () => {
+    const phoneText = document.querySelector('.phone-editable').textContent.trim();
+    try {
+        await navigator.clipboard.writeText(phoneText);
+    } catch (err) {
+        const temp = document.createElement('textarea');
+        temp.value = phoneText;
+        document.body.appendChild(temp);
+        temp.select();
+        document.execCommand('copy');
+        document.body.removeChild(temp);
+    }
+    copyToast.classList.add('visible');
+    clearTimeout(copyPhoneBtn._toastTimer);
+    copyPhoneBtn._toastTimer = setTimeout(() => copyToast.classList.remove('visible'), 1800);
+});
 
-        if (e.target.classList.contains('remove-time')) {
-            const pill = e.target.closest('.time-pill');
-            if (pill) pill.remove();
-        }
-
-        if (e.target.classList.contains('add-time-btn')) {
-            const wrapper = e.target.closest('.times-wrapper');
-            const newPill = document.createElement('div');
-            newPill.className = 'time-pill';
-            newPill.innerHTML = `
-                <span class="time-text" contenteditable="true" spellcheck="false">وقت جديد</span>
-                <button class="remove-time" title="حذف الوقت">×</button>
-            `;
-            wrapper.insertBefore(newPill, e.target);
-            const textSpan = newPill.querySelector('.time-text');
-            textSpan.focus();
-            
-            const range = document.createRange();
-            range.selectNodeContents(textSpan);
-            const sel = window.getSelection();
-            sel.removeAllRanges();
-            sel.addRange(range);
-        }
-    });
-
-    document.addEventListener('keydown', (e) => {
-        if (e.key === 'Enter' && e.target.isContentEditable && !e.shiftKey) {
-            e.preventDefault();
-            e.target.blur();
-        }
-    });
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter' && e.target.isContentEditable && !e.shiftKey) {
+        e.preventDefault();
+        e.target.blur();
+    }
+});
 </script>
 </body>
 </html>
