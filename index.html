@@ -37,6 +37,12 @@ html {
     --body-font: 'Alexandria', sans-serif;
     --eyebrow-letter-spacing: 2px;
     --card-shape: glass;
+    --print-heading: #1a1a18;
+    --print-muted: #6B685F;
+    --print-accent: #C2603C;
+    --print-tint: #faf8f4;
+    --print-border: #e5e0d6;
+    --ease: cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 html[data-theme="luxury"] {
@@ -68,6 +74,11 @@ html[data-theme="luxury"] {
     --body-font: 'Alexandria', sans-serif;
     --eyebrow-letter-spacing: 4px;
     --card-shape: onyx;
+    --print-heading: #2a2110;
+    --print-muted: #6f6650;
+    --print-accent: #9b7b1f;
+    --print-tint: #f7f3e8;
+    --print-border: #e6dcb8;
 }
 
 html[data-theme="modern"] {
@@ -99,6 +110,191 @@ html[data-theme="modern"] {
     --body-font: 'Alexandria', sans-serif;
     --eyebrow-letter-spacing: 1px;
     --card-shape: flat;
+    --print-heading: #122420;
+    --print-muted: #4d5c58;
+    --print-accent: #0E7C6B;
+    --print-tint: #f4faf8;
+    --print-border: #d9ece7;
+}
+
+html[data-theme="glass"] {
+    --bg-base: #E9F1FA;
+    --bg-glow-1: #DCEAF9;
+    --bg-glow-2: #FBFEFF;
+    --card-bg: rgba(255, 255, 255, 0.38);
+    --card-border: rgba(255, 255, 255, 0.65);
+    --card-border-width: 1px;
+    --text-main: #1B2733;
+    --text-muted: #5C6E80;
+    --accent: #3D7FE0;
+    --accent-soft: rgba(61, 127, 224, 0.12);
+    --accent-contrast: #ffffff;
+    --danger: #d1493a;
+    --bio-stroke: #3D7FE0;
+    --bio-opacity: 0.07;
+    --whatsapp-bg: rgba(13, 143, 127, 0.55);
+    --whatsapp-border: rgba(255, 255, 255, 0.5);
+    --whatsapp-color: #ffffff;
+    --whatsapp-icon: #ffffff;
+    --radius-card: 30px;
+    --radius-row: 22px;
+    --radius-pill: 100px;
+    --shadow-card: 0 30px 60px -20px rgba(61, 127, 224, 0.25);
+    --shadow-hover: 0 16px 32px -10px rgba(61, 127, 224, 0.22);
+    --glass-blur: saturate(180%) blur(28px);
+    --display-font: 'Alexandria', sans-serif;
+    --body-font: 'Alexandria', sans-serif;
+    --eyebrow-letter-spacing: 3px;
+    --card-shape: liquid;
+    --print-heading: #12202e;
+    --print-muted: #55677a;
+    --print-accent: #2F6FE0;
+    --print-tint: #e0edfc;
+    --print-border: #b8d4f5;
+}
+
+html[data-theme="pink"] {
+    --bg-base: #FBEEF1;
+    --bg-glow-1: #F6DEE6;
+    --bg-glow-2: #FFF7F9;
+    --card-bg: rgba(255, 255, 255, 0.72);
+    --card-border: rgba(255, 255, 255, 0.9);
+    --card-border-width: 1px;
+    --text-main: #3A1E27;
+    --text-muted: #8C6B74;
+    --accent: #C2557A;
+    --accent-soft: rgba(194, 85, 122, 0.12);
+    --accent-contrast: #ffffff;
+    --danger: #C24A5B;
+    --bio-stroke: var(--accent);
+    --bio-opacity: 0.06;
+    --whatsapp-bg: #0d8f7f;
+    --whatsapp-border: rgba(194, 85, 122, 0.35);
+    --whatsapp-color: #ffffff;
+    --whatsapp-icon: #ffffff;
+    --radius-card: 30px;
+    --radius-row: 20px;
+    --radius-pill: 100px;
+    --shadow-card: 0 25px 50px -15px rgba(194, 85, 122, 0.2);
+    --shadow-hover: 0 14px 28px -8px rgba(194, 85, 122, 0.2);
+    --glass-blur: saturate(180%) blur(20px);
+    --display-font: 'Aref Ruqaa', serif;
+    --body-font: 'Alexandria', sans-serif;
+    --eyebrow-letter-spacing: 2px;
+    --card-shape: glass;
+    --print-heading: #3a1e27;
+    --print-muted: #8c6b74;
+    --print-accent: #B5476B;
+    --print-tint: #fbe1e8;
+    --print-border: #edb9c9;
+}
+
+html[data-theme="threaded"] {
+    --bg-base: #F2F2F2;
+    --bg-glow-1: #ECECEC;
+    --bg-glow-2: #FAFAFA;
+    --card-bg: #FFFFFF;
+    --card-border: #E5E5E5;
+    --card-border-width: 1px;
+    --text-main: #0F0F0F;
+    --text-muted: #606060;
+    --accent: #1A73E8;
+    --accent-soft: rgba(26, 115, 232, 0.08);
+    --accent-contrast: #ffffff;
+    --danger: #D93025;
+    --bio-stroke: var(--text-muted);
+    --bio-opacity: 0.04;
+    --whatsapp-bg: #0d8f7f;
+    --whatsapp-border: transparent;
+    --whatsapp-color: #ffffff;
+    --whatsapp-icon: #ffffff;
+    --radius-card: 12px;
+    --radius-row: 0px;
+    --radius-pill: 18px;
+    --shadow-card: 0 1px 2px rgba(0, 0, 0, 0.08);
+    --shadow-hover: 0 1px 3px rgba(0, 0, 0, 0.1);
+    --glass-blur: none;
+    --display-font: 'Alexandria', sans-serif;
+    --body-font: 'Alexandria', sans-serif;
+    --eyebrow-letter-spacing: 0.5px;
+    --card-shape: flat;
+    --print-heading: #0f0f0f;
+    --print-muted: #606060;
+    --print-accent: #1a56db;
+    --print-tint: #f9f9f9;
+    --print-border: #e5e5e5;
+}
+
+html[data-theme="botanical"] {
+    --bg-base: #F4F7F0;
+    --bg-glow-1: #E7EFE0;
+    --bg-glow-2: #FBFCF8;
+    --card-bg: rgba(255, 255, 255, 0.75);
+    --card-border: rgba(90, 120, 80, 0.18);
+    --card-border-width: 1px;
+    --text-main: #22301D;
+    --text-muted: #65735C;
+    --accent: #4B7A3E;
+    --accent-soft: rgba(75, 122, 62, 0.12);
+    --accent-contrast: #ffffff;
+    --danger: #B5473A;
+    --bio-stroke: var(--accent);
+    --bio-opacity: 0.09;
+    --whatsapp-bg: #3F7A4E;
+    --whatsapp-border: transparent;
+    --whatsapp-color: #ffffff;
+    --whatsapp-icon: #ffffff;
+    --radius-card: 26px;
+    --radius-row: 18px;
+    --radius-pill: 100px;
+    --shadow-card: 0 22px 46px -16px rgba(34, 48, 29, 0.16);
+    --shadow-hover: 0 12px 26px -8px rgba(34, 48, 29, 0.16);
+    --glass-blur: saturate(160%) blur(16px);
+    --display-font: 'Aref Ruqaa', serif;
+    --body-font: 'Alexandria', sans-serif;
+    --eyebrow-letter-spacing: 2px;
+    --card-shape: glass;
+    --print-heading: #22301d;
+    --print-muted: #55624c;
+    --print-accent: #3F6B33;
+    --print-tint: #e6efdb;
+    --print-border: #bcd6a6;
+}
+
+html[data-theme="gazette"] {
+    --bg-base: #EDE9DD;
+    --bg-glow-1: #E6E1D2;
+    --bg-glow-2: #F5F2E7;
+    --card-bg: #FBF9F2;
+    --card-border: #1A1A1A;
+    --card-border-width: 2px;
+    --text-main: #1A1A1A;
+    --text-muted: #55524A;
+    --accent: #8B1E1E;
+    --accent-soft: rgba(139, 30, 30, 0.08);
+    --accent-contrast: #FBF9F2;
+    --danger: #8B1E1E;
+    --bio-stroke: var(--text-main);
+    --bio-opacity: 0.05;
+    --whatsapp-bg: #1A1A1A;
+    --whatsapp-border: transparent;
+    --whatsapp-color: #FBF9F2;
+    --whatsapp-icon: #FBF9F2;
+    --radius-card: 2px;
+    --radius-row: 0px;
+    --radius-pill: 0px;
+    --shadow-card: 0 3px 0 var(--text-main);
+    --shadow-hover: 0 2px 0 var(--text-main);
+    --glass-blur: none;
+    --display-font: 'Aref Ruqaa', serif;
+    --body-font: 'Alexandria', sans-serif;
+    --eyebrow-letter-spacing: 3px;
+    --card-shape: gazette;
+    --print-heading: #1a1a1a;
+    --print-muted: #55524a;
+    --print-accent: #8b1e1e;
+    --print-tint: #f7f4ea;
+    --print-border: #1a1a1a;
 }
 
 * {
@@ -106,6 +302,7 @@ html[data-theme="modern"] {
     padding: 0;
     box-sizing: border-box;
     -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
     color-adjust: exact !important;
 }
 
@@ -157,10 +354,18 @@ body::before {
     position: fixed;
     top: 2.5rem;
     left: 2.5rem;
+    right: 2.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.8rem;
+    z-index: 100;
+}
+
+.print-btn-row {
     display: flex;
     align-items: center;
-    gap: 1rem;
-    z-index: 100;
+    gap: 0.8rem;
 }
 
 .icon-btn {
@@ -173,17 +378,20 @@ body::before {
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: transform 0.3s var(--ease), border-color 0.3s var(--ease), box-shadow 0.3s var(--ease);
     box-shadow: var(--shadow-card);
     flex-shrink: 0;
 }
 
 html:not([data-theme="luxury"]) .icon-btn { backdrop-filter: var(--glass-blur); -webkit-backdrop-filter: var(--glass-blur); }
+html[data-theme="gazette"] .icon-btn { border-radius: 4px; }
 
 .icon-btn:hover {
     transform: scale(1.06);
     border-color: var(--accent);
 }
+
+.icon-btn:active { transform: scale(0.96); }
 
 .icon-btn:focus-visible {
     outline: 2px solid var(--accent);
@@ -198,15 +406,23 @@ html:not([data-theme="luxury"]) .icon-btn { backdrop-filter: var(--glass-blur); 
 
 .theme-switch {
     display: flex;
+    max-width: min(88vw, 560px);
+    overflow-x: auto;
     background: var(--card-bg);
     border: var(--card-border-width) solid var(--card-border);
     border-radius: var(--radius-pill);
     box-shadow: var(--shadow-card);
     padding: 4px;
     gap: 2px;
+    scrollbar-width: thin;
 }
 
+.theme-switch::-webkit-scrollbar { height: 4px; }
+.theme-switch::-webkit-scrollbar-thumb { background: var(--card-border); border-radius: 10px; }
+
 html:not([data-theme="luxury"]) .theme-switch { backdrop-filter: var(--glass-blur); -webkit-backdrop-filter: var(--glass-blur); }
+html[data-theme="gazette"] .theme-switch { border-radius: 4px; }
+html[data-theme="gazette"] .theme-option { border-radius: 2px; }
 
 .theme-option {
     border: none;
@@ -218,7 +434,7 @@ html:not([data-theme="luxury"]) .theme-switch { backdrop-filter: var(--glass-blu
     padding: 0.7rem 1.3rem;
     border-radius: calc(var(--radius-pill) - 2px);
     cursor: pointer;
-    transition: all 0.25s ease;
+    transition: color 0.25s var(--ease), background 0.25s var(--ease), transform 0.15s var(--ease);
     white-space: nowrap;
 }
 
@@ -226,6 +442,8 @@ html:not([data-theme="luxury"]) .theme-switch { backdrop-filter: var(--glass-blu
     color: var(--text-main);
     background: var(--accent-soft);
 }
+
+.theme-option:active { transform: scale(0.96); }
 
 .theme-option:focus-visible {
     outline: 2px solid var(--accent);
@@ -248,7 +466,7 @@ html:not([data-theme="luxury"]) .theme-switch { backdrop-filter: var(--glass-blu
     position: relative;
     z-index: 1;
     overflow: hidden;
-    transition: background 0.4s ease, border-radius 0.3s ease, box-shadow 0.3s ease;
+    transition: background 0.4s var(--ease), border-radius 0.4s var(--ease), box-shadow 0.4s var(--ease), border-color 0.4s var(--ease);
 }
 
 html:not([data-theme="luxury"]) .announcement-card { backdrop-filter: var(--glass-blur); -webkit-backdrop-filter: var(--glass-blur); }
@@ -268,6 +486,15 @@ html:not([data-theme="luxury"]) .announcement-card { backdrop-filter: var(--glas
 
 html[data-theme="luxury"] .announcement-card::after { width: 260px; height: 260px; }
 
+html[data-theme="glass"] .announcement-card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.45) 0%, rgba(255, 255, 255, 0) 32%, rgba(255, 255, 255, 0) 68%, rgba(255, 255, 255, 0.2) 100%);
+    pointer-events: none;
+    z-index: 0;
+}
+
 .corner-mark {
     position: absolute;
     width: 26px;
@@ -285,6 +512,35 @@ html[data-theme="luxury"] .corner-mark { opacity: 0.55; }
 .corner-mark.tr { top: 18px; left: 18px; border-right: none; border-bottom: none; }
 .corner-mark.bl { bottom: 18px; right: 18px; border-left: none; border-top: none; }
 .corner-mark.br { bottom: 18px; left: 18px; border-right: none; border-top: none; }
+
+.flourish {
+    width: 64px;
+    height: 3px;
+    border-radius: 3px;
+    background: var(--accent);
+    opacity: 0.5;
+    margin: 0 auto 2.2rem;
+    position: relative;
+    z-index: 1;
+    transition: background 0.4s ease, opacity 0.3s ease;
+}
+
+html[data-theme="modern"] .flourish,
+html[data-theme="threaded"] .flourish { display: none; }
+
+html[data-theme="luxury"] .flourish { background: linear-gradient(90deg, transparent, var(--accent), transparent); height: 1px; opacity: 0.8; width: 120px; }
+html[data-theme="glass"] .flourish { background: linear-gradient(90deg, transparent, var(--accent), #E38BC0, transparent); opacity: 0.6; }
+html[data-theme="gazette"] .flourish {
+    width: 100%;
+    max-width: 100%;
+    height: 0;
+    border-top: 1px solid var(--text-main);
+    border-bottom: 3px double var(--text-main);
+    padding-top: 3px;
+    background: none;
+    opacity: 1;
+    margin: 0 0 2.4rem;
+}
 
 .dna-motif {
     position: absolute;
@@ -340,7 +596,7 @@ html[data-theme="luxury"] .corner-mark { opacity: 0.55; }
     background: var(--bg-glow-2);
     border: 2px solid var(--card-border);
     cursor: pointer;
-    transition: all 0.35s ease;
+    transition: transform 0.35s var(--ease), border-color 0.35s var(--ease);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -404,6 +660,14 @@ html[data-theme="luxury"] .announcement-label {
     padding-bottom: 0.4rem;
 }
 
+html[data-theme="gazette"] .announcement-label {
+    color: var(--text-main);
+    border-top: 1px solid var(--text-main);
+    border-bottom: 1px solid var(--text-main);
+    padding: 0.3rem 0;
+    font-weight: 700;
+}
+
 .doctor-name {
     font-family: var(--display-font);
     font-size: 5.2rem;
@@ -414,6 +678,17 @@ html[data-theme="luxury"] .announcement-label {
 }
 
 html[data-theme="modern"] .doctor-name { font-weight: 800; letter-spacing: -0.5px; }
+
+html[data-theme="glass"] .doctor-name {
+    font-weight: 800;
+    background: linear-gradient(120deg, #2F6FE0, #8E7CFF 45%, #E38BC0 80%, #2F6FE0);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+}
+
+html[data-theme="threaded"] .doctor-name { font-weight: 800; letter-spacing: -0.5px; }
 
 .profession-title {
     font-size: 1.8rem;
@@ -444,6 +719,10 @@ html[data-theme="modern"] .doctor-name { font-weight: 800; letter-spacing: -0.5p
 }
 
 html[data-theme="modern"] .hero-announcement { background: var(--bg-glow-1); border: none; }
+html[data-theme="threaded"] .hero-announcement { background: var(--bg-glow-1); border: 1px solid var(--card-border); }
+html[data-theme="threaded"] .contact-action { background: var(--bg-glow-1); border: 1px solid var(--card-border); }
+html[data-theme="gazette"] .hero-announcement { background: transparent; border-top: 1px solid var(--text-main); border-bottom: 1px solid var(--text-main); border-radius: 0; }
+html[data-theme="gazette"] .contact-action { background: transparent; border: 1px solid var(--text-main); border-radius: 0; }
 
 .announcement-main-text {
     font-size: 2.2rem;
@@ -481,6 +760,7 @@ html[data-theme="luxury"] .year-badge-wrapper::after {
     letter-spacing: 2px;
     display: inline-block;
     box-shadow: 0 10px 20px var(--accent-soft);
+    font-variant-numeric: tabular-nums;
 }
 
 html[data-theme="luxury"] .year-badge {
@@ -498,6 +778,33 @@ html[data-theme="modern"] .year-badge {
     box-shadow: none;
 }
 
+html[data-theme="glass"] .year-badge {
+    background: rgba(255, 255, 255, 0.45);
+    border: 1px solid rgba(255, 255, 255, 0.7);
+    color: var(--accent);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.6), 0 10px 24px rgba(61, 127, 224, 0.18);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+html[data-theme="pink"] .year-badge {
+    background: linear-gradient(135deg, var(--accent), #E8899F);
+}
+
+html[data-theme="threaded"] .year-badge {
+    border-radius: 8px;
+    font-family: var(--body-font);
+    font-weight: 800;
+    box-shadow: none;
+    letter-spacing: 0;
+}
+
+html[data-theme="gazette"] .year-badge {
+    border-radius: 2px;
+    box-shadow: none;
+    letter-spacing: 4px;
+}
+
 .grade-text {
     display: block;
     font-size: 1.9rem;
@@ -505,6 +812,11 @@ html[data-theme="modern"] .year-badge {
     color: var(--text-muted);
     margin-top: 1.2rem;
 }
+
+html[data-theme="pink"] .grade-text,
+html[data-theme="botanical"] .grade-text { font-style: italic; }
+
+html[data-theme="luxury"] .doctor-name { letter-spacing: 1px; }
 
 .schedule-container { margin-bottom: 3.5rem; position: relative; z-index: 1; }
 
@@ -532,9 +844,11 @@ html[data-theme="modern"] .year-badge {
     height: 6px;
     background: var(--accent);
     border-radius: 50%;
+    box-shadow: 0 0 0 4px var(--accent-soft);
 }
 
 html[data-theme="luxury"] .section-title::before { border-radius: 0; transform: rotate(45deg); }
+html[data-theme="gazette"] .section-title::before { border-radius: 0; box-shadow: none; }
 
 .add-day-btn {
     background: transparent;
@@ -571,7 +885,7 @@ html[data-theme="luxury"] .section-title::before { border-radius: 0; transform: 
     border: 1px solid var(--card-border);
     border-radius: var(--radius-row);
     padding: 1.8rem 2.2rem;
-    transition: all 0.3s ease;
+    transition: transform 0.3s var(--ease), box-shadow 0.3s var(--ease), border-color 0.3s var(--ease);
     position: relative;
     animation: popIn 0.35s cubic-bezier(0.16, 1, 0.3, 1);
 }
@@ -588,13 +902,53 @@ html[data-theme="luxury"] .schedule-row {
     border: 1px solid var(--card-border);
 }
 
+html[data-theme="glass"] .schedule-row {
+    background: rgba(255, 255, 255, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.55);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.5);
+}
+
+html[data-theme="threaded"] .schedule-row {
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid var(--card-border);
+    border-radius: 0;
+    padding: 1.6rem 0;
+}
+
+html[data-theme="gazette"] .schedule-row {
+    background: transparent;
+    border: 1px solid var(--text-main);
+}
+
+html[data-theme="threaded"] .schedule-row:hover { box-shadow: none; border-color: var(--card-border); }
+
 .schedule-row.removing, .time-pill.removing { opacity: 0; transform: scale(0.9); }
 
-.schedule-row:hover { border-color: var(--accent); box-shadow: var(--shadow-hover); }
+.schedule-row:hover { border-color: var(--accent); box-shadow: var(--shadow-hover); transform: translateY(-2px); }
+html[data-theme="threaded"] .schedule-row:hover { transform: none; }
 
 .row-top { display: flex; align-items: center; justify-content: space-between; gap: 1rem; }
 
 .day-name { font-size: 1.6rem; font-weight: 700; color: var(--text-main); flex: 1; }
+
+html[data-theme="threaded"] .day-name {
+    display: flex;
+    align-items: center;
+}
+
+html[data-theme="threaded"] .day-name::before {
+    content: '';
+    display: inline-block;
+    width: 32px;
+    height: 32px;
+    flex-shrink: 0;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--accent), #6EA8FE);
+    margin-inline-end: 1rem;
+}
 
 .delete-row-btn {
     background: transparent;
@@ -624,7 +978,7 @@ html[data-theme="luxury"] .schedule-row {
     display: inline-flex;
     align-items: center;
     gap: 0.8rem;
-    transition: all 0.2s ease;
+    transition: transform 0.2s var(--ease), border-color 0.2s var(--ease), box-shadow 0.2s var(--ease);
     animation: popIn 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
@@ -642,7 +996,31 @@ html[data-theme="luxury"] .time-pill {
     letter-spacing: 0.5px;
 }
 
-.time-pill:hover { border-color: var(--accent); }
+html[data-theme="glass"] .time-pill {
+    background: rgba(255, 255, 255, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.7);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.7);
+}
+
+html[data-theme="threaded"] .times-wrapper {
+    margin-inline-start: 2.6rem;
+    padding-inline-start: 1.2rem;
+    border-inline-start: 2px solid var(--card-border);
+}
+
+html[data-theme="threaded"] .time-pill {
+    background: var(--bg-glow-1);
+    border: none;
+    font-weight: 500;
+}
+
+html[data-theme="gazette"] .time-pill {
+    background: transparent;
+    border: 1px solid var(--text-main);
+    font-variant: small-caps;
+}
+
+.time-pill:hover { border-color: var(--accent); transform: translateY(-1px); box-shadow: 0 4px 10px -4px rgba(0,0,0,0.15); }
 
 .time-text { outline: none; }
 
@@ -678,6 +1056,19 @@ html[data-theme="luxury"] .time-pill {
 
 .add-time-btn:hover { border-color: var(--accent); background: var(--accent-soft); }
 .add-time-btn:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+html[data-theme="threaded"] .add-time-btn {
+    border: none;
+    font-weight: 700;
+    padding: 0.5rem 0.8rem;
+}
+html[data-theme="threaded"] .add-time-btn:hover { background: var(--accent-soft); }
+
+html[data-theme="threaded"] .add-day-btn {
+    border: 1px solid var(--card-border);
+    background: var(--bg-glow-1);
+    border-radius: 20px;
+}
 
 .contact-action {
     background: var(--accent-soft);
@@ -720,10 +1111,20 @@ html[data-theme="luxury"] .time-pill {
 
 html[data-theme="luxury"] .whatsapp-button { border-radius: 6px; box-shadow: none; }
 html[data-theme="modern"] .whatsapp-button { box-shadow: none; }
+html[data-theme="glass"] .whatsapp-button {
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.4), var(--shadow-hover);
+}
+html[data-theme="threaded"] .whatsapp-button { box-shadow: none; border-radius: 24px; }
+html[data-theme="threaded"] .announcement-card::after { display: none; }
+html[data-theme="gazette"] .whatsapp-button { border-radius: 2px; letter-spacing: 2px; }
+html[data-theme="gazette"] .announcement-card::after { display: none; }
+html[data-theme="gazette"] .corner-mark { display: none; }
 
 .whatsapp-button:hover { transform: translateY(-2px); }
 
-.whatsapp-icon { width: 2.6rem; height: 2.6rem; fill: var(--whatsapp-icon); flex-shrink: 0; }
+.whatsapp-icon { width: 2.6rem; height: 2.6rem; fill: var(--whatsapp-icon); flex-shrink: 0; filter: drop-shadow(0 1px 1px rgba(0, 0, 0, 0.12)); }
 
 .phone-editable { outline: none; }
 
@@ -769,8 +1170,8 @@ html[data-theme="modern"] .whatsapp-button { box-shadow: none; }
 
 @media (max-width: 768px) {
     body { padding: 2rem 1.5rem; }
-    .top-controls { top: 1.5rem; left: 1.5rem; right: 1.5rem; flex-wrap: wrap; }
-    .theme-switch { order: 2; }
+    .top-controls { top: 1.5rem; left: 1.5rem; right: 1.5rem; }
+    .theme-switch { max-width: 100%; }
     .icon-btn { width: 42px; height: 42px; }
     .announcement-card { padding: 3.5rem 2rem; }
     .header-section { flex-direction: column; text-align: center; gap: 2rem; }
@@ -804,7 +1205,8 @@ html[data-theme="modern"] .whatsapp-button { box-shadow: none; }
     html:not(.print-wysiwyg) body::before,
     html:not(.print-wysiwyg) .dna-motif,
     html:not(.print-wysiwyg) .announcement-card::after,
-    html:not(.print-wysiwyg) .corner-mark { display: none !important; }
+    html:not(.print-wysiwyg) .corner-mark,
+    html:not(.print-wysiwyg) .flourish { display: none !important; }
 
     html:not(.print-wysiwyg) .print-header {
         display: flex;
@@ -820,8 +1222,8 @@ html[data-theme="modern"] .whatsapp-button { box-shadow: none; }
         padding: 0.6cm 1.2cm;
         z-index: 999;
     }
-    html:not(.print-wysiwyg) .print-header .ph-name { font-family: 'Aref Ruqaa', serif; font-size: 1.9rem; font-weight: 700; color: #1a1a18; }
-    html:not(.print-wysiwyg) .print-header .ph-sub { font-size: 1.2rem; color: #6B685F; }
+    html:not(.print-wysiwyg) .print-header .ph-name { font-family: var(--display-font); font-size: 1.9rem; font-weight: 700; color: var(--print-heading); }
+    html:not(.print-wysiwyg) .print-header .ph-sub { font-size: 1.2rem; color: var(--print-muted); }
 
     html:not(.print-wysiwyg) .print-spacer { display: block; height: 2.1cm; }
 
@@ -829,24 +1231,24 @@ html[data-theme="modern"] .whatsapp-button { box-shadow: none; }
         max-width: 100%;
         background: #fff;
         box-shadow: none;
-        border: 1px solid #e5e0d6;
+        border: 1px solid var(--print-border);
         border-radius: 10px;
         padding: 1cm 1.2cm 1.4cm;
     }
     html:not(.print-wysiwyg) .header-section { display: none; }
-    html:not(.print-wysiwyg) .hero-announcement { padding: 1.2rem 1rem; margin-bottom: 1.4rem; background: #faf8f4 !important; border: 1px solid #e5e0d6 !important; break-inside: avoid; }
+    html:not(.print-wysiwyg) .hero-announcement { padding: 1.2rem 1rem; margin-bottom: 1.4rem; background: var(--print-tint) !important; border: 1px solid var(--print-border) !important; break-inside: avoid; }
     html:not(.print-wysiwyg) .announcement-main-text { font-size: 1.7rem; margin-bottom: 0.6rem; }
     html:not(.print-wysiwyg) .year-badge { font-size: 2.4rem; padding: 0.2rem 1.6rem; }
-    html:not(.print-wysiwyg) .grade-text { font-size: 1.4rem; margin-top: 0.6rem; }
+    html:not(.print-wysiwyg) .grade-text { font-size: 1.4rem; margin-top: 0.6rem; color: var(--print-muted); }
     html:not(.print-wysiwyg) .schedule-container { break-inside: auto; margin-bottom: 1.4rem; }
     html:not(.print-wysiwyg) .section-header { break-after: avoid; margin-bottom: 1rem; }
     html:not(.print-wysiwyg) .doctor-name, html:not(.print-wysiwyg) .announcement-main-text,
     html:not(.print-wysiwyg) .day-name, html:not(.print-wysiwyg) .section-title,
-    html:not(.print-wysiwyg) .contact-date { color: #1a1a18 !important; }
-    html:not(.print-wysiwyg) .year-badge { background: #fff !important; color: #1a1a18 !important; border: 2px solid #C2603C !important; box-shadow: none !important; }
-    html:not(.print-wysiwyg) .whatsapp-button { box-shadow: none !important; background: #0d8f7f !important; color: #fff !important; border: none !important; }
-    html:not(.print-wysiwyg) .schedule-row, html:not(.print-wysiwyg) .time-pill { break-inside: avoid; background: #faf8f4 !important; border-color: #e5e0d6 !important; }
-    html:not(.print-wysiwyg) .contact-action { break-inside: avoid; background: #f4faf8 !important; border-color: #d9ece7 !important; }
+    html:not(.print-wysiwyg) .contact-date { color: var(--print-heading) !important; -webkit-text-fill-color: var(--print-heading) !important; background: none !important; }
+    html:not(.print-wysiwyg) .year-badge { background: #fff !important; color: var(--print-heading) !important; border: 2px solid var(--print-accent) !important; box-shadow: none !important; }
+    html:not(.print-wysiwyg) .whatsapp-button { box-shadow: none !important; background: #0d8f7f !important; color: #fff !important; border: 1px solid var(--print-accent) !important; }
+    html:not(.print-wysiwyg) .schedule-row, html:not(.print-wysiwyg) .time-pill { break-inside: avoid; background: var(--print-tint) !important; border-color: var(--print-border) !important; border-radius: 10px !important; border-inline-start-width: 1px !important; }
+    html:not(.print-wysiwyg) .contact-action { break-inside: avoid; background: var(--print-tint) !important; border-color: var(--print-border) !important; }
 
     html.print-wysiwyg .print-header,
     html.print-wysiwyg .print-spacer { display: none !important; }
@@ -856,7 +1258,12 @@ html[data-theme="modern"] .whatsapp-button { box-shadow: none; }
         justify-content: center;
         min-height: auto;
         padding: 0;
+        background: var(--bg-base) !important;
+        background-image:
+            radial-gradient(circle at 0% 0%, var(--bg-glow-1) 0%, transparent 45%),
+            radial-gradient(circle at 100% 100%, var(--bg-glow-2) 0%, transparent 45%) !important;
     }
+    html.print-wysiwyg .announcement-card { background: var(--card-bg) !important; }
     html.print-wysiwyg .announcement-card {
         transform: scale(var(--print-scale, 1));
         transform-origin: top center;
@@ -869,16 +1276,23 @@ html[data-theme="modern"] .whatsapp-button { box-shadow: none; }
 
 <div class="top-controls">
     <div class="theme-switch" role="group" aria-label="اختيار المظهر">
-        <button class="theme-option" data-theme-value="classic" aria-pressed="true">كلاسيكي</button>
-        <button class="theme-option" data-theme-value="luxury" aria-pressed="false">فخم</button>
-        <button class="theme-option" data-theme-value="modern" aria-pressed="false">عصري</button>
+        <button class="theme-option" data-theme-value="classic" aria-pressed="true" title="التصميم الدافئ الأصلي بلمسة زجاجية خفيفة">كلاسيكي</button>
+        <button class="theme-option" data-theme-value="luxury" aria-pressed="false" title="أسود فاخر بحواف ذهبية">فخم</button>
+        <button class="theme-option" data-theme-value="modern" aria-pressed="false" title="تصميم مسطح ونظيف بلمسة طبية">عصري</button>
+        <button class="theme-option" data-theme-value="glass" aria-pressed="false" title="زجاج سائل شفاف بتدرجات لونية">زجاجي</button>
+        <button class="theme-option" data-theme-value="pink" aria-pressed="false" title="ألوان وردية دافئة وأنيقة">وردي</button>
+        <button class="theme-option" data-theme-value="threaded" aria-pressed="false" title="عرض المواعيد على شكل نقاشات متسلسلة">تعليقات</button>
+        <button class="theme-option" data-theme-value="botanical" aria-pressed="false" title="أخضر طبيعي مستوحى من علم الأحياء">أخضر</button>
+        <button class="theme-option" data-theme-value="gazette" aria-pressed="false" title="أسود وأبيض بطابع صحفي كلاسيكي">جريدة</button>
     </div>
-    <button class="icon-btn" id="printBtn" aria-label="طباعة منسّقة (متعددة الصفحات عند الحاجة)" title="طباعة منسّقة (متعددة الصفحات عند الحاجة)">
-        <svg viewBox="0 0 24 24"><path d="M19 8H5c-1.66 0-3 1.34-3 3v6h4v4h12v-4h4v-6c0-1.66-1.34-3-3-3zm-3 11H8v-5h8v5zm3-7c-.55 0-1-.45-1-1s.45-1 1-1 1 .45 1 1-.45 1-1 1zm-1-9H6v4h12V3z"/></svg>
-    </button>
-    <button class="icon-btn" id="printWysiwygBtn" aria-label="طباعة كما تراها في صفحة واحدة" title="طباعة كما تراها في صفحة واحدة">
-        <svg viewBox="0 0 24 24"><path d="M9 3H5a2 2 0 00-2 2v4h2V5h4V3zm10 0h-4v2h4v4h2V5a2 2 0 00-2-2zM7 15H5v4a2 2 0 002 2h4v-2H7v-4zm12 4h-4v2h4a2 2 0 002-2v-4h-2v4z"/></svg>
-    </button>
+    <div class="print-btn-row">
+        <button class="icon-btn" id="printBtn" aria-label="طباعة منسّقة (متعددة الصفحات عند الحاجة)" title="طباعة منسّقة (متعددة الصفحات عند الحاجة)">
+            <svg viewBox="0 0 24 24"><path d="M19 8H5c-1.66 0-3 1.34-3 3v6h4v4h12v-4h4v-6c0-1.66-1.34-3-3-3zm-3 11H8v-5h8v5zm3-7c-.55 0-1-.45-1-1s.45-1 1-1 1 .45 1 1-.45 1-1 1zm-1-9H6v4h12V3z"/></svg>
+        </button>
+        <button class="icon-btn" id="printWysiwygBtn" aria-label="طباعة كما تراها في صفحة واحدة" title="طباعة كما تراها في صفحة واحدة">
+            <svg viewBox="0 0 24 24"><path d="M9 3H5a2 2 0 00-2 2v4h2V5h4V3zm10 0h-4v2h4v4h2V5a2 2 0 00-2-2zM7 15H5v4a2 2 0 002 2h4v-2H7v-4zm12 4h-4v2h4a2 2 0 002-2v-4h-2v4z"/></svg>
+        </button>
+    </div>
 </div>
 
 <div class="print-header">
@@ -892,6 +1306,7 @@ html[data-theme="modern"] .whatsapp-button { box-shadow: none; }
     <span class="corner-mark tr" aria-hidden="true"></span>
     <span class="corner-mark bl" aria-hidden="true"></span>
     <span class="corner-mark br" aria-hidden="true"></span>
+    <div class="flourish" aria-hidden="true"></div>
 
     <div class="dna-motif" aria-hidden="true">
         <svg viewBox="0 0 100 200" fill="none" stroke-width="3">
