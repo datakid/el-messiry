@@ -1,1556 +1,2420 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl" data-theme="classic">
+<html lang="ar" dir="rtl" data-theme="classic" data-print-mode="poster" data-ink="color">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>د. محمد المسيري</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>ورقة</title>
+<meta name="theme-color" content="#C2603C">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20viewBox%3D%270%200%2032%2032%27%3E%3Crect%20x%3D%273%27%20y%3D%275%27%20width%3D%2726%27%20height%3D%2724%27%20rx%3D%276%27%20fill%3D%27none%27%20stroke%3D%27%232B2620%27%20stroke-width%3D%272.2%27%2F%3E%3Cpath%20d%3D%27M3%2012h26M10%203v4M22%203v4%27%20stroke%3D%27%232B2620%27%20stroke-width%3D%272.2%27%20stroke-linecap%3D%27round%27%2F%3E%3Ccircle%20cx%3D%2716%27%20cy%3D%2721%27%20r%3D%275%27%20fill%3D%27none%27%20stroke%3D%27%232B2620%27%20stroke-width%3D%272.2%27%2F%3E%3Cpath%20d%3D%27M16%2018.4V21l1.9%201.3%27%20stroke%3D%27%232B2620%27%20stroke-width%3D%272%27%20stroke-linecap%3D%27round%27%20stroke-linejoin%3D%27round%27%2F%3E%3C%2Fsvg%3E">
+<link rel="apple-touch-icon" id="appleTouchIcon">
+<link rel="manifest" id="manifestLink">
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Alexandria:wght@300;400;500;600;700;800&family=Aref+Ruqaa:wght@400;700&family=Amiri:ital,wght@0,400;0,700;1,400&family=Playfair+Display:wght@400;600;700;800&family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&display=swap');
+:root{
+  --radius-card:28px; --radius-row:18px; --radius-pill:999px; --radius-sm:10px;
+  --shadow-soft:0 10px 30px -18px rgba(20,16,10,0.35);
+  --shadow-hover:0 16px 34px -16px rgba(20,16,10,0.4);
+  --gap-xs:.5rem; --gap-sm:.9rem; --gap-md:1.4rem; --gap-lg:2.2rem;
+  --font-latin-body:"Inter","Segoe UI",system-ui,-apple-system,sans-serif;
+  --font-latin-deco:"Playfair Display","Georgia",serif;
+  --font-arabic-body:"Noto Naskh Arabic","Segoe UI",Tahoma,"Geeza Pro",serif;
+  --font-arabic-deco:"Aref Ruqaa","Amiri","Noto Naskh Arabic",serif;
+  --type-scale:1;
+  --base-fs:16px;
+}
+html[lang="ar"]{ --font-body:var(--font-arabic-body); --font-deco:var(--font-arabic-deco); }
+html[lang="en"]{ --font-body:var(--font-latin-body); --font-deco:var(--font-latin-deco); }
 
-html {
-    font-size: 10px;
-    --bg-base: #F3EEE7;
-    --bg-glow-1: #EAE0D2;
-    --bg-glow-2: #F8F5F0;
-    --card-bg: rgba(255, 255, 255, 0.68);
-    --card-border: rgba(255, 255, 255, 0.9);
-    --card-border-width: 1px;
-    --text-main: #292824;
-    --text-muted: #6B685F;
-    --accent: #C2603C;
-    --accent-soft: rgba(194, 96, 60, 0.12);
-    --accent-contrast: #ffffff;
-    --danger: #d1493a;
-    --bio-stroke: var(--text-main);
-    --bio-opacity: 0.05;
-    --whatsapp-bg: #0d8f7f;
-    --whatsapp-border: transparent;
-    --whatsapp-color: #ffffff;
-    --whatsapp-icon: #ffffff;
-    --radius-card: 32px;
-    --radius-row: 16px;
-    --radius-pill: 100px;
-    --shadow-card: 0 25px 50px -12px rgba(41, 28, 18, 0.1);
-    --shadow-hover: 0 15px 30px -5px rgba(41, 28, 18, 0.12);
-    --glass-blur: saturate(180%) blur(20px);
-    --display-font: 'Aref Ruqaa', serif;
-    --display-font-en: 'Playfair Display', serif;
-    --body-font: 'Alexandria', sans-serif;
-    --eyebrow-letter-spacing: 2px;
-    --print-heading: #1a1a18;
-    --print-muted: #6B685F;
-    --print-accent: #C2603C;
-    --print-tint: #faf8f4;
-    --print-border: #e5e0d6;
-    --ease: cubic-bezier(0.16, 1, 0.3, 1);
+html[data-theme="classic"]{
+  --bg-base:#F3EEE7; --bg-surface:#FFFFFF; --text-main:#2B2620; --text-soft:#6E6355;
+  --accent:#C2603C; --accent-soft:rgba(194,96,60,.12); --accent-contrast:#ffffff;
+  --card-border:rgba(43,38,32,.12); --line:rgba(43,38,32,.14);
+  --radius-shape: var(--radius-card);
+}
+html[data-theme="luxury"]{
+  --bg-base:#0a0906; --bg-surface:#15130d; --text-main:#F3EEDF; --text-soft:#B3A78C;
+  --accent:#C9A227; --accent-soft:rgba(201,162,39,.12); --accent-contrast:#100e0a;
+  --card-border:rgba(201,162,39,.25); --line:rgba(201,162,39,.2);
+  --radius-shape: 8px;
+}
+html[data-theme="modern"]{
+  --bg-base:#EDF3F1; --bg-surface:#FFFFFF; --text-main:#122420; --text-soft:#5C736D;
+  --accent:#0B6B5C; --accent-soft:rgba(11,107,92,.09); --accent-contrast:#ffffff;
+  --card-border:rgba(18,36,32,.12); --line:rgba(18,36,32,.12);
+  --radius-shape: 20px;
+}
+html[data-theme="gazette"]{
+  --bg-base:#EDE9DD; --bg-surface:#FAF8F2; --text-main:#231F1B; --text-soft:#5A5347;
+  --accent:#8B1E1E; --accent-soft:rgba(139,30,30,.08); --accent-contrast:#FBF9F2;
+  --card-border:rgba(35,31,27,.18); --line:rgba(35,31,27,.22);
+  --radius-shape: 2px;
 }
 
-html[data-theme="luxury"] {
-    --bg-base: #0a0906;
-    --bg-glow-1: #16130d;
-    --bg-glow-2: #100e0a;
-    --card-bg: #15130f;
-    --card-border: rgba(201, 162, 39, 0.35);
-    --card-border-width: 1px;
-    --text-main: #F1E9D8;
-    --text-muted: #9C9382;
-    --accent: #C9A227;
-    --accent-soft: rgba(201, 162, 39, 0.1);
-    --accent-contrast: #100e0a;
-    --danger: #e0796a;
-    --bio-stroke: #C9A227;
-    --bio-opacity: 0.14;
-    --whatsapp-bg: #123832;
-    --whatsapp-border: rgba(201, 162, 39, 0.55);
-    --whatsapp-color: #E9D8A6;
-    --whatsapp-icon: #E9D8A6;
-    --radius-card: 6px;
-    --radius-row: 4px;
-    --radius-pill: 4px;
-    --shadow-card: 0 30px 70px -20px rgba(0, 0, 0, 0.85);
-    --shadow-hover: 0 18px 40px -12px rgba(0, 0, 0, 0.9);
-    --glass-blur: none;
-    --display-font: 'Amiri', serif;
-    --display-font-en: 'Cormorant Garamond', serif;
-    --body-font: 'Alexandria', sans-serif;
-    --eyebrow-letter-spacing: 5px;
-    --print-heading: #2a2110;
-    --print-muted: #6f6650;
-    --print-accent: #9b7b1f;
-    --print-tint: #f7f3e8;
-    --print-border: #e6dcb8;
+*{box-sizing:border-box;}
+html,body{margin:0;padding:0;}
+body{
+  background:var(--bg-base); color:var(--text-main);
+  font-family:var(--font-body); font-size:var(--base-fs);
+  min-height:100vh; transition:background .3s ease,color .3s ease;
+  -webkit-font-smoothing:antialiased;
+}
+h1,h2,h3,p,ul{margin:0;}
+button{font-family:inherit;}
+[hidden]{display:none !important;}
+bdi{unicode-bidi:isolate;}
+.icon{width:20px;height:20px;flex:none;}
+.icon-sm{width:16px;height:16px;}
+.icon-lg{width:28px;height:28px;}
+
+/* ---------- app shell ---------- */
+#app{display:flex;flex-direction:column;min-height:100vh;}
+#toolbar{
+  display:flex;align-items:center;gap:var(--gap-sm);flex-wrap:wrap;
+  padding:.9rem 1.4rem;background:var(--bg-surface);border-bottom:1px solid var(--line);
+  position:sticky;top:0;z-index:40;box-shadow:var(--shadow-soft);
+}
+.tb-group{display:flex;align-items:center;gap:.5rem;}
+.tb-brand{gap:.6rem;}
+.tb-brand-label{font-family:var(--font-deco);font-size:1.3rem;color:var(--text-main);}
+.tb-push{margin-inline-start:auto;}
+.tb-field{display:flex;flex-direction:column;gap:.2rem;font-size:.72rem;color:var(--text-soft);}
+.tb-field-label{padding-inline-start:.2rem;}
+.tb-field select,select{
+  font-family:inherit;font-size:.85rem;padding:.45rem .8rem;border-radius:var(--radius-sm);
+  border:1px solid var(--card-border);background:var(--bg-base);color:var(--text-main);
+}
+.select-wrap{position:relative;display:inline-flex;align-items:center;width:100%;}
+.select-wrap select{
+  appearance:none;-webkit-appearance:none;-moz-appearance:none;width:100%;
+  padding-inline-end:2rem;border-color:var(--card-border);cursor:pointer;
+  transition:border-color .15s ease,box-shadow .15s ease;
+}
+.select-wrap select:hover{border-color:var(--accent);}
+.select-wrap select:focus-visible{outline:2px solid var(--accent);outline-offset:1px;}
+.select-wrap::after{
+  content:'';position:absolute;inset-inline-end:.9rem;top:50%;
+  width:7px;height:7px;border-inline-end:1.6px solid var(--text-soft);border-block-end:1.6px solid var(--text-soft);
+  transform:translateY(-65%) rotate(45deg);pointer-events:none;
+}
+.select-wrap-icon select{padding-inline-start:2rem;}
+.select-lead-icon{position:absolute;inset-inline-start:.65rem;top:50%;transform:translateY(-50%);color:var(--accent);pointer-events:none;width:16px;height:16px;}
+.icon-btn{
+  display:inline-flex;align-items:center;justify-content:center;width:38px;height:38px;
+  border-radius:var(--radius-pill);border:1px solid transparent;background:transparent;
+  color:var(--text-main);cursor:pointer;transition:all .15s ease;
+}
+.icon-btn:hover{background:var(--accent-soft);color:var(--accent);}
+.icon-btn:focus-visible{outline:2px solid var(--accent);outline-offset:2px;}
+.icon-btn:disabled{opacity:.35;cursor:default;}
+.icon-btn:disabled:hover{background:transparent;color:var(--text-main);}
+.icon-btn.is-active{background:var(--accent);color:var(--accent-contrast);}
+#numeralGlyph{font-weight:700;font-size:.9rem;}
+.btn-pill{
+  display:inline-flex;align-items:center;gap:.5rem;padding:.6rem 1.3rem;border-radius:var(--radius-pill);
+  border:1px solid var(--card-border);background:var(--bg-base);color:var(--text-main);
+  font-size:.92rem;font-weight:600;cursor:pointer;transition:all .15s ease;
+}
+.btn-pill:hover{transform:translateY(-1px);box-shadow:var(--shadow-hover);}
+.btn-accent{background:var(--accent);color:var(--accent-contrast);border-color:transparent;}
+.theme-swatch{
+  width:26px;height:26px;border-radius:50%;border:2px solid transparent;cursor:pointer;
+  background:var(--sw-bg);position:relative;transition:transform .15s ease;
+}
+.theme-swatch::after{
+  content:'';position:absolute;inset:4px;border-radius:50%;background:var(--sw-accent);
+}
+.theme-swatch:hover{transform:scale(1.08);}
+.theme-swatch[aria-pressed="true"]{border-color:var(--text-main);}
+
+#canvas{flex:1;display:flex;justify-content:center;padding:2.6rem 1.4rem 4rem;}
+
+/* ---------- sheet root (the editable announcement) ---------- */
+.sheet-root{width:100%;max-width:760px;}
+.sheet-card{
+  background:var(--bg-surface);border:1px solid var(--card-border);border-radius:var(--radius-shape);
+  box-shadow:var(--shadow-soft);padding:clamp(1.8rem,4vw,3.4rem);position:relative;overflow:hidden;
+}
+html[data-theme="modern"] .sheet-card{border-top:6px solid var(--accent);}
+html[data-theme="gazette"] .sheet-card{border:1px solid var(--text-main);box-shadow:none;}
+html[data-theme="luxury"] .sheet-card{background:linear-gradient(155deg,var(--bg-surface),#0a0906);}
+
+[contenteditable="true"]{outline:none;border-radius:6px;padding:.1em .3em;margin:-.1em -.3em;cursor:text;}
+[contenteditable="true"]:hover{background:var(--accent-soft);}
+[contenteditable="true"]:focus{background:var(--accent-soft);box-shadow:0 0 0 2px var(--accent);}
+[contenteditable="true"]:empty::before{content:attr(data-placeholder);color:var(--text-soft);opacity:.6;}
+
+.sheet-eyebrow{
+  font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);
+  font-weight:700;margin-bottom:.8rem;display:block;
+}
+:lang(ar) .sheet-eyebrow{letter-spacing:normal;text-transform:none;}
+.sheet-profile{display:flex;align-items:center;gap:1.3rem;margin-bottom:1.6rem;}
+.profile-photo{
+  width:84px;height:84px;border-radius:var(--radius-shape);flex:none;position:relative;overflow:hidden;
+  background:var(--accent-soft);border:1px solid var(--card-border);cursor:pointer;
+  display:flex;align-items:center;justify-content:center;color:var(--accent);
+}
+.profile-photo img{width:100%;height:100%;object-fit:cover;}
+.profile-photo input{display:none;}
+.profile-photo-wrap{position:relative;flex:none;}
+.photo-remove-btn{
+  position:absolute;top:-6px;inset-inline-end:-6px;width:22px;height:22px;border-radius:50%;
+  background:var(--text-main);color:var(--bg-base);border:2px solid var(--bg-surface);
+  display:flex;align-items:center;justify-content:center;cursor:pointer;padding:0;
+}
+.photo-remove-btn:hover{background:var(--accent);}
+.profile-text{flex:1;min-width:0;}
+.profile-name{
+  font-family:var(--font-deco);font-size:clamp(1.5rem,3vw,2.1rem);font-weight:700;
+  color:var(--text-main);display:block;line-height:1.2;
+}
+.profile-subtitle{color:var(--text-soft);font-size:1rem;margin-top:.3rem;display:block;}
+
+.sheet-headline{text-align:center;padding:1.6rem 0 2rem;position:relative;}
+.headline-badge{
+  display:inline-block;background:var(--accent-soft);color:var(--accent);font-weight:700;
+  font-size:.82rem;letter-spacing:.08em;padding:.35rem 1rem;border-radius:var(--radius-pill);margin-bottom:.9rem;
+}
+:lang(ar) .headline-badge{letter-spacing:normal;}
+.headline-title{
+  font-family:var(--font-deco);font-size:clamp(1.6rem,3.4vw,2.3rem);font-weight:700;
+  display:block;color:var(--text-main);
+}
+.headline-note{color:var(--text-soft);margin-top:.6rem;display:block;font-size:.98rem;}
+
+.sheet-groups{display:flex;flex-direction:column;gap:1.1rem;margin-bottom:1.6rem;}
+.group-block{
+  background:var(--bg-base);border:1px solid var(--card-border);border-radius:var(--radius-row);
+  padding:1.1rem 1.3rem;
+}
+html[data-theme="modern"] .group-block{background:#fff;border-inline-start:4px solid var(--accent);}
+.group-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:.7rem;gap:.6rem;}
+.group-label{font-weight:700;color:var(--accent);font-size:1rem;flex:1;}
+.row-remove-btn{
+  width:26px;height:26px;border-radius:50%;border:none;background:transparent;color:var(--text-soft);
+  cursor:pointer;display:flex;align-items:center;justify-content:center;opacity:.5;transition:opacity .15s ease;flex:none;
+}
+.row-remove-btn:hover{opacity:1;color:var(--accent);}
+.slot-list{display:flex;flex-wrap:wrap;gap:.6rem;}
+.slot-pill{
+  display:flex;align-items:center;gap:.5rem;background:var(--bg-surface);border:1px solid var(--card-border);
+  border-radius:var(--radius-pill);padding:.5rem .5rem .5rem 1rem;font-size:.92rem;
+}
+[dir="rtl"] .slot-pill{padding:.5rem 1rem .5rem .5rem;}
+.slot-time{font-weight:700;color:var(--text-main);white-space:nowrap;display:flex;align-items:center;gap:.3rem;}
+.slot-time svg{color:var(--accent);opacity:.7;}
+.slot-note{color:var(--text-soft);}
+.slot-full{color:var(--accent);font-weight:700;font-size:.78rem;}
+.slot-full-btn{
+  border:1px dashed var(--card-border);border-radius:var(--radius-pill);padding:.2rem .7rem;font-size:.74rem;
+  background:transparent;color:var(--text-soft);cursor:pointer;
+}
+.slot-full-btn.is-full{border-style:solid;border-color:var(--accent);color:var(--accent);background:var(--accent-soft);}
+.add-btn{
+  align-self:flex-start;border:1px dashed var(--card-border);color:var(--accent);background:transparent;
+  padding:.45rem 1.1rem;border-radius:var(--radius-pill);font-size:.85rem;font-weight:600;cursor:pointer;
+  display:inline-flex;align-items:center;gap:.4rem;transition:all .15s ease;
+}
+.add-btn:hover{background:var(--accent-soft);}
+.add-group-row{display:flex;justify-content:center;}
+
+.sheet-contacts{display:flex;flex-wrap:wrap;gap:.7rem;justify-content:center;margin-bottom:1.4rem;}
+.contact-chip{
+  display:flex;align-items:center;gap:.55rem;background:var(--accent-soft);color:var(--accent);
+  border-radius:var(--radius-pill);padding:.55rem 1.1rem;font-weight:600;font-size:.9rem;text-decoration:none;
+  border:1px solid transparent;
+}
+.contact-chip svg{color:var(--accent);}
+.contact-chip .row-remove-btn{color:var(--accent);opacity:.5;}
+
+.sheet-footer{text-align:center;border-top:1px dashed var(--card-border);padding-top:1.4rem;display:flex;
+  flex-direction:column;align-items:center;gap:.9rem;}
+.footer-text{color:var(--text-soft);font-size:.88rem;max-width:32em;display:block;}
+.footer-qr{background:#fff;padding:8px;border-radius:10px;line-height:0;}
+.footer-qr svg{display:block;}
+
+.toolbar-mini{display:flex;gap:.4rem;justify-content:center;margin-top:.6rem;}
+
+.time-input{
+  font-family:inherit;font-weight:700;font-size:.92rem;color:var(--text-main);border:none;
+  background:transparent;padding:0;width:3.2em;text-align:center;
+}
+.time-input:focus{background:var(--accent-soft);border-radius:6px;}
+.time-input::placeholder{color:var(--text-soft);opacity:.5;font-weight:400;}
+.contact-type-select{
+  border:none;background:transparent;color:inherit;font-size:.78rem;font-weight:600;
+  padding:0;-webkit-appearance:none;appearance:none;cursor:pointer;
+}
+button:focus-visible,select:focus-visible,[contenteditable]:focus-visible,
+.theme-swatch:focus-visible,input:focus-visible{
+  outline:2px solid var(--accent);outline-offset:2px;
 }
 
-html[data-theme="modern"] {
-    --bg-base: #EDF3F1;
-    --bg-glow-1: #E1EDEA;
-    --bg-glow-2: #FFFFFF;
-    --card-bg: #FFFFFF;
-    --card-border: #D7E3E0;
-    --card-border-width: 1px;
-    --text-main: #0F1F1C;
-    --text-muted: #56655F;
-    --accent: #0B6B5C;
-    --accent-soft: rgba(11, 107, 92, 0.09);
-    --accent-contrast: #ffffff;
-    --danger: #B3402F;
-    --bio-stroke: var(--accent);
-    --bio-opacity: 0.05;
-    --whatsapp-bg: #0B6B5C;
-    --whatsapp-border: transparent;
-    --whatsapp-color: #ffffff;
-    --whatsapp-icon: #ffffff;
-    --radius-card: 10px;
-    --radius-row: 8px;
-    --radius-pill: 10px;
-    --shadow-card: 0 20px 45px -18px rgba(15, 31, 28, 0.14);
-    --shadow-hover: 0 10px 24px -10px rgba(15, 31, 28, 0.16);
-    --glass-blur: none;
-    --display-font: 'Alexandria', sans-serif;
-    --display-font-en: 'Alexandria', sans-serif;
-    --body-font: 'Alexandria', sans-serif;
-    --eyebrow-letter-spacing: 3px;
-    --print-heading: #0f1f1c;
-    --print-muted: #56655f;
-    --print-accent: #0B6B5C;
-    --print-tint: #eef6f4;
-    --print-border: #cfe3de;
+/* ---------- print preview overlay ---------- */
+.preview-overlay{
+  position:fixed;inset:0;background:rgba(10,9,6,.55);z-index:100;display:flex;
+  align-items:stretch;justify-content:center;padding:2rem;backdrop-filter:blur(2px);
+}
+.preview-panel{
+  background:var(--bg-surface);border-radius:20px;max-width:1180px;width:100%;display:flex;
+  overflow:hidden;box-shadow:0 30px 80px -20px rgba(0,0,0,.5);
+}
+.preview-controls{
+  width:270px;flex:none;padding:1.6rem;display:flex;flex-direction:column;gap:1rem;
+  border-inline-end:1px solid var(--line);overflow-y:auto;
+}
+.preview-controls-head{display:flex;align-items:center;justify-content:space-between;}
+.preview-controls-head h2{font-family:var(--font-deco);font-size:1.2rem;}
+.pc-field{display:flex;flex-direction:column;gap:.3rem;font-size:.82rem;color:var(--text-soft);}
+.pc-field select{width:100%;}
+.pc-toggle{display:flex;align-items:center;gap:.6rem;font-size:.86rem;cursor:pointer;}
+.pc-meta{font-size:.78rem;color:var(--text-soft);border-top:1px solid var(--line);padding-top:.8rem;}
+.preview-stage{
+  flex:1;background:#3a3630;padding:2.4rem;overflow:auto;display:flex;
+  flex-direction:column;align-items:center;position:relative;
+}
+.pv-grid{display:grid;grid-template-columns:7mm auto;grid-template-rows:7mm auto;gap:0;}
+.preview-ruler-top{grid-column:2;grid-row:1;position:relative;height:7mm;}
+.preview-ruler-side{grid-column:1;grid-row:2;position:relative;width:7mm;}
+.ruler-tick{position:absolute;background:#c9c4b8;}
+.ruler-tick.major{background:#8a8574;}
+.ruler-label{position:absolute;font-size:6.5px;color:#8a8574;font-family:var(--font-latin-body);}
+.preview-pages{grid-column:2;grid-row:2;display:flex;flex-direction:column;gap:10mm;}
+.image-preview-canvas{max-width:min(100%,420px);max-height:70vh;border-radius:8px;box-shadow:0 10px 30px rgba(0,0,0,.4);align-self:center;margin:auto;}
+
+/* ---------- toasts ---------- */
+.toast-host{position:fixed;bottom:1.6rem;inset-inline:0;display:flex;flex-direction:column;
+  align-items:center;gap:.5rem;pointer-events:none;z-index:200;}
+.toast{
+  background:var(--text-main);color:var(--bg-base);padding:.7rem 1.3rem;border-radius:var(--radius-pill);
+  font-size:.88rem;box-shadow:var(--shadow-hover);opacity:0;transform:translateY(8px);
+  transition:all .25s ease;
+}
+.toast.show{opacity:1;transform:translateY(0);}
+
+.print-mount{position:fixed;inset:0;pointer-events:none;opacity:0;z-index:-1;}
+
+@media (max-width:760px){
+  #toolbar{padding:.7rem .9rem;}
+  .tb-brand-label{display:none;}
+  .preview-overlay{padding:0;}
+  .preview-panel{flex-direction:column;border-radius:0;height:100%;}
+  .preview-controls{width:100%;border-inline-end:none;border-bottom:1px solid var(--line);
+    flex-direction:row;flex-wrap:wrap;max-height:40vh;}
+  .preview-controls-head{width:100%;}
 }
 
-html[data-theme="glass"] {
-    --bg-base: #E9F1FA;
-    --bg-glow-1: #DCEAF9;
-    --bg-glow-2: #FBFEFF;
-    --card-bg: rgba(255, 255, 255, 0.38);
-    --card-border: rgba(255, 255, 255, 0.65);
-    --card-border-width: 1px;
-    --text-main: #1B2733;
-    --text-muted: #5C6E80;
-    --accent: #3D7FE0;
-    --accent-soft: rgba(61, 127, 224, 0.12);
-    --accent-contrast: #ffffff;
-    --danger: #d1493a;
-    --bio-stroke: #3D7FE0;
-    --bio-opacity: 0.07;
-    --whatsapp-bg: rgba(13, 143, 127, 0.55);
-    --whatsapp-border: rgba(255, 255, 255, 0.5);
-    --whatsapp-color: #ffffff;
-    --whatsapp-icon: #ffffff;
-    --radius-card: 30px;
-    --radius-row: 22px;
-    --radius-pill: 100px;
-    --shadow-card: 0 30px 60px -20px rgba(61, 127, 224, 0.25);
-    --shadow-hover: 0 16px 32px -10px rgba(61, 127, 224, 0.22);
-    --glass-blur: saturate(180%) blur(28px);
-    --display-font: 'Alexandria', sans-serif;
-    --display-font-en: 'Alexandria', sans-serif;
-    --body-font: 'Alexandria', sans-serif;
-    --eyebrow-letter-spacing: 3px;
-    --print-heading: #12202e;
-    --print-muted: #55677a;
-    --print-accent: #2F6FE0;
-    --print-tint: #e0edfc;
-    --print-border: #b8d4f5;
+/* ---------- print page (also used for on-screen true-size preview) ---------- */
+.pv-page{
+  background:#fff;color:var(--text-main);box-shadow:0 10px 30px rgba(0,0,0,.4);position:relative;flex:none;
+  overflow:hidden;font-family:var(--font-body);
 }
-
-html[data-theme="pink"] {
-    --bg-base: #FBF3F1;
-    --bg-glow-1: #F6E3DF;
-    --bg-glow-2: #FFFBF9;
-    --card-bg: #FFFDFB;
-    --card-border: #E9CFC9;
-    --card-border-width: 1px;
-    --text-main: #3A2420;
-    --text-muted: #8C6F68;
-    --accent: #A8465C;
-    --accent-soft: rgba(168, 70, 92, 0.1);
-    --accent-contrast: #ffffff;
-    --danger: #B3402F;
-    --bio-stroke: var(--accent);
-    --bio-opacity: 0.05;
-    --whatsapp-bg: #0d8f7f;
-    --whatsapp-border: rgba(168, 70, 92, 0.3);
-    --whatsapp-color: #ffffff;
-    --whatsapp-icon: #ffffff;
-    --radius-card: 16px;
-    --radius-row: 14px;
-    --radius-pill: 100px;
-    --shadow-card: 0 25px 50px -18px rgba(168, 70, 92, 0.18);
-    --shadow-hover: 0 14px 28px -8px rgba(168, 70, 92, 0.18);
-    --glass-blur: none;
-    --display-font: 'Aref Ruqaa', serif;
-    --display-font-en: 'Playfair Display', serif;
-    --body-font: 'Alexandria', sans-serif;
-    --eyebrow-letter-spacing: 2px;
-    --print-heading: #3a2420;
-    --print-muted: #8c6f68;
-    --print-accent: #93394c;
-    --print-tint: #fbe7e1;
-    --print-border: #eecabf;
+.pv-page *{box-sizing:border-box;}
+.pv-page .pp-inner{
+  width:100%;height:100%;padding:var(--pg-margin);display:flex;flex-direction:column;
 }
-
-html[data-theme="threaded"] {
-    --bg-base: #F0F1F3;
-    --bg-glow-1: #E9EAEC;
-    --bg-glow-2: #FAFAFB;
-    --card-bg: #FFFFFF;
-    --card-border: #E3E5E8;
-    --card-border-width: 1px;
-    --text-main: #101114;
-    --text-muted: #5C6066;
-    --accent: #3B6FE0;
-    --accent-soft: rgba(59, 111, 224, 0.1);
-    --accent-contrast: #ffffff;
-    --danger: #D93025;
-    --bio-stroke: var(--text-muted);
-    --bio-opacity: 0.04;
-    --whatsapp-bg: #0d8f7f;
-    --whatsapp-border: transparent;
-    --whatsapp-color: #ffffff;
-    --whatsapp-icon: #ffffff;
-    --radius-card: 20px;
-    --radius-row: 22px;
-    --radius-pill: 20px;
-    --shadow-card: 0 1px 2px rgba(0, 0, 0, 0.08);
-    --shadow-hover: 0 1px 3px rgba(0, 0, 0, 0.1);
-    --glass-blur: none;
-    --display-font: 'Alexandria', sans-serif;
-    --display-font-en: 'Alexandria', sans-serif;
-    --body-font: 'Alexandria', sans-serif;
-    --eyebrow-letter-spacing: 0.5px;
-    --print-heading: #101114;
-    --print-muted: #5c6066;
-    --print-accent: #2f4fb0;
-    --print-tint: #f2f4fb;
-    --print-border: #dbe1f0;
+.pv-page[data-ink="saver"]{background:#fff !important;}
+.pv-page:has(.pp-poster-body){background:var(--bg-base);}
+.pv-page[data-theme="luxury"]{
+  --bg-base:#FBF6E9; --bg-surface:#FFFFFF; --text-main:#2B2410; --text-soft:#6B5F3A;
+  --accent:#9C7A1E; --accent-soft:rgba(156,122,30,.12); --accent-contrast:#FBF6E9;
+  --card-border:rgba(43,36,16,.16); --line:rgba(43,36,16,.18);
 }
-
-html[data-theme="botanical"] {
-    --bg-base: #F4F6EE;
-    --bg-glow-1: #E9EFDD;
-    --bg-glow-2: #FBFCF7;
-    --card-bg: rgba(255, 255, 255, 0.8);
-    --card-border: rgba(63, 107, 51, 0.2);
-    --card-border-width: 1px;
-    --text-main: #20301C;
-    --text-muted: #5E6E55;
-    --accent: #3F6B33;
-    --accent-soft: rgba(63, 107, 51, 0.12);
-    --accent-contrast: #ffffff;
-    --danger: #B5473A;
-    --bio-stroke: var(--accent);
-    --bio-opacity: 0.09;
-    --whatsapp-bg: #3F7A4E;
-    --whatsapp-border: transparent;
-    --whatsapp-color: #ffffff;
-    --whatsapp-icon: #ffffff;
-    --radius-card: 26px;
-    --radius-row: 18px;
-    --radius-pill: 100px;
-    --shadow-card: 0 22px 46px -16px rgba(32, 48, 28, 0.16);
-    --shadow-hover: 0 12px 26px -8px rgba(32, 48, 28, 0.16);
-    --glass-blur: saturate(150%) blur(14px);
-    --display-font: 'Aref Ruqaa', serif;
-    --display-font-en: 'Playfair Display', serif;
-    --body-font: 'Alexandria', sans-serif;
-    --eyebrow-letter-spacing: 2px;
-    --print-heading: #20301c;
-    --print-muted: #55624c;
-    --print-accent: #3F6B33;
-    --print-tint: #e6efdb;
-    --print-border: #bcd6a6;
+.pv-page[data-theme="luxury"] .sheet-card{background:var(--bg-surface) !important;}
+.pv-page[data-ink="saver"] .sheet-card,
+.pv-page[data-ink="saver"] .group-block,
+.pv-page[data-ink="saver"] .headline-badge,
+.pv-page[data-ink="saver"] .contact-chip,
+.pv-page[data-ink="saver"] .pp-card-cell,
+.pv-page[data-ink="saver"] .mini-qr,
+.pv-page[data-ink="saver"] .slot-full-btn.is-full{
+  background:transparent !important; box-shadow:none !important;
 }
+.pv-page[data-ink="saver"] *{ color:#111 !important; }
+.pv-page[data-ink="saver"] .sheet-card{ border:.3mm solid #111 !important; }
+.pv-page[data-ink="color"]{ print-color-adjust:exact; -webkit-print-color-adjust:exact; }
 
-html[data-theme="gazette"] {
-    --bg-base: #EDE9DD;
-    --bg-glow-1: #E6E1D2;
-    --bg-glow-2: #F5F2E7;
-    --card-bg: #FBF9F2;
-    --card-border: #1A1A1A;
-    --card-border-width: 2px;
-    --text-main: #1A1A1A;
-    --text-muted: #55524A;
-    --accent: #8B1E1E;
-    --accent-soft: rgba(139, 30, 30, 0.08);
-    --accent-contrast: #FBF9F2;
-    --danger: #8B1E1E;
-    --bio-stroke: var(--text-main);
-    --bio-opacity: 0.05;
-    --whatsapp-bg: #1A1A1A;
-    --whatsapp-border: transparent;
-    --whatsapp-color: #FBF9F2;
-    --whatsapp-icon: #FBF9F2;
-    --radius-card: 2px;
-    --radius-row: 0px;
-    --radius-pill: 0px;
-    --shadow-card: 0 3px 0 var(--text-main);
-    --shadow-hover: 0 2px 0 var(--text-main);
-    --glass-blur: none;
-    --display-font: 'Aref Ruqaa', serif;
-    --display-font-en: 'Playfair Display', serif;
-    --body-font: 'Alexandria', sans-serif;
-    --eyebrow-letter-spacing: 3px;
-    --print-heading: #1a1a1a;
-    --print-muted: #55524a;
-    --print-accent: #8b1e1e;
-    --print-tint: #f7f4ea;
-    --print-border: #1a1a1a;
+.pp-header-strip{
+  display:flex;align-items:baseline;justify-content:space-between;font-size:9pt;
+  color:var(--text-soft);border-bottom:.3mm solid var(--card-border);padding-bottom:4pt;margin-bottom:8pt;flex:none;
 }
+.pp-header-strip b{color:var(--text-main);font-family:var(--font-deco);font-size:11pt;}
 
-html[lang="en"] { --display-font: var(--display-font-en); }
+.pp-poster-body{flex:1;display:flex;flex-direction:column;justify-content:center;
+  font-size:calc(16pt * var(--type-scale));}
+.pp-poster-body .sheet-card{box-shadow:none;}
+.pp-poster-body .sheet-eyebrow{font-size:.85em;}
+.pp-poster-body .profile-name{font-size:2.9em;}
+.pp-poster-body .profile-subtitle{font-size:1em;}
+.pp-poster-body .headline-badge{font-size:.8em;}
+.pp-poster-body .headline-title{font-size:2.3em;}
+.pp-poster-body .headline-note{font-size:1em;}
+.pp-poster-body .group-label{font-size:1.05em;}
+.pp-poster-body .slot-pill{font-size:1em;}
+.pp-poster-body .contact-chip{font-size:1em;}
+.pp-poster-body .footer-text{font-size:.85em;}
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    -webkit-print-color-adjust: exact !important;
-    print-color-adjust: exact !important;
-    color-adjust: exact !important;
+.pp-sheet-body .group-block{page-break-inside:avoid;box-shadow:none;}
+
+.pp-cards-grid{flex:1;display:grid;gap:0;font-size:calc(7pt * var(--type-scale));}
+.pp-card-cell{
+  border:.3mm dashed #999;padding:6mm;display:flex;flex-direction:column;justify-content:center;
+  align-items:center;text-align:center;gap:.4em;overflow:hidden;background:var(--bg-base);
 }
+.pp-card-cell .mini-name{font-family:var(--font-deco);font-size:1.9em;font-weight:700;color:var(--text-main);}
+.pp-card-cell .mini-sub{font-size:1.2em;color:var(--text-soft);}
+.pp-card-cell .mini-line{font-size:1.3em;}
+.pp-card-cell .mini-line b{color:var(--accent);}
+.pp-card-cell .mini-qr{margin-top:.4em;background:#fff;padding:2mm;border-radius:2mm;display:inline-block;width:fit-content;}
+.pp-card-cell .mini-qr svg{width:18mm;height:18mm;display:block;}
 
-body {
-    font-family: var(--body-font);
-    background: var(--bg-base);
-    background-image:
-        radial-gradient(circle at 0% 0%, var(--bg-glow-1) 0%, transparent 45%),
-        radial-gradient(circle at 100% 100%, var(--bg-glow-2) 0%, transparent 45%);
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 3rem 2rem;
-    color: var(--text-main);
-    position: relative;
-    overflow-x: hidden;
-    transition: background 0.4s ease, color 0.3s ease;
+.pp-footer-strip{
+  flex:none;font-size:8pt;color:#777;text-align:center;border-top:.3mm solid #ccc;
+  padding-top:4pt;margin-top:8pt;
 }
-
-body::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.03'/%3E%3C/svg%3E");
-    pointer-events: none;
-    z-index: 0;
-}
-
-[contenteditable="true"] {
-    outline: none;
-    transition: background 0.2s ease, box-shadow 0.2s ease;
-    border-radius: 4px;
-    padding: 0.1em 0.3em;
-    cursor: text;
-}
-
-[contenteditable="true"]:hover { background: var(--accent-soft); }
-
-[contenteditable="true"]:focus-visible,
-[contenteditable="true"]:focus {
-    background: var(--accent-soft);
-    box-shadow: 0 0 0 2px var(--accent);
-}
-
-.top-controls {
-    position: fixed;
-    top: 2.5rem;
-    left: 2.5rem;
-    right: 2.5rem;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 0.8rem;
-    z-index: 100;
-}
-
-.control-row { display: flex; align-items: center; gap: 0.8rem; flex-wrap: wrap; }
-
-.icon-btn {
-    width: 48px;
-    height: 48px;
-    background: var(--card-bg);
-    border: var(--card-border-width) solid var(--card-border);
-    border-radius: 50%;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: transform 0.3s var(--ease), border-color 0.3s var(--ease), box-shadow 0.3s var(--ease);
-    box-shadow: var(--shadow-card);
-    flex-shrink: 0;
-}
-
-html:not([data-theme="luxury"]) .icon-btn { backdrop-filter: var(--glass-blur); -webkit-backdrop-filter: var(--glass-blur); }
-html[data-theme="gazette"] .icon-btn { border-radius: 4px; }
-
-.icon-btn:hover { transform: scale(1.06); border-color: var(--accent); }
-.icon-btn:active { transform: scale(0.96); }
-.icon-btn:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
-.icon-btn svg { width: 20px; height: 20px; fill: var(--accent); }
-
-.lang-btn {
-    font-family: var(--body-font);
-    font-size: 1.4rem;
-    font-weight: 700;
-    color: var(--accent);
-}
-
-.theme-switch {
-    display: flex;
-    max-width: min(88vw, 560px);
-    overflow-x: auto;
-    background: var(--card-bg);
-    border: var(--card-border-width) solid var(--card-border);
-    border-radius: var(--radius-pill);
-    box-shadow: var(--shadow-card);
-    padding: 4px;
-    gap: 2px;
-    scrollbar-width: thin;
-}
-
-.theme-switch::-webkit-scrollbar { height: 4px; }
-.theme-switch::-webkit-scrollbar-thumb { background: var(--card-border); border-radius: 10px; }
-
-html:not([data-theme="luxury"]) .theme-switch { backdrop-filter: var(--glass-blur); -webkit-backdrop-filter: var(--glass-blur); }
-html[data-theme="gazette"] .theme-switch { border-radius: 4px; }
-html[data-theme="gazette"] .theme-option { border-radius: 2px; }
-
-.theme-option {
-    border: none;
-    background: transparent;
-    color: var(--text-muted);
-    font-family: var(--body-font);
-    font-size: 1.2rem;
-    font-weight: 600;
-    padding: 0.7rem 1.3rem;
-    border-radius: calc(var(--radius-pill) - 2px);
-    cursor: pointer;
-    transition: color 0.25s var(--ease), background 0.25s var(--ease), transform 0.15s var(--ease);
-    white-space: nowrap;
-}
-
-.theme-option:hover { color: var(--text-main); background: var(--accent-soft); }
-.theme-option:active { transform: scale(0.96); }
-.theme-option:focus-visible { outline: 2px solid var(--accent); outline-offset: -2px; }
-.theme-option[aria-pressed="true"] { background: var(--accent); color: var(--accent-contrast); }
-
-.announcement-card {
-    width: 100%;
-    max-width: 840px;
-    background: var(--card-bg);
-    border-radius: var(--radius-card);
-    border: var(--card-border-width) solid var(--card-border);
-    box-shadow: var(--shadow-card);
-    padding: 5rem 6rem;
-    position: relative;
-    z-index: 1;
-    overflow: hidden;
-    transition: background 0.4s var(--ease), border-radius 0.4s var(--ease), box-shadow 0.4s var(--ease), border-color 0.4s var(--ease);
-}
-
-html:not([data-theme="luxury"]) .announcement-card { backdrop-filter: var(--glass-blur); -webkit-backdrop-filter: var(--glass-blur); }
-
-.announcement-card::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    inset-inline-end: 0;
-    width: 320px;
-    height: 320px;
-    background: radial-gradient(circle, var(--accent-soft) 0%, transparent 70%);
-    border-radius: 50%;
-    transform: translate(30%, -30%);
-    pointer-events: none;
-}
-
-html[data-theme="luxury"] .announcement-card::after { width: 260px; height: 260px; }
-
-html[data-theme="luxury"] .announcement-card,
-html[data-theme="pink"] .announcement-card {
-    background-clip: padding-box;
-}
-
-html[data-theme="luxury"] .announcement-card::before,
-html[data-theme="pink"] .announcement-card::before {
-    content: '';
-    position: absolute;
-    inset: 12px;
-    border: 1px solid var(--accent);
-    opacity: 0.28;
-    border-radius: calc(var(--radius-card) - 10px);
-    pointer-events: none;
-    z-index: 0;
-}
-
-html[data-theme="luxury"] .announcement-card {
-    background-image: repeating-linear-gradient(135deg, rgba(201, 162, 39, 0.035) 0px, rgba(201, 162, 39, 0.035) 1px, transparent 1px, transparent 14px);
-}
-
-html[data-theme="botanical"] .announcement-card { border-radius: 48px 16px 48px 16px; }
-html[data-theme="modern"] .announcement-card { border-top: 6px solid var(--accent); }
-
-html[data-theme="glass"] .announcement-card::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0.45) 0%, rgba(255, 255, 255, 0) 32%, rgba(255, 255, 255, 0) 68%, rgba(255, 255, 255, 0.2) 100%);
-    pointer-events: none;
-    z-index: 0;
-}
-
-.corner-mark {
-    position: absolute;
-    width: 26px;
-    height: 26px;
-    border: 1px solid var(--accent);
-    opacity: 0;
-    pointer-events: none;
-    z-index: 2;
-    transition: opacity 0.3s ease;
-}
-
-html[data-theme="luxury"] .corner-mark { opacity: 0.55; }
-html[data-theme="pink"] .corner-mark { opacity: 0.3; }
-
-.corner-mark.tl { top: 18px; inset-inline-end: 18px; border-inline-start: none; border-bottom: none; }
-.corner-mark.tr { top: 18px; inset-inline-start: 18px; border-inline-end: none; border-bottom: none; }
-.corner-mark.bl { bottom: 18px; inset-inline-end: 18px; border-inline-start: none; border-top: none; }
-.corner-mark.br { bottom: 18px; inset-inline-start: 18px; border-inline-end: none; border-top: none; }
-
-.flourish {
-    width: 64px;
-    height: 3px;
-    border-radius: 3px;
-    background: var(--accent);
-    opacity: 0.5;
-    margin: 0 auto 2.2rem;
-    position: relative;
-    z-index: 1;
-    transition: background 0.4s ease, opacity 0.3s ease;
-}
-
-html[data-theme="modern"] .flourish,
-html[data-theme="threaded"] .flourish { display: none; }
-
-html[data-theme="luxury"] .flourish { background: linear-gradient(90deg, transparent, var(--accent), transparent); height: 1px; opacity: 0.8; width: 120px; }
-html[data-theme="glass"] .flourish { background: linear-gradient(90deg, transparent, var(--accent), #E38BC0, transparent); opacity: 0.6; }
-html[data-theme="gazette"] .flourish {
-    width: 100%;
-    max-width: 100%;
-    height: 0;
-    border-top: 1px solid var(--text-main);
-    border-bottom: 3px double var(--text-main);
-    padding-top: 3px;
-    background: none;
-    opacity: 1;
-    margin: 0 0 2.4rem;
-}
-
-.dna-motif {
-    position: absolute;
-    inset-inline-start: -40px;
-    bottom: -40px;
-    width: 220px;
-    height: 220px;
-    opacity: var(--bio-opacity);
-    pointer-events: none;
-    z-index: 0;
-}
-
-.dna-motif svg { width: 100%; height: 100%; stroke: var(--bio-stroke); }
-
-html[data-theme="botanical"] .dna-motif { display: none; }
-
-.leaf-motif {
-    display: none;
-    position: absolute;
-    inset-inline-start: -30px;
-    bottom: -30px;
-    width: 210px;
-    height: 210px;
-    opacity: var(--bio-opacity);
-    pointer-events: none;
-    z-index: 0;
-}
-
-html[data-theme="botanical"] .leaf-motif { display: block; }
-.leaf-motif svg { width: 100%; height: 100%; stroke: var(--bio-stroke); fill: none; }
-
-@keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
-@keyframes popIn { from { opacity: 0; transform: scale(0.92); } to { opacity: 1; transform: scale(1); } }
-
-.stagger-1 { animation: fadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.1s forwards; opacity: 0; }
-.stagger-2 { animation: fadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.2s forwards; opacity: 0; }
-.stagger-3 { animation: fadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.3s forwards; opacity: 0; }
-.stagger-4 { animation: fadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.4s forwards; opacity: 0; }
-
-@media (prefers-reduced-motion: reduce) {
-    .stagger-1, .stagger-2, .stagger-3, .stagger-4, .schedule-row, .time-pill {
-        animation: none !important; opacity: 1 !important; transition: none !important;
-    }
-}
-
-.header-section { display: flex; align-items: center; gap: 4rem; margin-bottom: 4rem; position: relative; z-index: 1; }
-
-.profile-image-container { flex-shrink: 0; position: relative; }
-
-.profile-image {
-    width: 130px;
-    height: 130px;
-    border-radius: 50%;
-    background: var(--bg-glow-2);
-    border: 2px solid var(--card-border);
-    cursor: pointer;
-    transition: transform 0.35s var(--ease), border-color 0.35s var(--ease);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
-    position: relative;
-    box-shadow: var(--shadow-hover);
-}
-
-html[data-theme="luxury"] .profile-image { border-radius: 8px; border-color: rgba(201, 162, 39, 0.4); }
-html[data-theme="modern"] .profile-image { border-radius: 24px; }
-
-.profile-image:hover { transform: scale(1.04); border-color: var(--accent); }
-.profile-image:focus-within { outline: 2px solid var(--accent); outline-offset: 3px; }
-.profile-image img { width: 100%; height: 100%; object-fit: cover; position: absolute; inset: 0; }
-
-.image-placeholder { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 0.6rem; color: var(--accent); text-align: center; padding: 1rem; z-index: 1; }
-.upload-icon { font-size: 2.8rem; line-height: 1; }
-.upload-text { font-size: 1.1rem; font-weight: 600; }
-.image-upload { position: absolute; width: 1px; height: 1px; overflow: hidden; opacity: 0; }
-
-.remove-image-btn {
-    position: absolute;
-    bottom: -2px;
-    inset-inline-end: -2px;
-    width: 30px;
-    height: 30px;
-    border-radius: 50%;
-    background: var(--card-bg);
-    border: 1px solid var(--card-border);
-    color: var(--danger);
-    display: none;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    font-size: 1.5rem;
-    line-height: 1;
-    box-shadow: var(--shadow-hover);
-    z-index: 2;
-}
-
-.remove-image-btn.visible { display: flex; }
-.remove-image-btn:hover { border-color: var(--danger); }
-.remove-image-btn:focus-visible { outline: 2px solid var(--danger); outline-offset: 2px; }
-
-.header-text { flex: 1; min-width: 0; }
-
-.announcement-label {
-    font-size: 1.5rem;
-    font-weight: 500;
-    color: var(--accent);
-    letter-spacing: var(--eyebrow-letter-spacing);
-    margin-bottom: 0.2rem;
-    display: inline-block;
-}
-
-html[data-theme="modern"] .announcement-label {
-    background: var(--accent-soft);
-    padding: 0.4rem 1rem;
-    border-radius: 100px;
-    font-size: 1.3rem;
-    font-weight: 700;
-}
-
-html[data-theme="luxury"] .announcement-label { border-bottom: 1px solid var(--accent); padding-bottom: 0.4rem; }
-
-html[data-theme="gazette"] .announcement-label {
-    color: var(--text-main);
-    border-top: 1px solid var(--text-main);
-    border-bottom: 1px solid var(--text-main);
-    padding: 0.3rem 0;
-    font-weight: 700;
-}
-
-.doctor-name { font-family: var(--display-font); font-size: 5.2rem; font-weight: 700; line-height: 1.15; color: var(--text-main); margin-bottom: 0.4rem; }
-
-html[data-theme="modern"] .doctor-name { font-weight: 800; letter-spacing: -0.5px; }
-
-html[data-theme="glass"] .doctor-name {
-    font-weight: 800;
-    background: linear-gradient(120deg, #2F6FE0, #8E7CFF 45%, #E38BC0 80%, #2F6FE0);
-    background-clip: text;
-    -webkit-background-clip: text;
-    color: transparent;
-    -webkit-text-fill-color: transparent;
-}
-
-html[data-theme="threaded"] .doctor-name { font-weight: 800; letter-spacing: -0.5px; }
-html[data-theme="luxury"] .doctor-name { letter-spacing: 1px; }
-
-.profession-title { font-size: 1.8rem; font-weight: 400; color: var(--text-muted); display: flex; align-items: center; gap: 1.5rem; }
-.profession-title::after { content: ''; flex: 1; height: 1px; background: linear-gradient(to left, var(--card-border), transparent); }
-html[dir="ltr"] .profession-title::after { background: linear-gradient(to right, var(--card-border), transparent); }
-
-.hero-announcement {
-    background: var(--accent-soft);
-    border: 1px solid var(--card-border);
-    border-radius: var(--radius-row);
-    padding: 3.5rem 3rem;
-    text-align: center;
-    margin-bottom: 3.5rem;
-    position: relative;
-    overflow: hidden;
-    z-index: 1;
-}
-
-html[data-theme="modern"] .hero-announcement { background: var(--bg-glow-1); border: none; }
-html[data-theme="threaded"] .hero-announcement { background: var(--bg-glow-1); border: 1px solid var(--card-border); }
-html[data-theme="threaded"] .contact-action { background: var(--bg-glow-1); border: 1px solid var(--card-border); }
-html[data-theme="botanical"] .hero-announcement { border-radius: 32px 12px 32px 12px; }
-html[data-theme="gazette"] .hero-announcement { background: transparent; border-top: 1px solid var(--text-main); border-bottom: 1px solid var(--text-main); border-radius: 0; }
-html[data-theme="gazette"] .contact-action { background: transparent; border: 1px solid var(--text-main); border-radius: 0; }
-
-.announcement-main-text { font-size: 2.2rem; font-weight: 500; color: var(--text-main); margin-bottom: 1.5rem; }
-
-.year-badge-wrapper { display: inline-flex; align-items: center; justify-content: center; gap: 1rem; margin: 0.5rem 0; }
-
-html[data-theme="luxury"] .year-badge-wrapper::before,
-html[data-theme="luxury"] .year-badge-wrapper::after { content: ''; width: 40px; height: 1px; background: var(--accent); opacity: 0.6; }
-
-.year-badge {
-    font-family: var(--display-font);
-    font-size: 3.6rem;
-    font-weight: 800;
-    color: var(--accent-contrast);
-    background: var(--accent);
-    border: none;
-    padding: 0.4rem 3rem;
-    border-radius: var(--radius-pill);
-    letter-spacing: 2px;
-    display: inline-block;
-    box-shadow: 0 10px 20px var(--accent-soft);
-    font-variant-numeric: tabular-nums;
-}
-
-html[data-theme="luxury"] .year-badge { background: transparent; color: var(--accent); border: 1px solid var(--accent); box-shadow: none; letter-spacing: 4px; }
-html[data-theme="modern"] .year-badge { border-radius: 6px; font-family: var(--body-font); font-weight: 800; box-shadow: none; }
-html[data-theme="glass"] .year-badge {
-    background: rgba(255, 255, 255, 0.45);
-    border: 1px solid rgba(255, 255, 255, 0.7);
-    color: var(--accent);
-    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.6), 0 10px 24px rgba(61, 127, 224, 0.18);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-}
-
-html[data-theme="pink"] .year-badge {
-    width: 9.2rem;
-    height: 9.2rem;
-    padding: 0;
-    border-radius: 50%;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 2.6rem;
-    background: var(--accent);
-    border: 3px solid rgba(255, 255, 255, 0.55);
-    box-shadow: 0 10px 24px rgba(168, 70, 92, 0.32), inset 0 0 0 2px rgba(255, 255, 255, 0.25);
-}
-
-html[data-theme="threaded"] .year-badge { border-radius: 10px; font-family: var(--body-font); font-weight: 800; box-shadow: none; letter-spacing: 0; }
-html[data-theme="gazette"] .year-badge { border-radius: 2px; box-shadow: none; letter-spacing: 4px; }
-
-.grade-text { display: block; font-size: 1.9rem; font-weight: 300; color: var(--text-muted); margin-top: 1.2rem; }
-html[data-theme="pink"] .grade-text,
-html[data-theme="botanical"] .grade-text { font-style: italic; }
-
-.schedule-container { margin-bottom: 3.5rem; position: relative; z-index: 1; }
-
-.section-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 2rem; flex-wrap: wrap; gap: 1rem; }
-
-.section-title { font-size: 1.8rem; font-weight: 600; color: var(--accent); display: flex; align-items: center; gap: 1.2rem; }
-.section-title::before { content: ''; width: 6px; height: 6px; background: var(--accent); border-radius: 50%; box-shadow: 0 0 0 4px var(--accent-soft); }
-
-html[data-theme="luxury"] .section-title::before { border-radius: 0; transform: rotate(45deg); }
-html[data-theme="modern"] .section-title::before { border-radius: 2px; box-shadow: none; width: 9px; height: 9px; }
-html[data-theme="gazette"] .section-title::before { border-radius: 0; box-shadow: none; }
-
-.add-day-btn {
-    background: transparent;
-    border: 1px dashed var(--accent);
-    color: var(--accent);
-    padding: 0.6rem 1.4rem;
-    border-radius: var(--radius-pill);
-    font-size: 1.3rem;
-    font-weight: 600;
-    cursor: pointer;
-    transition: all 0.25s ease;
-    font-family: var(--body-font);
-}
-
-.add-day-btn:hover { background: var(--accent-soft); transform: translateY(-1px); }
-.add-day-btn:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
-
-.schedule-grid { display: flex; flex-direction: column; gap: 1.5rem; }
-
-.empty-schedule {
-    text-align: center;
-    padding: 2.5rem 1.5rem;
-    color: var(--text-muted);
-    font-size: 1.4rem;
-    border: 1px dashed var(--card-border);
-    border-radius: var(--radius-row);
-    animation: popIn 0.35s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.schedule-row {
-    display: flex;
-    flex-direction: column;
-    gap: 1.2rem;
-    background: var(--accent-soft);
-    border: 1px solid var(--card-border);
-    border-radius: var(--radius-row);
-    padding: 1.8rem 2.2rem;
-    transition: transform 0.3s var(--ease), box-shadow 0.3s var(--ease), border-color 0.3s var(--ease);
-    position: relative;
-    animation: popIn 0.35s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-html[data-theme="modern"] .schedule-row { background: #FFFFFF; border: 1px solid var(--card-border); border-inline-start: 4px solid var(--accent); box-shadow: var(--shadow-hover); }
-html[data-theme="luxury"] .schedule-row { background: transparent; border: 1px solid var(--card-border); }
-
-html[data-theme="glass"] .schedule-row {
-    background: rgba(255, 255, 255, 0.3);
-    border: 1px solid rgba(255, 255, 255, 0.55);
-    backdrop-filter: blur(14px);
-    -webkit-backdrop-filter: blur(14px);
-    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.5);
-}
-
-html[data-theme="threaded"] .schedule-row {
-    background: var(--accent-soft);
-    border: none;
-    border-radius: var(--radius-row);
-    border-end-start-radius: 6px;
-    padding: 1.6rem 1.8rem;
-}
-
-html[data-theme="gazette"] .schedule-row { background: transparent; border: 1px solid var(--text-main); }
-
-html[data-theme="threaded"] .schedule-row:hover { box-shadow: none; border-color: transparent; }
-
-.schedule-row.removing, .time-pill.removing { opacity: 0; transform: scale(0.9); }
-.schedule-row:hover { border-color: var(--accent); box-shadow: var(--shadow-hover); transform: translateY(-2px); }
-html[data-theme="threaded"] .schedule-row:hover { transform: none; }
-
-.row-top { display: flex; align-items: center; justify-content: space-between; gap: 1rem; }
-.day-name { font-size: 1.6rem; font-weight: 700; color: var(--text-main); flex: 1; }
-
-html[data-theme="threaded"] .day-name { display: flex; align-items: center; }
-html[data-theme="threaded"] .day-name::before {
-    content: '';
-    display: inline-block;
-    width: 34px;
-    height: 34px;
-    flex-shrink: 0;
-    border-radius: 50%;
-    background: linear-gradient(135deg, var(--accent), #6EA8FE);
-    margin-inline-end: 1rem;
-    box-shadow: 0 0 0 3px var(--card-bg);
-}
-
-.delete-row-btn { background: transparent; border: none; color: var(--text-muted); font-size: 1.8rem; cursor: pointer; line-height: 1; padding: 0.2rem 0.6rem; border-radius: 4px; transition: all 0.2s; }
-.delete-row-btn:hover { color: var(--danger); background: rgba(209, 73, 58, 0.1); }
-.delete-row-btn:focus-visible { outline: 2px solid var(--danger); outline-offset: 1px; }
-
-.times-wrapper { display: flex; gap: 1rem; flex-wrap: wrap; align-items: center; }
-
-.time-pill {
-    background: var(--bg-glow-2);
-    border: 1px solid var(--card-border);
-    padding: 0.6rem 1.4rem;
-    border-radius: var(--radius-pill);
-    font-size: 1.4rem;
-    font-weight: 500;
-    color: var(--text-main);
-    display: inline-flex;
-    align-items: center;
-    gap: 0.8rem;
-    font-variant-numeric: tabular-nums;
-    transition: transform 0.2s var(--ease), border-color 0.2s var(--ease), box-shadow 0.2s var(--ease);
-    animation: popIn 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-html[data-theme="modern"] .time-pill { background: var(--accent-soft); border: none; color: var(--accent); font-weight: 600; }
-html[data-theme="luxury"] .time-pill { background: transparent; border: 1px solid var(--card-border); border-radius: 3px; letter-spacing: 0.5px; }
-html[data-theme="glass"] .time-pill { background: rgba(255, 255, 255, 0.5); border: 1px solid rgba(255, 255, 255, 0.7); box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.7); }
-
-html[data-theme="threaded"] .times-wrapper { margin-inline-start: 2.8rem; padding-inline-start: 1.2rem; border-inline-start: 2px solid var(--card-border); }
-html[data-theme="threaded"] .time-pill { background: var(--card-bg); border: 1px solid var(--card-border); font-weight: 500; }
-html[data-theme="pink"] .time-pill { border-color: var(--card-border); }
-html[data-theme="gazette"] .time-pill { background: transparent; border: 1px solid var(--text-main); font-variant: small-caps; }
-
-.time-pill:hover { border-color: var(--accent); transform: translateY(-1px); box-shadow: 0 4px 10px -4px rgba(0,0,0,0.15); }
-.time-text { outline: none; }
-
-.remove-time { background: none; border: none; color: var(--text-muted); cursor: pointer; font-size: 1.4rem; line-height: 1; display: flex; align-items: center; justify-content: center; padding: 0.2rem; transition: color 0.2s; }
-.remove-time:hover { color: var(--danger); }
-.remove-time:focus-visible { outline: 2px solid var(--danger); outline-offset: 1px; }
-
-.add-time-btn { background: transparent; border: 1px dashed var(--card-border); color: var(--accent); padding: 0.6rem 1.4rem; border-radius: var(--radius-pill); font-size: 1.3rem; font-weight: 500; cursor: pointer; transition: all 0.2s ease; font-family: var(--body-font); }
-.add-time-btn:hover { border-color: var(--accent); background: var(--accent-soft); }
-.add-time-btn:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
-
-html[data-theme="threaded"] .add-time-btn { border: none; font-weight: 700; padding: 0.5rem 0.8rem; }
-html[data-theme="threaded"] .add-time-btn:hover { background: var(--accent-soft); }
-html[data-theme="threaded"] .add-day-btn { border: 1px solid var(--card-border); background: var(--bg-glow-1); border-radius: 20px; }
-
-.contact-action { background: var(--accent-soft); border: 1px solid var(--card-border); border-radius: var(--radius-row); padding: 3rem 2rem; text-align: center; position: relative; overflow: hidden; z-index: 1; }
-.contact-date { font-size: 1.6rem; font-weight: 400; color: var(--text-muted); margin-bottom: 1.8rem; }
-
-.whatsapp-button-container { display: inline-flex; align-items: center; justify-content: center; gap: 1rem; flex-wrap: wrap; }
-
-.whatsapp-button {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 1.2rem;
-    background: var(--whatsapp-bg);
-    color: var(--whatsapp-color);
-    border: 1px solid var(--whatsapp-border);
-    padding: 1.2rem 3.5rem;
-    border-radius: var(--radius-pill);
-    font-size: 2.2rem;
-    font-weight: 700;
-    letter-spacing: 1px;
-    direction: ltr;
-    box-shadow: var(--shadow-hover);
-    transition: transform 0.25s ease, box-shadow 0.25s ease;
-}
-
-html[data-theme="luxury"] .whatsapp-button { border-radius: 6px; box-shadow: none; }
-html[data-theme="modern"] .whatsapp-button { box-shadow: none; }
-html[data-theme="glass"] .whatsapp-button { backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.4), var(--shadow-hover); }
-html[data-theme="threaded"] .whatsapp-button { box-shadow: none; border-radius: 24px; }
-html[data-theme="threaded"] .announcement-card::after { display: none; }
-html[data-theme="gazette"] .whatsapp-button { border-radius: 2px; letter-spacing: 2px; }
-html[data-theme="gazette"] .announcement-card::after { display: none; }
-html[data-theme="gazette"] .corner-mark { display: none; }
-
-.whatsapp-button:hover { transform: translateY(-2px); }
-.whatsapp-icon { width: 2.6rem; height: 2.6rem; fill: var(--whatsapp-icon); flex-shrink: 0; filter: drop-shadow(0 1px 1px rgba(0, 0, 0, 0.12)); }
-.phone-editable { outline: none; }
-
-.copy-btn {
-    background: var(--card-bg);
-    border: 1px solid var(--card-border);
-    color: var(--text-muted);
-    width: 48px;
-    height: 48px;
-    border-radius: 50%;
-    cursor: pointer;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    transition: all 0.25s ease;
-    box-shadow: var(--shadow-hover);
-}
-
-.copy-btn:hover { color: var(--accent); border-color: var(--accent); }
-.copy-btn:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
-.copy-btn svg { width: 20px; height: 20px; fill: currentColor; }
-
-.toast {
-    position: fixed;
-    bottom: 3rem;
-    left: 50%;
-    transform: translateX(-50%) translateY(20px);
-    background: var(--text-main);
-    color: var(--bg-base);
-    padding: 1rem 2.2rem;
-    border-radius: var(--radius-pill);
-    font-size: 1.3rem;
-    font-weight: 600;
-    opacity: 0;
-    pointer-events: none;
-    transition: opacity 0.3s ease, transform 0.3s ease;
-    z-index: 200;
-    display: flex;
-    align-items: center;
-    gap: 1.2rem;
-}
-
-.toast.visible { opacity: 1; transform: translateX(-50%) translateY(0); pointer-events: auto; }
-
-.toast-undo-btn {
-    background: transparent;
-    border: none;
-    color: var(--accent-contrast, #fff);
-    text-decoration: underline;
-    font-family: var(--body-font);
-    font-size: 1.3rem;
-    font-weight: 700;
-    cursor: pointer;
-    padding: 0;
-}
-
-.print-header { display: none; }
-
-@media (max-width: 768px) {
-    body { padding: 2rem 1.5rem; }
-    .top-controls { top: 1.5rem; left: 1.5rem; right: 1.5rem; }
-    .theme-switch { max-width: 100%; }
-    .icon-btn { width: 42px; height: 42px; }
-    .announcement-card { padding: 3.5rem 2rem; }
-    .header-section { flex-direction: column; text-align: center; gap: 2rem; }
-    .profession-title { justify-content: center; }
-    .profession-title::after { display: none; }
-    .doctor-name { font-size: 4rem; }
-    .hero-announcement { padding: 2.5rem 1.5rem; }
-    .announcement-main-text { font-size: 1.9rem; }
-    .year-badge { font-size: 3rem; padding: 0.3rem 2rem; }
-    .schedule-row { padding: 1.5rem; }
-    .row-top { flex-direction: row; }
-    .times-wrapper { justify-content: flex-start; }
-    .whatsapp-button { font-size: 1.9rem; padding: 1rem 2rem; width: 100%; }
-}
-
-@media print {
-    html { font-size: 9.5px; }
-    .top-controls, .add-day-btn, .delete-row-btn, .remove-time, .add-time-btn,
-    .upload-icon, .upload-text, .copy-btn, .toast, .remove-image-btn { display: none !important; }
-    [contenteditable="true"] { background: transparent !important; box-shadow: none !important; }
-    .stagger-1, .stagger-2, .stagger-3, .stagger-4 { animation: none !important; opacity: 1 !important; }
-    .schedule-row, .time-pill { animation: none !important; }
-    @page { size: A4; margin: 1cm; }
-
-    html:not(.print-wysiwyg) body { background: #fff !important; padding: 0; min-height: auto; display: block; }
-    html:not(.print-wysiwyg) body::before,
-    html:not(.print-wysiwyg) .dna-motif,
-    html:not(.print-wysiwyg) .leaf-motif,
-    html:not(.print-wysiwyg) .announcement-card::after,
-    html:not(.print-wysiwyg) .corner-mark,
-    html:not(.print-wysiwyg) .flourish { display: none !important; }
-
-    html:not(.print-wysiwyg) .print-header {
-        display: flex;
-        align-items: baseline;
-        justify-content: space-between;
-        gap: 1rem;
-        position: fixed;
-        top: 0;
-        left: 0;
-        right: 0;
-        background: #fff;
-        border-bottom: 1px solid #e5e0d6;
-        padding: 0.6cm 1.2cm;
-        z-index: 999;
-    }
-    html:not(.print-wysiwyg) .print-header .ph-name { font-family: var(--display-font); font-size: 1.9rem; font-weight: 700; color: var(--print-heading); }
-    html:not(.print-wysiwyg) .print-header .ph-sub { font-size: 1.2rem; color: var(--print-muted); }
-    html:not(.print-wysiwyg) .print-spacer { display: block; height: 2.1cm; }
-
-    html:not(.print-wysiwyg) .announcement-card { max-width: 100%; background: #fff; box-shadow: none; border: 1px solid var(--print-border); border-radius: 10px; padding: 1cm 1.2cm 1.4cm; }
-    html:not(.print-wysiwyg) .header-section { display: none; }
-    html:not(.print-wysiwyg) .hero-announcement { padding: 1.2rem 1rem; margin-bottom: 1.4rem; background: var(--print-tint) !important; border: 1px solid var(--print-border) !important; break-inside: avoid; }
-    html:not(.print-wysiwyg) .announcement-main-text { font-size: 1.7rem; margin-bottom: 0.6rem; }
-    html:not(.print-wysiwyg) .year-badge { font-size: 2.4rem; padding: 0.2rem 1.6rem; width: auto; height: auto; }
-    html:not(.print-wysiwyg) .grade-text { font-size: 1.4rem; margin-top: 0.6rem; color: var(--print-muted); }
-    html:not(.print-wysiwyg) .schedule-container { break-inside: auto; margin-bottom: 1.4rem; }
-    html:not(.print-wysiwyg) .section-header { break-after: avoid; margin-bottom: 1rem; }
-    html:not(.print-wysiwyg) .doctor-name, html:not(.print-wysiwyg) .announcement-main-text,
-    html:not(.print-wysiwyg) .day-name, html:not(.print-wysiwyg) .section-title,
-    html:not(.print-wysiwyg) .contact-date { color: var(--print-heading) !important; -webkit-text-fill-color: var(--print-heading) !important; background: none !important; }
-    html:not(.print-wysiwyg) .year-badge { background: #fff !important; color: var(--print-heading) !important; border: 2px solid var(--print-accent) !important; box-shadow: none !important; }
-    html:not(.print-wysiwyg) .whatsapp-button { box-shadow: none !important; background: #0d8f7f !important; color: #fff !important; border: 1px solid var(--print-accent) !important; }
-    html:not(.print-wysiwyg) .schedule-row, html:not(.print-wysiwyg) .time-pill { break-inside: avoid; background: var(--print-tint) !important; border-color: var(--print-border) !important; border-radius: 10px !important; border-inline-start-width: 1px !important; }
-    html:not(.print-wysiwyg) .contact-action { break-inside: avoid; background: var(--print-tint) !important; border-color: var(--print-border) !important; }
-
-    html.print-wysiwyg .print-header, html.print-wysiwyg .print-spacer { display: none !important; }
-    html.print-wysiwyg body {
-        display: flex;
-        align-items: flex-start;
-        justify-content: center;
-        min-height: auto;
-        padding: 0;
-        background: var(--bg-base) !important;
-        background-image:
-            radial-gradient(circle at 0% 0%, var(--bg-glow-1) 0%, transparent 45%),
-            radial-gradient(circle at 100% 100%, var(--bg-glow-2) 0%, transparent 45%) !important;
-    }
-    html.print-wysiwyg .announcement-card { background: var(--card-bg) !important; }
-    html.print-wysiwyg .announcement-card { transform: scale(var(--print-scale, 1)); transform-origin: top center; }
-    html.print-wysiwyg .schedule-row, html.print-wysiwyg .time-pill { break-inside: avoid; }
+bdi.tabular{font-variant-numeric:tabular-nums;}
+
+/* ================= PRINT ================= */
+@media print{
+  html,body{background:#fff !important;}
+  #app,#toolbar,#toastHost,#canvas,#printPreview{display:none !important;}
+  .print-mount{display:block !important;position:static !important;pointer-events:auto !important;opacity:1 !important;z-index:auto !important;}
+  .print-mount .pv-page{box-shadow:none !important;break-after:page;}
+  .print-mount .pv-page:last-child{break-after:auto;}
 }
 </style>
+<style id="pageRules"></style>
+
 </head>
 <body>
+<svg id="iconSprite" style="position:absolute;width:0;height:0;overflow:hidden" aria-hidden="true">
+<defs>
+<symbol id="i-print" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+<path d="M7 8V3h10v5"/><rect x="3" y="8" width="18" height="8" rx="2"/><path d="M7 16v5h10v-5"/>
+</symbol>
+<symbol id="i-poster" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+<circle cx="12" cy="4" r="1.3" fill="currentColor" stroke="none"/><rect x="5" y="6.4" width="14" height="15.6" rx="1.5"/><path d="M9 11h6M9 15h4"/>
+</symbol>
+<symbol id="i-layout-grid" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+<rect x="3" y="3" width="8" height="8" rx="1.4"/><rect x="13" y="3" width="8" height="8" rx="1.4"/><rect x="3" y="13" width="8" height="8" rx="1.4"/><rect x="13" y="13" width="8" height="8" rx="1.4"/>
+</symbol>
+<symbol id="i-download" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+<path d="M12 3v12"/><path d="M7 11l5 5 5-5"/><path d="M4 19h16"/>
+</symbol>
+<symbol id="i-image" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+<rect x="3" y="4" width="18" height="16" rx="2"/><circle cx="8.5" cy="9.5" r="1.4" fill="currentColor" stroke="none"/><path d="M21 15.5l-5-5a2 2 0 0 0-2.8 0L5 18.5"/>
+</symbol>
+<symbol id="i-qr" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+<rect x="3" y="3" width="7" height="7" rx="1.2"/><rect x="14" y="3" width="7" height="7" rx="1.2"/><rect x="3" y="14" width="7" height="7" rx="1.2"/>
+<rect x="14.6" y="14.6" width="2.3" height="2.3" fill="currentColor" stroke="none"/><rect x="18.6" y="14.6" width="2.3" height="2.3" fill="currentColor" stroke="none"/>
+<rect x="14.6" y="18.6" width="2.3" height="2.3" fill="currentColor" stroke="none"/><rect x="18.6" y="18.6" width="2.3" height="2.3" fill="currentColor" stroke="none"/>
+</symbol>
+<symbol id="i-link" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+<path d="M10 14a5 5 0 0 0 7 0l3-3a5 5 0 0 0-7-7l-1 1"/><path d="M14 10a5 5 0 0 0-7 0l-3 3a5 5 0 0 0 7 7l1-1"/>
+</symbol>
+<symbol id="i-whatsapp" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+<path d="M12 3a9 9 0 1 0 6.7 15L21 21l-1.1-3.3A9 9 0 0 0 12 3z"/>
+<circle cx="8.5" cy="12" r="1" fill="currentColor" stroke="none"/><circle cx="12" cy="12" r="1" fill="currentColor" stroke="none"/><circle cx="15.5" cy="12" r="1" fill="currentColor" stroke="none"/>
+</symbol>
+<symbol id="i-phone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+<path d="M4.5 4h3.5l1.5 4.5-2 1.5a12 12 0 0 0 6.5 6.5l1.5-2 4.5 1.5V19a2 2 0 0 1-2 2C11 21 3 13 3 6a2 2 0 0 1 1.5-2z"/>
+</symbol>
+<symbol id="i-mail" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+<rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/>
+</symbol>
+<symbol id="i-map-pin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+<path d="M12 21s7-6.5 7-12a7 7 0 1 0-14 0c0 5.5 7 12 7 12z"/><circle cx="12" cy="9" r="2.3"/>
+</symbol>
+<symbol id="i-instagram" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+<rect x="3" y="3" width="18" height="18" rx="6"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.2" cy="6.8" r="1" fill="currentColor" stroke="none"/>
+</symbol>
+<symbol id="i-telegram" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+<path d="M21 4L3 11l6.5 2.4L18 8l-6 6.5V21l3-3.8L21 4z"/>
+</symbol>
+<symbol id="i-plus" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+<path d="M12 5v14M5 12h14"/>
+</symbol>
+<symbol id="i-trash" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+<path d="M4 7h16"/><path d="M9 7V5a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v2"/><path d="M6 7l1 13a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2l1-13"/><path d="M10 11v6M14 11v6"/>
+</symbol>
+<symbol id="i-clock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+<circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/>
+</symbol>
+<symbol id="i-calendar" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+<rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/>
+</symbol>
+<symbol id="i-copy" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+<rect x="8" y="8" width="13" height="13" rx="2"/><path d="M5 16H4a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h11a1 1 0 0 1 1 1v1"/>
+</symbol>
+<symbol id="i-undo" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+<path d="M4 9h11a6 6 0 0 1 0 12h-3"/><path d="M8 5L4 9l4 4"/>
+</symbol>
+<symbol id="i-redo" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+<path d="M20 9H9a6 6 0 0 0 0 12h3"/><path d="M16 5l4 4-4 4"/>
+</symbol>
+<symbol id="i-globe" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+<circle cx="12" cy="12" r="9"/><path d="M3 12h18"/><path d="M12 3a14 14 0 0 1 0 18"/><path d="M12 3a14 14 0 0 0 0 18"/>
+</symbol>
+<symbol id="i-palette" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+<path d="M12 3a9 9 0 1 0 0 18c1.2 0 2-.9 2-2 0-.5-.2-.9-.5-1.2-.3-.3-.5-.7-.5-1.2 0-.9.8-1.6 1.7-1.6H17a4 4 0 0 0 4-4c0-4.4-4-8-9-8z"/>
+<circle cx="7.5" cy="12" r="1.1" fill="currentColor" stroke="none"/><circle cx="9.5" cy="8" r="1.1" fill="currentColor" stroke="none"/><circle cx="14.5" cy="8" r="1.1" fill="currentColor" stroke="none"/><circle cx="16" cy="12.5" r="1.1" fill="currentColor" stroke="none"/>
+</symbol>
+<symbol id="i-eye" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+<path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="3"/>
+</symbol>
+<symbol id="i-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
+<path d="M4 12l5 5L20 6"/>
+</symbol>
+<symbol id="i-x" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
+<path d="M5 5l14 14M19 5L5 19"/>
+</symbol>
+<symbol id="i-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
+<path d="M6 9l6 6 6-6"/>
+</symbol>
+</defs>
+</svg>
 
-<div class="top-controls">
-    <div class="theme-switch" role="group" data-ar="اختيار المظهر" data-en="Choose a theme" data-i18n-target="aria-label" aria-label="اختيار المظهر">
-        <button class="theme-option" data-theme-value="classic" aria-pressed="true" data-ar="كلاسيكي" data-en="Classic" data-ar-title="التصميم الدافئ الأصلي بلمسة زجاجية خفيفة" data-en-title="The original warm design with a light glass touch">كلاسيكي</button>
-        <button class="theme-option" data-theme-value="luxury" aria-pressed="false" data-ar="فخم" data-en="Luxury" data-ar-title="أسود فاخر بحواف ذهبية منقوشة" data-en-title="Onyx black with engraved gold detailing">فخم</button>
-        <button class="theme-option" data-theme-value="modern" aria-pressed="false" data-ar="عصري" data-en="Modern" data-ar-title="تصميم دقيق بلمسة سويسرية وشريط تعريفي بارز" data-en-title="A precise Swiss-inspired layout with a bold accent rule">عصري</button>
-        <button class="theme-option" data-theme-value="glass" aria-pressed="false" data-ar="زجاجي" data-en="Glass" data-ar-title="زجاج سائل شفاف بتدرجات لونية">زجاجي</button>
-        <button class="theme-option" data-theme-value="pink" aria-pressed="false" data-ar="وردي" data-en="Blush" data-ar-title="طابع دعوة أنيقة بحبر وردي وختم دائري" data-en-title="Elegant stationery styling with a wax-seal year badge">وردي</button>
-        <button class="theme-option" data-theme-value="threaded" aria-pressed="false" data-ar="محادثة" data-en="Chat" data-ar-title="عرض المواعيد كفقاعات محادثة، تماشيًا مع الحجز عبر واتساب" data-en-title="Schedule shown as chat bubbles, echoing WhatsApp booking">تعليقات</button>
-        <button class="theme-option" data-theme-value="botanical" aria-pressed="false" data-ar="أخضر" data-en="Botanical" data-ar-title="أخضر طبيعي مستوحى من علم النبات بزخارف أوراق" data-en-title="A botanical green with hand-drawn leaf motifs">أخضر</button>
-        <button class="theme-option" data-theme-value="gazette" aria-pressed="false" data-ar="جريدة" data-en="Gazette" data-ar-title="أسود وأبيض بطابع صحفي كلاسيكي">جريدة</button>
+<div id="app">
+  <header id="toolbar" role="toolbar" aria-label="أدوات التحرير">
+    <div class="tb-group tb-brand">
+      <svg class="icon-lg" style="color:var(--accent)"><use href="#i-calendar"></use></svg>
+      <span id="brandLabel" class="tb-brand-label"></span>
     </div>
-    <div class="control-row">
-        <button class="icon-btn" id="printBtn" data-ar="طباعة منسّقة (متعددة الصفحات عند الحاجة)" data-en="Paginated print (multiple pages if needed)" data-i18n-target="aria-label,title" aria-label="طباعة منسّقة" title="طباعة منسّقة">
-            <svg viewBox="0 0 24 24"><path d="M19 8H5c-1.66 0-3 1.34-3 3v6h4v4h12v-4h4v-6c0-1.66-1.34-3-3-3zm-3 11H8v-5h8v5zm3-7c-.55 0-1-.45-1-1s.45-1 1-1 1 .45 1 1-.45 1-1 1zm-1-9H6v4h12V3z"/></svg>
+
+    <div class="tb-group tb-scroll" id="presetGroup">
+      <label class="tb-field">
+        <span class="tb-field-label" data-i18n="presetLabel"></span>
+        <span class="select-wrap select-wrap-icon">
+          <svg class="icon-sm select-lead-icon" id="presetIcon"><use href="#i-calendar"></use></svg>
+          <select id="presetSelect"></select>
+        </span>
+      </label>
+    </div>
+
+    <div class="tb-group" id="themeGroup" role="group" aria-label="Theme"></div>
+
+    <div class="tb-group">
+      <button class="icon-btn" id="langBtn" type="button" title="EN / AR">
+        <svg class="icon"><use href="#i-globe"></use></svg>
+      </button>
+      <button class="icon-btn" id="numeralBtn" type="button">
+        <span id="numeralGlyph">١٢</span>
+      </button>
+      <button class="icon-btn" id="undoBtn" type="button" data-i18n-title="undo">
+        <svg class="icon"><use href="#i-undo"></use></svg>
+      </button>
+      <button class="icon-btn" id="redoBtn" type="button" data-i18n-title="redo">
+        <svg class="icon"><use href="#i-redo"></use></svg>
+      </button>
+    </div>
+
+    <div class="tb-group tb-push">
+      <button class="icon-btn" id="startOverBtn" type="button" data-i18n-title="startOver">
+        <svg class="icon"><use href="#i-trash"></use></svg>
+      </button>
+      <button class="icon-btn" id="importBtn" type="button" data-i18n-title="importJson">
+        <svg class="icon"><use href="#i-copy"></use></svg>
+      </button>
+      <input type="file" id="importFile" accept="application/json" hidden>
+      <button class="icon-btn" id="exportBtn" type="button" data-i18n-title="exportJson">
+        <svg class="icon"><use href="#i-download"></use></svg>
+      </button>
+      <button class="icon-btn" id="shareBtn" type="button" data-i18n-title="shareLink">
+        <svg class="icon"><use href="#i-link"></use></svg>
+      </button>
+      <button class="btn-pill btn-accent" id="printBtn" type="button">
+        <svg class="icon"><use href="#i-print"></use></svg>
+        <span data-i18n="printBtn"></span>
+      </button>
+    </div>
+  </header>
+
+  <main id="canvas">
+    <div id="sheetRoot" class="sheet-root"></div>
+  </main>
+</div>
+
+<div id="printPreview" class="preview-overlay" hidden role="dialog" aria-modal="true" aria-labelledby="printPreviewTitleEl">
+  <div class="preview-panel">
+    <div class="preview-controls">
+      <div class="preview-controls-head">
+        <h2 id="printPreviewTitleEl" data-i18n="printPreviewTitle"></h2>
+        <button class="icon-btn" id="closePreviewBtn" type="button">
+          <svg class="icon"><use href="#i-x"></use></svg>
         </button>
-        <button class="icon-btn" id="printWysiwygBtn" data-ar="طباعة كما تراها في صفحة واحدة" data-en="Print exactly as shown, on one page" data-i18n-target="aria-label,title" aria-label="طباعة كما تراها" title="طباعة كما تراها">
-            <svg viewBox="0 0 24 24"><path d="M9 3H5a2 2 0 00-2 2v4h2V5h4V3zm10 0h-4v2h4v4h2V5a2 2 0 00-2-2zM7 15H5v4a2 2 0 002 2h4v-2H7v-4zm12 4h-4v2h4a2 2 0 002-2v-4h-2v4z"/></svg>
-        </button>
-        <button class="icon-btn lang-btn" id="langBtn" data-ar="EN" data-en="ع" data-i18n-target="text" data-ar-title="التبديل إلى الإنجليزية" data-en-title="Switch to Arabic" title="التبديل إلى الإنجليزية">EN</button>
+      </div>
+
+      <label class="pc-field">
+        <span data-i18n="modeLabel"></span>
+        <span class="select-wrap">
+          <select id="printModeSelect">
+            <option value="poster" data-i18n="modePoster"></option>
+            <option value="sheet" data-i18n="modeSheet"></option>
+            <option value="cards" data-i18n="modeCards"></option>
+            <option value="image" data-i18n="modeImage"></option>
+          </select>
+        </span>
+      </label>
+
+      <label class="pc-field" id="paperField">
+        <span data-i18n="paperLabel"></span>
+        <span class="select-wrap">
+          <select id="paperSelect">
+            <option value="A4">A4</option>
+            <option value="A5">A5</option>
+            <option value="Letter">Letter</option>
+          </select>
+        </span>
+      </label>
+
+      <label class="pc-field" id="orientationField">
+        <span data-i18n="orientationLabel"></span>
+        <span class="select-wrap">
+          <select id="orientationSelect">
+            <option value="portrait" data-i18n="portrait"></option>
+            <option value="landscape" data-i18n="landscape"></option>
+          </select>
+        </span>
+      </label>
+
+      <label class="pc-field" id="marginField">
+        <span data-i18n="marginLabel"></span>
+        <span class="select-wrap">
+          <select id="marginSelect">
+            <option value="normal" data-i18n="marginNormal"></option>
+            <option value="narrow" data-i18n="marginNarrow"></option>
+            <option value="none" data-i18n="marginNone"></option>
+          </select>
+        </span>
+      </label>
+
+      <label class="pc-field" id="nUpField" hidden>
+        <span data-i18n="cardsLabel"></span>
+        <span class="select-wrap">
+          <select id="nUpSelect">
+            <option value="2">2</option>
+            <option value="4" selected>4</option>
+            <option value="8">8</option>
+          </select>
+        </span>
+      </label>
+
+      <label class="pc-field" id="imageSizeField" hidden>
+        <span data-i18n="imageSizeLabel"></span>
+        <span class="select-wrap">
+          <select id="imageSizeSelect">
+            <option value="square">1080 × 1080</option>
+            <option value="story">1080 × 1920</option>
+          </select>
+        </span>
+      </label>
+
+      <label class="pc-toggle">
+        <input type="checkbox" id="inkSaverToggle">
+        <span data-i18n="inkSaver"></span>
+      </label>
+
+      <label class="pc-toggle" id="showQrField">
+        <input type="checkbox" id="showQrToggle">
+        <span data-i18n="showQr"></span>
+      </label>
+
+      <label class="pc-toggle" id="timeFormatField">
+        <input type="checkbox" id="timeFormatToggle">
+        <span data-i18n="use12h"></span>
+      </label>
+
+      <label class="pc-toggle" id="bleedField" hidden>
+        <input type="checkbox" id="bleedToggle">
+        <span data-i18n="cropMarks"></span>
+      </label>
+
+      <div class="pc-meta">
+        <span id="pageCountLabel"></span>
+      </div>
+
+      <button class="btn-pill btn-accent" id="commitPrintBtn" type="button">
+        <svg class="icon"><use href="#i-print"></use></svg>
+        <span id="commitPrintLabel"></span>
+      </button>
     </div>
+
+    <div class="preview-stage" id="previewStage">
+      <div class="pv-grid" id="pvGrid">
+        <div class="preview-ruler-top" id="rulerTop"></div>
+        <div class="preview-ruler-side" id="rulerSide"></div>
+        <div class="preview-pages" id="previewPages"></div>
+      </div>
+      <canvas id="imagePreviewCanvas" class="image-preview-canvas" hidden></canvas>
+    </div>
+  </div>
 </div>
 
-<div class="print-header">
-    <span class="ph-name">د. محمد المسيري</span>
-    <span class="ph-sub">مواعيد الحجز — للصف الثالث الثانوي</span>
-</div>
+<div id="toastHost" class="toast-host" aria-live="polite"></div>
 
-<main class="announcement-card">
-    <div class="print-spacer"></div>
-    <span class="corner-mark tl" aria-hidden="true"></span>
-    <span class="corner-mark tr" aria-hidden="true"></span>
-    <span class="corner-mark bl" aria-hidden="true"></span>
-    <span class="corner-mark br" aria-hidden="true"></span>
-    <div class="flourish" aria-hidden="true"></div>
+<div id="printMount" class="print-mount"></div>
 
-    <div class="dna-motif" aria-hidden="true">
-        <svg viewBox="0 0 100 200" fill="none" stroke-width="3">
-            <path d="M20 0 C20 30 80 30 80 60 C80 90 20 90 20 120 C20 150 80 150 80 180" />
-            <path d="M80 0 C80 30 20 30 20 60 C20 90 80 90 80 120 C80 150 20 150 20 180" />
-        </svg>
-    </div>
-
-    <div class="leaf-motif" aria-hidden="true">
-        <svg viewBox="0 0 100 200" stroke-width="3">
-            <path d="M50 5 C50 60 50 140 50 195" />
-            <path d="M50 40 C30 30 15 40 8 60 C25 62 40 55 50 40 Z" />
-            <path d="M50 40 C70 30 85 40 92 60 C75 62 60 55 50 40 Z" />
-            <path d="M50 90 C30 80 15 90 8 110 C25 112 40 105 50 90 Z" />
-            <path d="M50 90 C70 80 85 90 92 110 C75 112 60 105 50 90 Z" />
-            <path d="M50 140 C34 132 22 140 16 156 C31 158 43 152 50 140 Z" />
-            <path d="M50 140 C66 132 78 140 84 156 C69 158 57 152 50 140 Z" />
-        </svg>
-    </div>
-
-    <header class="header-section stagger-1">
-        <div class="profile-image-container">
-            <label for="imageUpload" class="profile-image" id="profileImageWrapper" data-ar-title="انقر لتغيير الصورة" data-en-title="Click to change photo" title="انقر لتغيير الصورة">
-                <div class="image-placeholder" id="imagePlaceholder">
-                    <span class="upload-icon">✦</span>
-                    <span class="upload-text" data-ar="إضافة صورة" data-en="Add photo">إضافة صورة</span>
-                </div>
-            </label>
-            <input type="file" id="imageUpload" class="image-upload" accept="image/*">
-            <button type="button" class="remove-image-btn" id="removeImageBtn" data-ar="إزالة الصورة" data-en="Remove photo" data-i18n-target="aria-label,title" aria-label="إزالة الصورة" title="إزالة الصورة">×</button>
-        </div>
-
-        <div class="header-text">
-            <span class="announcement-label" contenteditable="true" spellcheck="false" data-ar="يعلن" data-en="Announcing">يعلن</span>
-            <h1 class="doctor-name" contenteditable="true" spellcheck="false" data-ar="د. محمد المسيري" data-en="Dr. Mohamed Elmesairy">د. محمد المسيري</h1>
-            <div class="profession-title"><span contenteditable="true" spellcheck="false" data-ar="أستاذ علم الأحياء" data-en="Biology Teacher">أستاذ علم الأحياء</span></div>
-        </div>
-    </header>
-
-    <section class="hero-announcement stagger-2">
-        <h2 class="announcement-main-text" contenteditable="true" spellcheck="false" data-ar="عن فتح باب الحجز للعام الدراسي الجديد" data-en="Booking is now open for the new school year">عن فتح باب الحجز للعام الدراسي الجديد</h2>
-        <div class="year-badge-wrapper">
-            <div class="year-badge" contenteditable="true" spellcheck="false">2026</div>
-        </div>
-        <span class="grade-text" contenteditable="true" spellcheck="false" data-ar="للصف الثالث الثانوي" data-en="For Grade 12 students">للصف الثالث الثانوي</span>
-    </section>
-
-    <section class="schedule-container stagger-3">
-        <div class="section-header">
-            <h3 class="section-title" contenteditable="true" spellcheck="false" data-ar="مواعيد المجموعات" data-en="Group Schedule">مواعيد المجموعات</h3>
-            <button class="add-day-btn" id="addDayBtn" data-ar="+ إضافة مجموعة جديدة" data-en="+ Add new group">+ إضافة مجموعة جديدة</button>
-        </div>
-
-        <div class="schedule-grid" id="scheduleGrid">
-
-            <div class="schedule-row">
-                <div class="row-top">
-                    <span class="day-name" contenteditable="true" spellcheck="false" data-ar="السبت، الإثنين، الأربعاء" data-en="Sat, Mon, Wed">السبت، الإثنين، الأربعاء</span>
-                    <button class="delete-row-btn" data-ar="حذف المجموعة" data-en="Delete group" data-i18n-target="aria-label,title" aria-label="حذف المجموعة" title="حذف المجموعة">×</button>
-                </div>
-                <div class="times-wrapper">
-                    <div class="time-pill">
-                        <span class="time-text" contenteditable="true" spellcheck="false" data-ar="12:30 - 2:00 م" data-en="12:30 - 2:00 PM">12:30 - 2:00 م</span>
-                        <button class="remove-time" data-ar="حذف الوقت" data-en="Remove time" data-i18n-target="aria-label,title" aria-label="حذف الوقت" title="حذف الوقت">×</button>
-                    </div>
-                    <div class="time-pill">
-                        <span class="time-text" contenteditable="true" spellcheck="false" data-ar="2:00 - 3:30 م" data-en="2:00 - 3:30 PM">2:00 - 3:30 م</span>
-                        <button class="remove-time" data-ar="حذف الوقت" data-en="Remove time" data-i18n-target="aria-label,title" aria-label="حذف الوقت" title="حذف الوقت">×</button>
-                    </div>
-                    <div class="time-pill">
-                        <span class="time-text" contenteditable="true" spellcheck="false" data-ar="4:00 - 5:30 م" data-en="4:00 - 5:30 PM">4:00 - 5:30 م</span>
-                        <button class="remove-time" data-ar="حذف الوقت" data-en="Remove time" data-i18n-target="aria-label,title" aria-label="حذف الوقت" title="حذف الوقت">×</button>
-                    </div>
-                    <button class="add-time-btn" data-ar="+ إضافة وقت" data-en="+ Add time">+ إضافة وقت</button>
-                </div>
-            </div>
-
-            <div class="schedule-row">
-                <div class="row-top">
-                    <span class="day-name" contenteditable="true" spellcheck="false" data-ar="الأحد، الثلاثاء، الخميس" data-en="Sun, Tue, Thu">الأحد، الثلاثاء، الخميس</span>
-                    <button class="delete-row-btn" data-ar="حذف المجموعة" data-en="Delete group" data-i18n-target="aria-label,title" aria-label="حذف المجموعة" title="حذف المجموعة">×</button>
-                </div>
-                <div class="times-wrapper">
-                    <div class="time-pill">
-                        <span class="time-text" contenteditable="true" spellcheck="false" data-ar="12:30 - 2:00 م" data-en="12:30 - 2:00 PM">12:30 - 2:00 م</span>
-                        <button class="remove-time" data-ar="حذف الوقت" data-en="Remove time" data-i18n-target="aria-label,title" aria-label="حذف الوقت" title="حذف الوقت">×</button>
-                    </div>
-                    <div class="time-pill">
-                        <span class="time-text" contenteditable="true" spellcheck="false" data-ar="2:00 - 3:30 م" data-en="2:00 - 3:30 PM">2:00 - 3:30 م</span>
-                        <button class="remove-time" data-ar="حذف الوقت" data-en="Remove time" data-i18n-target="aria-label,title" aria-label="حذف الوقت" title="حذف الوقت">×</button>
-                    </div>
-                    <button class="add-time-btn" data-ar="+ إضافة وقت" data-en="+ Add time">+ إضافة وقت</button>
-                </div>
-            </div>
-
-        </div>
-    </section>
-
-    <section class="contact-action stagger-4">
-        <p class="contact-date" contenteditable="true" spellcheck="false" data-ar="يبدأ الحجز من السبت 14 / 6 / 2025 عبر الواتساب" data-en="Booking opens Saturday, June 14 2025 via WhatsApp">يبدأ الحجز من السبت 14 / 6 / 2025 عبر الواتساب</p>
-        <div class="whatsapp-button-container">
-            <div class="whatsapp-button">
-                <svg class="whatsapp-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M19.002 4.908A9.818 9.818 0 0012.001 2C6.478 2 2 6.477 2 11.999c0 1.83.504 3.551 1.368 5.066L2.071 22l5.132-1.291a9.948 9.948 0 004.798 1.228h.001c5.522 0 9.999-4.477 9.999-9.998s-4.477-9.999-9.999-9.999zm-7.001 13.018c-1.353 0-2.616-.445-3.632-1.229l-.26-.153-2.705.686.7-2.637-.17-.271a7.948 7.948 0 01-1.272-4.011c0-4.383 3.559-7.941 7.941-7.941s7.941 3.558 7.941 7.941-3.559 7.941-7.941 7.941zm4.496-5.832c-.246-.123-1.454-.717-1.68-.799-.226-.082-.391-.123-.555.123-.164.246-.635.799-.779.963s-.289.184-.535.062c-.246-.123-1.042-.451-2.029-1.249s-1.58-1.559-1.806-2.181c-.226-.622-.025-.963.1-.1253.11-.11.246-.288.37-.432s.164-.246.246-.41c.082-.164.041-.307-.021-.432-.062-.123-.555-1.328-.76-1.818-.2-.48-.409-.419-.555-.426h-.473c-.164 0-.432.062-.658.307s-.865.84-1.065 2.029-.289 2.215.307 3.653c.184.451.905 1.763 2.622 3.279 2.066 1.781 3.492 2.308 4.729 2.308.835 0 1.556-.269 1.943-.889.43-.661.43-1.229.307-1.352s-.164-.184-.41-.307z"/>
-                </svg>
-                <span class="phone-editable" contenteditable="true" spellcheck="false">01066026409</span>
-            </div>
-            <button class="copy-btn" id="copyPhoneBtn" data-ar="نسخ الرقم" data-en="Copy number" data-i18n-target="aria-label,title" aria-label="نسخ الرقم" title="نسخ الرقم">
-                <svg viewBox="0 0 24 24"><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></svg>
-            </button>
-        </div>
-    </section>
-</main>
-
-<div class="toast" id="toast" role="status" aria-live="polite">
-    <span id="toastMessage">تم نسخ الرقم</span>
-    <button class="toast-undo-btn" id="toastUndoBtn" style="display:none;" data-ar="تراجع" data-en="Undo">تراجع</button>
-</div>
+<canvas id="workCanvas" width="1080" height="1920" hidden></canvas>
 
 <script>
-(function () {
-    const html = document.documentElement;
-    const themeButtons = document.querySelectorAll('.theme-option');
-    const printBtn = document.getElementById('printBtn');
-    const printWysiwygBtn = document.getElementById('printWysiwygBtn');
-    const langBtn = document.getElementById('langBtn');
-    const imageInput = document.getElementById('imageUpload');
-    const imageWrapper = document.getElementById('profileImageWrapper');
-    const removeImageBtn = document.getElementById('removeImageBtn');
-    const imagePlaceholder = document.getElementById('imagePlaceholder');
-    const scheduleGrid = document.getElementById('scheduleGrid');
-    const addDayBtn = document.getElementById('addDayBtn');
-    const copyPhoneBtn = document.getElementById('copyPhoneBtn');
-    const toast = document.getElementById('toast');
-    const toastMessage = document.getElementById('toastMessage');
-    const toastUndoBtn = document.getElementById('toastUndoBtn');
+'use strict';
 
-    let currentLang = 'ar';
-    let toastTimer = null;
-    let undoTimer = null;
-    let pendingUndo = null;
-    function setTheme(name) {
-        html.setAttribute('data-theme', name);
-        themeButtons.forEach(btn => btn.setAttribute('aria-pressed', btn.dataset.themeValue === name ? 'true' : 'false'));
-        try { localStorage.setItem('hio-theme', name); } catch (err) {}
+function uid(){ return Math.random().toString(36).slice(2,9); }
+function clone(o){ return JSON.parse(JSON.stringify(o)); }
+function escapeHtml(s){
+  return String(s == null ? '' : s).replace(/[&<>"']/g, c => ({
+    '&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'
+  }[c]));
+}
+function debounce(fn, ms){
+  let t = null;
+  return function(...args){ clearTimeout(t); t = setTimeout(() => fn.apply(this, args), ms); };
+}
+function clamp(n, a, b){ return Math.max(a, Math.min(b, n)); }
+function mmToPx(mm){ return mm * 96 / 25.4; }
+function pxToMm(px){ return px * 25.4 / 96; }
+
+const LABELS = {
+  ar: {
+    appTitle: 'ورقة',
+    presetLabel: 'النوع',
+    undo: 'تراجع', redo: 'إعادة',
+    importJson: 'استيراد', exportJson: 'تصدير',
+    shareLink: 'رابط مشاركة',
+    printBtn: 'طباعة',
+    printPreviewTitle: 'معاينة الطباعة',
+    modeLabel: 'النمط', modePoster: 'ملصق', modeSheet: 'ورقة متعددة', modeCards: 'بطاقات', modeImage: 'صورة',
+    paperLabel: 'الورق', orientationLabel: 'الاتجاه', portrait: 'طولي', landscape: 'عرضي',
+    marginLabel: 'الهامش', marginNormal: 'عادي', marginNarrow: 'ضيق', marginNone: 'بدون',
+    cardsLabel: 'عدد البطاقات', imageSizeLabel: 'مقاس الصورة',
+    inkSaver: 'توفير الحبر', cropMarks: 'علامات القص', showQr: 'إظهار رمز QR', use12h: 'صيغة ١٢ ساعة',
+    pageCount: n => `${n} صفحة`,
+    print: 'طباعة', downloadImage: 'تنزيل الصورة',
+    addGroup: 'إضافة مجموعة', addSlot: 'إضافة وقت', addContact: 'إضافة تواصل',
+    full: 'ممتلئ', removeGroup: 'حذف المجموعة', removeSlot: 'حذف الوقت', removeContact: 'حذف',
+    namePh: 'الاسم', subtitlePh: 'صفة أو تخصص', eyebrowPh: 'عنوان صغير', removePhoto: 'ازالة الصورة', contactValueLabel: 'بيانات التواصل',
+    titlePh: 'عنوان الإعلان', badgePh: '٢٠٢٦', notePh: 'ملاحظة',
+    groupLabelPh: 'اسم المجموعة', slotNotePh: 'ملاحظة',
+    footerPh: 'نص أسفل الورقة',
+    toastSaved: 'تم الحفظ', toastCopied: 'تم نسخ الرابط', toastStartOver: 'تمت إعادة الضبط', toastImported: 'تم الاستيراد',
+    toastImgTooBig: 'الصورة كبيرة، تم ضغطها تلقائياً', invalidFile: 'ملف غير صالح',
+    toastSaveFailed: 'تعذر الحفظ — مساحة التخزين ممتلئة', toastShareTooLarge: 'الرابط طويل جداً بسبب الصورة، تم استبعادها',
+    toastShareFailed: 'تعذر إنشاء رابط المشاركة',
+    startOver: 'البدء من جديد', confirmStartOver: 'سيتم حذف كل المحتوى الحالي. متابعة؟'
+  },
+  en: {
+    appTitle: 'Sheet',
+    presetLabel: 'Type',
+    undo: 'Undo', redo: 'Redo',
+    importJson: 'Import', exportJson: 'Export',
+    shareLink: 'Share link',
+    printBtn: 'Print',
+    printPreviewTitle: 'Print preview',
+    modeLabel: 'Mode', modePoster: 'Poster', modeSheet: 'Sheet', modeCards: 'Cards', modeImage: 'Image',
+    paperLabel: 'Paper', orientationLabel: 'Orientation', portrait: 'Portrait', landscape: 'Landscape',
+    marginLabel: 'Margin', marginNormal: 'Normal', marginNarrow: 'Narrow', marginNone: 'None',
+    cardsLabel: 'Cards per sheet', imageSizeLabel: 'Image size',
+    inkSaver: 'Ink saver', cropMarks: 'Crop marks', showQr: 'Show QR code', use12h: '12-hour format',
+    pageCount: n => `${n} page${n===1?'':'s'}`,
+    print: 'Print', downloadImage: 'Download image',
+    addGroup: 'Add group', addSlot: 'Add time', addContact: 'Add contact',
+    full: 'Full', removeGroup: 'Remove group', removeSlot: 'Remove time', removeContact: 'Remove',
+    namePh: 'Name', subtitlePh: 'Title or specialty', eyebrowPh: 'Small eyebrow label', removePhoto: 'Remove photo', contactValueLabel: 'Contact details',
+    titlePh: 'Announcement title', badgePh: '2026', notePh: 'Note',
+    groupLabelPh: 'Group name', slotNotePh: 'Note',
+    footerPh: 'Footer text',
+    toastSaved: 'Saved', toastCopied: 'Link copied', toastStartOver: 'Reset', toastImported: 'Imported',
+    toastImgTooBig: 'Image was large, compressed automatically', invalidFile: 'Invalid file',
+    toastSaveFailed: "Couldn't save — storage is full", toastShareTooLarge: 'Link too long because of the photo, so it was left out',
+    toastShareFailed: "Couldn't create the share link",
+    startOver: 'Start over', confirmStartOver: 'This clears all current content. Continue?'
+  }
+};
+function t(key){
+  const lang = document.documentElement.lang === 'en' ? 'en' : 'ar';
+  return LABELS[lang][key];
+}
+
+const PRESETS = {
+  tutor: {
+    icon: 'i-calendar',
+    label: { ar: 'مدرّس خصوصي', en: 'Private tutor' },
+    groupWord: { ar: 'مجموعة', en: 'Group' },
+    defaults: {
+      eyebrow: { ar: 'جدول المجموعات', en: 'Group schedule' },
+      title: { ar: 'مواعيد المجموعات', en: 'Group Schedule' },
+      groupLabel: { ar: 'المجموعة', en: 'Group' }
     }
-    themeButtons.forEach(btn => btn.addEventListener('click', () => setTheme(btn.dataset.themeValue)));
-    function applyI18nElement(el) {
-        const val = currentLang === 'ar' ? el.dataset.ar : el.dataset.en;
-        if (val === undefined) return;
-        if (el.isContentEditable) {
-            if (el.dataset.dirty === '1') return;
-            el.textContent = val;
-            return;
+  },
+  clinic: {
+    icon: 'i-clock',
+    label: { ar: 'عيادة', en: 'Clinic' },
+    groupWord: { ar: 'يوم', en: 'Day' },
+    defaults: {
+      eyebrow: { ar: 'مواعيد العيادة', en: 'Clinic hours' },
+      title: { ar: 'مواعيد الكشف', en: 'Consultation Hours' },
+      groupLabel: { ar: 'اليوم', en: 'Day' }
+    }
+  },
+  gym: {
+    icon: 'i-clock',
+    label: { ar: 'نادي رياضي', en: 'Gym' },
+    groupWord: { ar: 'يوم', en: 'Day' },
+    defaults: {
+      eyebrow: { ar: 'جدول الحصص', en: 'Class timetable' },
+      title: { ar: 'جدول الحصص الرياضية', en: 'Class Timetable' },
+      groupLabel: { ar: 'اليوم', en: 'Day' }
+    }
+  },
+  salon: {
+    icon: 'i-clock',
+    label: { ar: 'صالون / حلاق', en: 'Salon / barber' },
+    groupWord: { ar: 'يوم', en: 'Day' },
+    defaults: {
+      eyebrow: { ar: 'مواعيد العمل', en: 'Business hours' },
+      title: { ar: 'مواعيد الصالون', en: 'Salon Hours' },
+      groupLabel: { ar: 'اليوم', en: 'Day' }
+    }
+  },
+  shop: {
+    icon: 'i-map-pin',
+    label: { ar: 'محل / مطعم', en: 'Shop / restaurant' },
+    groupWord: { ar: 'يوم', en: 'Day' },
+    defaults: {
+      eyebrow: { ar: 'مواعيد الفتح', en: 'Opening hours' },
+      title: { ar: 'مواعيد العمل', en: 'Opening Hours' },
+      groupLabel: { ar: 'اليوم', en: 'Day' }
+    }
+  },
+  event: {
+    icon: 'i-calendar',
+    label: { ar: 'برنامج فعالية', en: 'Event programme' },
+    groupWord: { ar: 'جلسة', en: 'Session' },
+    defaults: {
+      eyebrow: { ar: 'برنامج الفعالية', en: 'Event programme' },
+      title: { ar: 'برنامج اليوم', en: "Today's Programme" },
+      groupLabel: { ar: 'الجلسة', en: 'Session' }
+    }
+  },
+  course: {
+    icon: 'i-calendar',
+    label: { ar: 'مواعيد كورس', en: 'Course dates' },
+    groupWord: { ar: 'أسبوع', en: 'Week' },
+    defaults: {
+      eyebrow: { ar: 'مواعيد الكورس', en: 'Course dates' },
+      title: { ar: 'خطة الكورس', en: 'Course Schedule' },
+      groupLabel: { ar: 'الأسبوع', en: 'Week' }
+    }
+  },
+  office: {
+    icon: 'i-clock',
+    label: { ar: 'ساعات مكتب', en: 'Office hours' },
+    groupWord: { ar: 'يوم', en: 'Day' },
+    defaults: {
+      eyebrow: { ar: 'ساعات العمل', en: 'Office hours' },
+      title: { ar: 'ساعات الدوام', en: 'Office Hours' },
+      groupLabel: { ar: 'اليوم', en: 'Day' }
+    }
+  },
+  prayer: {
+    icon: 'i-clock',
+    label: { ar: 'مواقيت الصلاة', en: 'Prayer times' },
+    groupWord: { ar: 'صلاة', en: 'Prayer' },
+    defaults: {
+      eyebrow: { ar: 'مواقيت الصلاة', en: 'Prayer times' },
+      title: { ar: 'مواقيت الصلاة', en: 'Prayer Times' },
+      groupLabel: { ar: 'الصلاة', en: 'Prayer' }
+    }
+  },
+  delivery: {
+    icon: 'i-map-pin',
+    label: { ar: 'مواعيد التوصيل', en: 'Delivery windows' },
+    groupWord: { ar: 'منطقة', en: 'Zone' },
+    defaults: {
+      eyebrow: { ar: 'مواعيد التوصيل', en: 'Delivery windows' },
+      title: { ar: 'مواعيد التوصيل', en: 'Delivery Windows' },
+      groupLabel: { ar: 'المنطقة', en: 'Zone' }
+    }
+  }
+};
+
+const THEMES = ['classic', 'modern', 'gazette', 'luxury'];
+
+const STORAGE_KEY = 'sheet-app:v1';
+const MAX_HISTORY = 80;
+
+function defaultState(presetKey, lang){
+  presetKey = PRESETS[presetKey] ? presetKey : 'tutor';
+  lang = lang === 'en' ? 'en' : 'ar';
+  const p = PRESETS[presetKey];
+  const g1 = uid(), s1 = uid(), s2 = uid();
+  return {
+    v: 1,
+    lang, dir: lang === 'ar' ? 'rtl' : 'ltr',
+    numerals: lang === 'ar' ? 'arabic' : 'latin',
+    timeFormat: '24h',
+    preset: presetKey,
+    theme: 'classic',
+    profile: { name: '', subtitle: '', eyebrow: p.defaults.eyebrow[lang], photo: null },
+    headline: { title: p.defaults.title[lang], badge: '', note: '' },
+    groups: [
+      { id: g1, label: p.defaults.groupLabel[lang] + ' 1', slots: [
+        { id: s1, from: '09:00', to: '11:00', note: '', full: false },
+        { id: s2, from: '17:00', to: '19:00', note: '', full: false }
+      ] }
+    ],
+    contacts: [
+      { id: uid(), type: 'whatsapp', value: '', label: '' }
+    ],
+    footer: { text: '', showQr: true },
+    print: { mode: 'poster', paper: 'A4', orientation: 'portrait', margin: 'normal', ink: 'color', nUp: 4, cropMarks: false, imageSize: 'square' }
+  };
+}
+
+function applyPreset(state, presetKey){
+  if (!PRESETS[presetKey]) return state;
+  const p = PRESETS[presetKey];
+  state.preset = presetKey;
+  const wasDefaultTitle = Object.values(PRESETS).some(pp => pp.defaults.title.ar === state.headline.title || pp.defaults.title.en === state.headline.title);
+  const wasDefaultEyebrow = Object.values(PRESETS).some(pp => pp.defaults.eyebrow.ar === state.profile.eyebrow || pp.defaults.eyebrow.en === state.profile.eyebrow);
+  if (wasDefaultTitle || !state.headline.title) state.headline.title = p.defaults.title[state.lang];
+  if (wasDefaultEyebrow || !state.profile.eyebrow) state.profile.eyebrow = p.defaults.eyebrow[state.lang];
+  return state;
+}
+
+function getGroup(state, id){ return state.groups.find(g => g.id === id) || null; }
+function getSlot(state, gid, sid){ const g = getGroup(state, gid); return g ? (g.slots.find(s => s.id === sid) || null) : null; }
+function getContact(state, id){ return state.contacts.find(c => c.id === id) || null; }
+
+function normalize(raw){
+  if (!raw || typeof raw !== 'object' || !Array.isArray(raw.groups)) return null;
+  const preset = PRESETS[raw.preset] ? raw.preset : 'tutor';
+  const lang = raw.lang === 'en' ? 'en' : 'ar';
+  const base = defaultState(preset, lang);
+  const str = v => typeof v === 'string' ? v : '';
+  return {
+    v: 1,
+    lang,
+    dir: raw.dir === 'ltr' ? 'ltr' : 'rtl',
+    numerals: raw.numerals === 'latin' ? 'latin' : 'arabic',
+    timeFormat: raw.timeFormat === '12h' ? '12h' : '24h',
+    preset,
+    theme: THEMES.includes(raw.theme) ? raw.theme : 'classic',
+    profile: {
+      name: str(raw.profile && raw.profile.name),
+      subtitle: str(raw.profile && raw.profile.subtitle),
+      eyebrow: (raw.profile && typeof raw.profile.eyebrow === 'string') ? raw.profile.eyebrow : base.profile.eyebrow,
+      photo: safePhotoSrc(raw.profile && raw.profile.photo) || null
+    },
+    headline: {
+      title: (raw.headline && typeof raw.headline.title === 'string') ? raw.headline.title : base.headline.title,
+      badge: str(raw.headline && raw.headline.badge),
+      note: str(raw.headline && raw.headline.note)
+    },
+    groups: raw.groups.length ? raw.groups.map(g => ({
+      id: (g && typeof g.id === 'string') ? g.id : uid(),
+      label: str(g && g.label),
+      slots: Array.isArray(g && g.slots) ? g.slots.map(s => ({
+        id: (s && typeof s.id === 'string') ? s.id : uid(),
+        from: (s && typeof s.from === 'string') ? s.from : '09:00',
+        to: (s && typeof s.to === 'string') ? s.to : '11:00',
+        note: str(s && s.note),
+        full: !!(s && s.full)
+      })) : []
+    })) : base.groups,
+    contacts: Array.isArray(raw.contacts) ? raw.contacts.map(c => ({
+      id: (c && typeof c.id === 'string') ? c.id : uid(),
+      type: CONTACT_TYPES.includes(c && c.type) ? c.type : 'link',
+      value: str(c && c.value),
+      label: str(c && c.label)
+    })) : base.contacts,
+    footer: {
+      text: str(raw.footer && raw.footer.text),
+      showQr: !(raw.footer && raw.footer.showQr === false)
+    },
+    print: {
+      mode: ['poster', 'sheet', 'cards', 'image'].includes(raw.print && raw.print.mode) ? raw.print.mode : 'poster',
+      paper: (raw.print && PAPER_MM[raw.print.paper]) ? raw.print.paper : 'A4',
+      orientation: (raw.print && raw.print.orientation === 'landscape') ? 'landscape' : 'portrait',
+      margin: (raw.print && MARGIN_MM[raw.print.margin]) ? raw.print.margin : 'normal',
+      ink: (raw.print && raw.print.ink === 'saver') ? 'saver' : 'color',
+      nUp: (raw.print && [2, 4, 8].includes(raw.print.nUp)) ? raw.print.nUp : 4,
+      cropMarks: !!(raw.print && raw.print.cropMarks),
+      imageSize: (raw.print && raw.print.imageSize === 'story') ? 'story' : 'square'
+    }
+  };
+}
+
+let saveFailedToastShown = false;
+const saveStateDebounced = debounce(function(state){
+  try { localStorage.setItem(STORAGE_KEY, JSON.stringify(state)); saveFailedToastShown = false; }
+  catch(e){ if (!saveFailedToastShown){ toast(t('toastSaveFailed')); saveFailedToastShown = true; } }
+}, 400);
+
+function loadStateFromStorage(){
+  try {
+    const raw = localStorage.getItem(STORAGE_KEY);
+    if (!raw) return null;
+    return normalize(JSON.parse(raw));
+  } catch(e){}
+  return null;
+}
+
+const EditHistory = {
+  stack: [], index: -1,
+  _strip(state){
+    const clone = JSON.parse(JSON.stringify(state));
+    clone.profile.photo = null;
+    return JSON.stringify(clone);
+  },
+  init(state){ this.stack = [this._strip(state)]; this.index = 0; },
+  commit(state){
+    const snap = this._strip(state);
+    if (this.stack[this.index] === snap) return;
+    this.stack = this.stack.slice(0, this.index + 1);
+    this.stack.push(snap);
+    if (this.stack.length > MAX_HISTORY) this.stack.shift(); else this.index++;
+    if (this.stack.length > MAX_HISTORY) this.index = this.stack.length - 1;
+  },
+  canUndo(){ return this.index > 0; },
+  canRedo(){ return this.index < this.stack.length - 1; },
+  undo(){ if (!this.canUndo()) return null; this.index--; return JSON.parse(this.stack[this.index]); },
+  redo(){ if (!this.canRedo()) return null; this.index++; return JSON.parse(this.stack[this.index]); }
+};
+function applyHistoryState(restored, currentPhoto){
+  if (!restored) return null;
+  restored.profile.photo = currentPhoto || null;
+  return restored;
+}
+
+const ARABIC_DIGITS = ['٠','١','٢','٣','٤','٥','٦','٧','٨','٩'];
+function convertDigits(str, mode){
+  str = String(str);
+  if (mode === 'arabic') return str.replace(/[0-9]/g, d => ARABIC_DIGITS[+d]);
+  return str.replace(/[٠-٩]/g, d => String(ARABIC_DIGITS.indexOf(d)));
+}
+function formatTime(hhmm, timeFormat, numerals, lang){
+  if (!hhmm) return '';
+  const m = /^(\d{1,2}):(\d{2})$/.exec(hhmm.trim());
+  if (!m) return convertDigits(hhmm, numerals);
+  let h = +m[1], min = m[2];
+  let suffix = '';
+  if (timeFormat === '12h'){
+    suffix = h >= 12 ? (lang === 'ar' ? ' م' : ' PM') : (lang === 'ar' ? ' ص' : ' AM');
+    h = h % 12; if (h === 0) h = 12;
+  }
+  const out = `${h}:${min}${suffix}`;
+  return convertDigits(out, numerals);
+}
+function formatTimeRange(from, to, timeFormat, numerals, lang){
+  const a = formatTime(from, timeFormat, numerals, lang);
+  const b = formatTime(to, timeFormat, numerals, lang);
+  if (a && b) return `${a} – ${b}`;
+  return a || b || '';
+}
+function parseTimeInput(raw){
+  raw = String(raw || '').trim().replace(/[٠-٩]/g, d => String(ARABIC_DIGITS.indexOf(d)));
+  let m = /^([0-1]?[0-9]|2[0-3]):([0-5][0-9])$/.exec(raw);
+  if (!m) m = /^([0-1]?[0-9]|2[0-3])[.,]?([0-5][0-9])$/.exec(raw.replace(/\s/g, ''));
+  if (!m && /^\d{1,2}$/.test(raw) && +raw <= 23) m = [raw, raw, '00'];
+  if (!m) return null;
+  return `${String(+m[1]).padStart(2, '0')}:${String(m[2]).padStart(2, '0')}`;
+}
+
+const CONTACT_TYPE_LABELS = {
+  whatsapp: { ar: 'واتساب', en: 'WhatsApp' },
+  phone: { ar: 'هاتف', en: 'Phone' },
+  mail: { ar: 'بريد إلكتروني', en: 'Email' },
+  'map-pin': { ar: 'العنوان', en: 'Address' },
+  instagram: { ar: 'إنستغرام', en: 'Instagram' },
+  telegram: { ar: 'تيليغرام', en: 'Telegram' },
+  link: { ar: 'رابط', en: 'Link' }
+};
+function contactTypeLabel(ty, lang){ return (CONTACT_TYPE_LABELS[ty] || CONTACT_TYPE_LABELS.link)[lang]; }
+
+const CONTACT_TYPES = ['whatsapp', 'phone', 'mail', 'map-pin', 'instagram', 'telegram', 'link'];
+function contactIcon(type){ return CONTACT_TYPES.includes(type) ? type : 'link'; }
+function contactHref(type, value){
+  value = (value || '').trim();
+  if (!value) return '';
+  switch(type){
+    case 'whatsapp': {
+      const digits = value.replace(/[^0-9]/g, '');
+      return digits ? `https://wa.me/${digits}` : '';
+    }
+    case 'phone': return `tel:${value.replace(/[^0-9+]/g, '')}`;
+    case 'mail': return `mailto:${value}`;
+    case 'instagram': return /^https?:/i.test(value) ? value : `https://instagram.com/${value.replace(/^@/, '')}`;
+    case 'telegram': return /^https?:/i.test(value) ? value : `https://t.me/${value.replace(/^@/, '')}`;
+    case 'map-pin': return /^https?:/i.test(value) ? value : '';
+    case 'link': return /^https?:/i.test(value) ? value : `https://${value}`;
+    default: return '';
+  }
+}
+function primaryShareUrl(state){
+  const wa = state.contacts.find(c => c.type === 'whatsapp' && c.value.trim());
+  if (wa) return contactHref('whatsapp', wa.value);
+  const withUrl = state.contacts.find(c => contactHref(c.type, c.value));
+  if (withUrl) return contactHref(withUrl.type, withUrl.value);
+  return '';
+}
+
+function renderSheetInner(state){
+  const lang = state.lang, numerals = state.numerals, tf = state.timeFormat;
+  const L = LABELS[lang];
+  const photoInner = state.profile.photo
+    ? `<img src="${escapeHtml(safePhotoSrc(state.profile.photo))}" alt="">`
+    : `<svg class="icon-lg"><use href="#i-image"></use></svg>`;
+
+  const groupsHtml = state.groups.map(g => `
+    <div class="group-block" data-group="${g.id}">
+      <div class="group-head">
+        <span class="group-label" contenteditable="true" role="textbox" aria-label="${escapeHtml(L.groupLabelPh)}" data-bind="group.label" data-group="${g.id}" data-placeholder="${escapeHtml(L.groupLabelPh)}">${escapeHtml(g.label)}</span>
+        <button type="button" class="row-remove-btn" data-action="removeGroup" data-group="${g.id}" title="${escapeHtml(L.removeGroup)}">
+          <svg class="icon-sm"><use href="#i-trash"></use></svg>
+        </button>
+      </div>
+      <div class="slot-list">
+        ${g.slots.map(s => `
+          <div class="slot-pill" data-group="${g.id}" data-slot="${s.id}">
+            <bdi class="slot-time tabular">
+              <svg class="icon-sm"><use href="#i-clock"></use></svg>
+              <input type="text" inputmode="numeric" dir="ltr" class="time-input" value="${s.from}" placeholder="00:00" maxlength="5" data-bind="slot.from" data-group="${g.id}" data-slot="${s.id}">
+              <span>–</span>
+              <input type="text" inputmode="numeric" dir="ltr" class="time-input" value="${s.to}" placeholder="00:00" maxlength="5" data-bind="slot.to" data-group="${g.id}" data-slot="${s.id}">
+            </bdi>
+            <span class="slot-note" contenteditable="true" role="textbox" aria-label="${escapeHtml(L.slotNotePh)}" data-bind="slot.note" data-group="${g.id}" data-slot="${s.id}" data-placeholder="${escapeHtml(L.slotNotePh)}">${escapeHtml(s.note)}</span>
+            <button type="button" class="slot-full-btn ${s.full ? 'is-full' : ''}" data-action="toggleFull" data-group="${g.id}" data-slot="${s.id}">${escapeHtml(L.full)}</button>
+            <button type="button" class="row-remove-btn" data-action="removeSlot" data-group="${g.id}" data-slot="${s.id}" title="${escapeHtml(L.removeSlot)}">
+              <svg class="icon-sm"><use href="#i-x"></use></svg>
+            </button>
+          </div>
+        `).join('')}
+        <button type="button" class="add-btn" data-action="addSlot" data-group="${g.id}">
+          <svg class="icon-sm"><use href="#i-plus"></use></svg>${escapeHtml(L.addSlot)}
+        </button>
+      </div>
+    </div>
+  `).join('');
+
+  const contactsHtml = state.contacts.map(c => `
+    <span class="contact-chip" data-contact="${c.id}">
+      <svg class="icon-sm"><use href="#i-${contactIcon(c.type)}"></use></svg>
+      <select class="contact-type-select" data-action="contactType" data-contact="${c.id}">
+        ${CONTACT_TYPES.map(ty => `<option value="${ty}" ${ty === c.type ? 'selected' : ''}>${escapeHtml(contactTypeLabel(ty, state.lang))}</option>`).join('')}
+      </select>
+      <span contenteditable="true" role="textbox" aria-label="${escapeHtml(L.contactValueLabel)}" data-bind="contact.value" data-contact="${c.id}" data-placeholder="...">${escapeHtml(c.value)}</span>
+      <button type="button" class="row-remove-btn" data-action="removeContact" data-contact="${c.id}" title="${escapeHtml(L.removeContact)}">
+        <svg class="icon-sm"><use href="#i-x"></use></svg>
+      </button>
+    </span>
+  `).join('');
+
+  return `
+    <div class="sheet-card">
+      <span class="sheet-eyebrow" contenteditable="true" role="textbox" aria-label="${escapeHtml(L.eyebrowPh)}" data-bind="profile.eyebrow" data-placeholder="${escapeHtml(L.eyebrowPh)}">${escapeHtml(state.profile.eyebrow)}</span>
+      <div class="sheet-profile">
+        <div class="profile-photo-wrap">
+          <label class="profile-photo" title="">
+            ${photoInner}
+            <input type="file" accept="image/*" data-action="uploadPhoto">
+          </label>
+          ${safePhotoSrc(state.profile.photo) ? `<button type="button" class="photo-remove-btn" data-action="removePhoto" title="${escapeHtml(L.removePhoto)}"><svg class="icon-sm"><use href="#i-x"></use></svg></button>` : ''}
+        </div>
+        <div class="profile-text">
+          <span class="profile-name" contenteditable="true" role="textbox" aria-label="${escapeHtml(L.namePh)}" data-bind="profile.name" data-placeholder="${escapeHtml(L.namePh)}">${escapeHtml(state.profile.name)}</span>
+          <span class="profile-subtitle" contenteditable="true" role="textbox" aria-label="${escapeHtml(L.subtitlePh)}" data-bind="profile.subtitle" data-placeholder="${escapeHtml(L.subtitlePh)}">${escapeHtml(state.profile.subtitle)}</span>
+        </div>
+      </div>
+
+      <div class="sheet-headline">
+        <span class="headline-badge" contenteditable="true" role="textbox" aria-label="${escapeHtml(L.badgePh)}" data-bind="headline.badge" data-placeholder="${escapeHtml(L.badgePh)}">${escapeHtml(state.headline.badge)}</span>
+        <span class="headline-title" contenteditable="true" role="textbox" aria-label="${escapeHtml(L.titlePh)}" data-bind="headline.title" data-placeholder="${escapeHtml(L.titlePh)}">${escapeHtml(state.headline.title)}</span>
+        <span class="headline-note" contenteditable="true" role="textbox" aria-label="${escapeHtml(L.notePh)}" data-bind="headline.note" data-placeholder="${escapeHtml(L.notePh)}">${escapeHtml(state.headline.note)}</span>
+      </div>
+
+      <div class="sheet-groups">
+        ${groupsHtml}
+        <div class="add-group-row">
+          <button type="button" class="add-btn" data-action="addGroup">
+            <svg class="icon-sm"><use href="#i-plus"></use></svg>${escapeHtml(L.addGroup)}
+          </button>
+        </div>
+      </div>
+
+      <div class="sheet-contacts">
+        ${contactsHtml}
+        <button type="button" class="add-btn" data-action="addContact">
+          <svg class="icon-sm"><use href="#i-plus"></use></svg>${escapeHtml(L.addContact)}
+        </button>
+      </div>
+
+      <div class="sheet-footer">
+        <span class="footer-text" contenteditable="true" role="textbox" aria-label="${escapeHtml(L.footerPh)}" data-bind="footer.text" data-placeholder="${escapeHtml(L.footerPh)}">${escapeHtml(state.footer.text)}</span>
+      </div>
+    </div>
+  `;
+}
+
+let isRerendering = false;
+function render(state){
+  const root = document.getElementById('sheetRoot');
+  isRerendering = true;
+  root.innerHTML = renderSheetInner(state);
+  isRerendering = false;
+}
+
+let state = null;
+let focusSnapshot = null;
+
+function setBindValue(state, bindPath, dataset, value){
+  if (bindPath === 'profile.name') state.profile.name = value;
+  else if (bindPath === 'profile.subtitle') state.profile.subtitle = value;
+  else if (bindPath === 'profile.eyebrow') state.profile.eyebrow = value;
+  else if (bindPath === 'headline.title') state.headline.title = value;
+  else if (bindPath === 'headline.badge') state.headline.badge = value;
+  else if (bindPath === 'headline.note') state.headline.note = value;
+  else if (bindPath === 'footer.text') state.footer.text = value;
+  else if (bindPath === 'group.label'){ const g = getGroup(state, dataset.group); if (g) g.label = value; }
+  else if (bindPath === 'slot.note'){ const s = getSlot(state, dataset.group, dataset.slot); if (s) s.note = value; }
+  else if (bindPath === 'slot.from'){ const s = getSlot(state, dataset.group, dataset.slot); if (s) s.from = value; }
+  else if (bindPath === 'slot.to'){ const s = getSlot(state, dataset.group, dataset.slot); if (s) s.to = value; }
+  else if (bindPath === 'contact.value'){ const c = getContact(state, dataset.contact); if (c) c.value = value; }
+}
+
+function persistLive(){ saveStateDebounced(state); }
+function structuralChange(){
+  render(state);
+  EditHistory.commit(state);
+  saveStateDebounced(state);
+  refreshToolbar();
+}
+
+const SAFE_PHOTO_RE = /^data:image\/(png|jpeg|webp);base64,[A-Za-z0-9+/]+=*$/;
+function safePhotoSrc(photo){
+  return (typeof photo === 'string' && SAFE_PHOTO_RE.test(photo)) ? photo : '';
+}
+
+function downscaleImage(file, maxDim, cb){
+  const reader = new FileReader();
+  reader.onload = () => {
+    const img = new Image();
+    img.onload = () => {
+      let w = img.width, h = img.height;
+      if (w > maxDim || h > maxDim){
+        if (w >= h){ h = Math.round(h * maxDim / w); w = maxDim; }
+        else { w = Math.round(w * maxDim / h); h = maxDim; }
+      }
+      const canvas = document.createElement('canvas');
+      canvas.width = w; canvas.height = h;
+      const ctx = canvas.getContext('2d');
+      ctx.drawImage(img, 0, 0, w, h);
+      cb(canvas.toDataURL('image/jpeg', 0.85));
+    };
+    img.onerror = () => cb(null);
+    img.src = reader.result;
+  };
+  reader.onerror = () => cb(null);
+  reader.readAsDataURL(file);
+}
+
+function wireSheetRoot(){
+  const root = document.getElementById('sheetRoot');
+
+  root.addEventListener('focusin', e => {
+    const el = e.target;
+    if (el.matches('[contenteditable="true"]')) focusSnapshot = JSON.stringify(state);
+  });
+
+  root.addEventListener('focusout', e => {
+    if (isRerendering) return;
+    const el = e.target;
+    if (!el.matches('[contenteditable="true"]')) return;
+    const text = el.textContent.trim();
+    el.textContent = text;
+    setBindValue(state, el.dataset.bind, el.dataset, text);
+    persistLive();
+    if (focusSnapshot && focusSnapshot !== JSON.stringify(state)){
+      EditHistory.commit(state);
+      refreshToolbar();
+    }
+    focusSnapshot = null;
+  });
+
+  root.addEventListener('input', e => {
+    const el = e.target;
+    if (el.matches('[contenteditable="true"]')){
+      setBindValue(state, el.dataset.bind, el.dataset, el.textContent);
+      persistLive();
+    }
+  });
+
+  root.addEventListener('keydown', e => {
+    if (e.key === 'Enter' && (e.target.matches('[contenteditable="true"]') || e.target.matches('.time-input'))){
+      e.preventDefault();
+      e.target.blur();
+    }
+  });
+
+  root.addEventListener('paste', e => {
+    if (!e.target.matches('[contenteditable="true"]')) return;
+    e.preventDefault();
+    const text = (e.clipboardData || window.clipboardData).getData('text/plain');
+    document.execCommand('insertText', false, text);
+  });
+
+  root.addEventListener('change', e => {
+    const el = e.target;
+    if (el.matches('.time-input')){
+      const s = getSlot(state, el.dataset.group, el.dataset.slot);
+      const parsed = parseTimeInput(el.value);
+      if (parsed){
+        el.value = parsed;
+        setBindValue(state, el.dataset.bind, el.dataset, parsed);
+        EditHistory.commit(state);
+        persistLive();
+        refreshToolbar();
+      } else if (s){
+        el.value = el.dataset.bind === 'slot.from' ? s.from : s.to;
+      }
+    } else if (el.matches('[data-action="contactType"]')){
+      const c = getContact(state, el.dataset.contact);
+      if (c) c.type = el.value;
+      structuralChange();
+    } else if (el.matches('[data-action="uploadPhoto"]')){
+      const file = el.files && el.files[0];
+      if (!file) return;
+      const tooBig = file.size > 900 * 1024;
+      downscaleImage(file, 512, dataUrl => {
+        if (!dataUrl) return;
+        state.profile.photo = dataUrl;
+        structuralChange();
+        if (tooBig) toast(t('toastImgTooBig'));
+      });
+    }
+  });
+
+  root.addEventListener('click', e => {
+    const btn = e.target.closest('[data-action]');
+    if (!btn) return;
+    const action = btn.dataset.action;
+    if (action === 'addGroup'){
+      const p = PRESETS[state.preset];
+      state.groups.push({ id: uid(), label: (p.defaults.groupLabel[state.lang]) + ' ' + (state.groups.length + 1), slots: [{ id: uid(), from: '09:00', to: '11:00', note: '', full: false }] });
+      structuralChange();
+    } else if (action === 'removeGroup'){
+      state.groups = state.groups.filter(g => g.id !== btn.dataset.group);
+      structuralChange();
+    } else if (action === 'addSlot'){
+      const g = getGroup(state, btn.dataset.group);
+      if (g) g.slots.push({ id: uid(), from: '09:00', to: '11:00', note: '', full: false });
+      structuralChange();
+    } else if (action === 'removeSlot'){
+      const g = getGroup(state, btn.dataset.group);
+      if (g) g.slots = g.slots.filter(s => s.id !== btn.dataset.slot);
+      structuralChange();
+    } else if (action === 'toggleFull'){
+      const s = getSlot(state, btn.dataset.group, btn.dataset.slot);
+      if (s) s.full = !s.full;
+      structuralChange();
+    } else if (action === 'addContact'){
+      state.contacts.push({ id: uid(), type: 'whatsapp', value: '', label: '' });
+      structuralChange();
+    } else if (action === 'removeContact'){
+      state.contacts = state.contacts.filter(c => c.id !== btn.dataset.contact);
+      structuralChange();
+    } else if (action === 'removePhoto'){
+      state.profile.photo = null;
+      structuralChange();
+    }
+  });
+}
+
+const QR = (function () {
+  const RS_M = [
+    [1,26,16],[1,44,28],[1,70,44],[2,50,32],[2,67,43],[4,43,27],[4,49,31],
+    [2,60,38,2,61,39],[3,58,36,2,59,37],[4,69,43,1,70,44],[1,80,50,4,81,51],
+    [6,58,36,2,59,37],[8,59,37,1,60,38],[4,64,40,5,65,41],[5,65,41,5,66,42],
+    [7,73,45,3,74,46],[10,74,46,1,75,47],[9,69,43,4,70,44],[3,70,44,11,71,45],
+    [3,67,41,13,68,42],[17,68,42],[17,74,46],[4,75,47,14,76,48],[6,73,45,14,74,46],
+    [8,75,47,13,76,48],[19,74,46,4,75,47],[22,73,45,3,74,46],[3,73,45,23,74,46],
+    [21,73,45,7,74,46],[19,75,47,10,76,48],[2,74,46,29,75,47],[10,74,46,23,75,47],
+    [14,74,46,21,75,47],[14,74,46,23,75,47],[12,75,47,26,76,48],[6,75,47,34,76,48],
+    [29,74,46,14,75,47],[13,74,46,32,75,47],[40,75,47,7,76,48],[18,75,47,31,76,48]
+  ];
+  const ALIGN = [
+    [],[6,18],[6,22],[6,26],[6,30],[6,34],[6,22,38],[6,24,42],[6,26,46],[6,28,50],
+    [6,30,54],[6,32,58],[6,34,62],[6,26,46,66],[6,26,48,70],[6,26,50,74],[6,30,54,78],
+    [6,30,56,82],[6,30,58,86],[6,34,62,90],[6,28,50,72,94],[6,26,50,74,98],[6,30,54,78,102],
+    [6,28,54,80,106],[6,32,58,84,110],[6,30,58,86,114],[6,34,62,90,118],[6,26,50,74,98,122],
+    [6,30,54,78,102,126],[6,26,52,78,104,130],[6,30,56,82,108,134],[6,34,60,86,112,138],
+    [6,30,58,86,114,142],[6,34,62,90,118,146],[6,30,54,78,102,126,150],[6,24,50,76,102,128,154],
+    [6,28,54,80,106,132,158],[6,32,58,84,110,136,162],[6,26,54,82,110,138,166],[6,30,58,86,114,142,170]
+  ];
+  const G15 = 0x537, G15_MASK = 0x5412, G18 = 0x1F25, PAD0 = 0xEC, PAD1 = 0x11;
+
+  const EXP = new Uint8Array(256);
+  const LOG = new Uint8Array(256);
+  (function initGF() {
+    let x = 1;
+    for (let i = 0; i < 255; i++) { EXP[i] = x; LOG[x] = i; x <<= 1; if (x & 0x100) x ^= 0x11D; }
+  })();
+  function gexp(n) { n = n % 255; if (n < 0) n += 255; return EXP[n]; }
+  function glog(n) { return LOG[n]; }
+
+  function bchDigit(data) { let d = 0; while (data !== 0) { d++; data = Math.floor(data / 2); } return d; }
+  function bchTypeInfo(data) {
+    let d = data << 10;
+    while (bchDigit(d) - bchDigit(G15) >= 0) d ^= G15 << (bchDigit(d) - bchDigit(G15));
+    return ((data << 10) | d) ^ G15_MASK;
+  }
+  function bchTypeNumber(data) {
+    let d = data << 12;
+    while (bchDigit(d) - bchDigit(G18) >= 0) d ^= G18 << (bchDigit(d) - bchDigit(G18));
+    return (data << 12) | d;
+  }
+
+  function maskFunc(pattern) {
+    switch (pattern) {
+      case 0: return (i, j) => (i + j) % 2 === 0;
+      case 1: return (i, j) => i % 2 === 0;
+      case 2: return (i, j) => j % 3 === 0;
+      case 3: return (i, j) => (i + j) % 3 === 0;
+      case 4: return (i, j) => (Math.floor(i / 2) + Math.floor(j / 3)) % 2 === 0;
+      case 5: return (i, j) => (i * j) % 2 + (i * j) % 3 === 0;
+      case 6: return (i, j) => ((i * j) % 2 + (i * j) % 3) % 2 === 0;
+      case 7: return (i, j) => ((i * j) % 3 + (i + j) % 2) % 2 === 0;
+    }
+    throw new Error('bad mask');
+  }
+
+  class BitBuffer {
+    constructor() { this.buffer = []; this.length = 0; }
+    put(num, length) { for (let i = 0; i < length; i++) this.putBit(((num >> (length - i - 1)) & 1) === 1); }
+    putBit(bit) {
+      const idx = Math.floor(this.length / 8);
+      if (this.buffer.length <= idx) this.buffer.push(0);
+      if (bit) this.buffer[idx] |= (0x80 >> (this.length % 8));
+      this.length++;
+    }
+  }
+
+  function charCountBits(version) {
+    if (version < 10) return 8;
+    return 16;
+  }
+
+  function rsBlocksFor(version) {
+    const row = RS_M[version - 1];
+    const blocks = [];
+    if (row.length === 3) {
+      blocks.push({ count: row[0], total: row[1], data: row[2] });
+    } else {
+      blocks.push({ count: row[0], total: row[1], data: row[2] });
+      blocks.push({ count: row[3], total: row[4], data: row[5] });
+    }
+    const out = [];
+    blocks.forEach(b => { for (let i = 0; i < b.count; i++) out.push({ total: b.total, data: b.data }); });
+    return out;
+  }
+
+  function bitCapacity(version) {
+    return rsBlocksFor(version).reduce((s, b) => s + b.data * 8, 0);
+  }
+
+  function utf8Bytes(str) {
+    return Array.from(new TextEncoder().encode(str));
+  }
+
+  function chooseVersion(byteLen) {
+    for (let v = 1; v <= 40; v++) {
+      const needed = 4 + charCountBits(v) + byteLen * 8;
+      if (needed <= bitCapacity(v)) return v;
+    }
+    return null;
+  }
+
+  function createData(version, dataBytes) {
+    const buffer = new BitBuffer();
+    buffer.put(0b0100, 4);
+    buffer.put(dataBytes.length, charCountBits(version));
+    dataBytes.forEach(b => buffer.put(b, 8));
+
+    const rsBlocks = rsBlocksFor(version);
+    const bitLimit = rsBlocks.reduce((s, b) => s + b.data * 8, 0);
+
+    for (let i = 0; i < Math.min(bitLimit - buffer.length, 4); i++) buffer.putBit(false);
+    const delimit = buffer.length % 8;
+    if (delimit) for (let i = 0; i < 8 - delimit; i++) buffer.putBit(false);
+
+    const bytesToFill = Math.floor((bitLimit - buffer.length) / 8);
+    for (let i = 0; i < bytesToFill; i++) buffer.put(i % 2 === 0 ? PAD0 : PAD1, 8);
+
+    return createBytes(buffer, rsBlocks);
+  }
+
+  function polyMulGF(a, b) {
+    const result = new Array(a.length + b.length - 1).fill(0);
+    for (let i = 0; i < a.length; i++) {
+      if (a[i] === 0) continue;
+      for (let j = 0; j < b.length; j++) {
+        if (b[j] === 0) continue;
+        result[i + j] ^= gexp((glog(a[i]) + glog(b[j])) % 255);
+      }
+    }
+    return result;
+  }
+
+  function rsGeneratorPoly(degree) {
+    let g = [1];
+    for (let i = 0; i < degree; i++) g = polyMulGF(g, [1, gexp(i)]);
+    return g;
+  }
+
+  function rsEncode(dataCodewords, numEc) {
+    const generator = rsGeneratorPoly(numEc);
+    const msg = dataCodewords.concat(new Array(numEc).fill(0));
+    for (let i = 0; i < dataCodewords.length; i++) {
+      const coef = msg[i];
+      if (coef === 0) continue;
+      const factor = glog(coef);
+      for (let j = 0; j < generator.length; j++) {
+        if (generator[j] === 0) continue;
+        msg[i + j] ^= gexp((glog(generator[j]) + factor) % 255);
+      }
+    }
+    return msg.slice(dataCodewords.length);
+  }
+
+  function createBytes(buffer, rsBlocks) {
+    let offset = 0;
+    let maxDc = 0, maxEc = 0;
+    const dcData = [], ecData = [];
+    rsBlocks.forEach(block => {
+      const dcCount = block.data, ecCount = block.total - dcCount;
+      maxDc = Math.max(maxDc, dcCount);
+      maxEc = Math.max(maxEc, ecCount);
+      const dc = [];
+      for (let i = 0; i < dcCount; i++) dc.push(buffer.buffer[i + offset] & 0xFF);
+      offset += dcCount;
+      dcData.push(dc);
+      ecData.push(rsEncode(dc, ecCount));
+    });
+    const totalDc = rsBlocks.reduce((s, b) => s + b.data, 0);
+    const data = new Array(totalDc + rsBlocks.reduce((s, b) => s + (b.total - b.data), 0));
+    let idx = 0;
+    for (let i = 0; i < maxDc; i++) dcData.forEach(dc => { if (i < dc.length) data[idx++] = dc[i]; });
+    for (let i = 0; i < maxEc; i++) ecData.forEach(ec => { if (i < ec.length) data[idx++] = ec[i]; });
+    return data;
+  }
+
+  function buildMatrix(version, maskPattern, data, forScoring) {
+    const n = version * 4 + 17;
+    const modules = Array.from({ length: n }, () => new Array(n).fill(null));
+
+    function setupFinder(row, col) {
+      for (let r = -1; r <= 7; r++) {
+        if (row + r <= -1 || n <= row + r) continue;
+        for (let c = -1; c <= 7; c++) {
+          if (col + c <= -1 || n <= col + c) continue;
+          if ((r >= 0 && r <= 6 && (c === 0 || c === 6)) ||
+              (c >= 0 && c <= 6 && (r === 0 || r === 6)) ||
+              (r >= 2 && r <= 4 && c >= 2 && c <= 4)) {
+            modules[row + r][col + c] = true;
+          } else {
+            modules[row + r][col + c] = false;
+          }
         }
-        const targets = (el.dataset.i18nTarget || 'text').split(',');
-        targets.forEach(t => {
-            t = t.trim();
-            if (t === 'text') el.textContent = val;
-            else el.setAttribute(t, val);
-        });
+      }
+    }
+    setupFinder(0, 0);
+    setupFinder(n - 7, 0);
+    setupFinder(0, n - 7);
+
+    const pos = ALIGN[version - 1];
+    pos.forEach(row => pos.forEach(col => {
+      if (modules[row][col] !== null) return;
+      for (let r = -2; r <= 2; r++) for (let c = -2; c <= 2; c++) {
+        if (r === -2 || r === 2 || c === -2 || c === 2 || (r === 0 && c === 0)) modules[row + r][col + c] = true;
+        else modules[row + r][col + c] = false;
+      }
+    }));
+
+    for (let r = 8; r < n - 8; r++) if (modules[r][6] === null) modules[r][6] = (r % 2 === 0);
+    for (let c = 8; c < n - 8; c++) if (modules[6][c] === null) modules[6][c] = (c % 2 === 0);
+
+    const typeInfoData = (0 << 3) | maskPattern;
+    const bits = bchTypeInfo(typeInfoData);
+    for (let i = 0; i < 15; i++) {
+      const mod = !forScoring && ((bits >> i) & 1) === 1;
+      if (i < 6) modules[i][8] = mod;
+      else if (i < 8) modules[i + 1][8] = mod;
+      else modules[n - 15 + i][8] = mod;
+    }
+    for (let i = 0; i < 15; i++) {
+      const mod = !forScoring && ((bits >> i) & 1) === 1;
+      if (i < 8) modules[8][n - i - 1] = mod;
+      else if (i < 9) modules[8][15 - i - 1 + 1] = mod;
+      else modules[8][15 - i - 1] = mod;
+    }
+    modules[n - 8][8] = !forScoring;
+
+    if (version >= 7) {
+      const vbits = bchTypeNumber(version);
+      for (let i = 0; i < 18; i++) {
+        const mod = !forScoring && ((vbits >> i) & 1) === 1;
+        modules[Math.floor(i / 3)][i % 3 + n - 8 - 3] = mod;
+        modules[i % 3 + n - 8 - 3][Math.floor(i / 3)] = mod;
+      }
     }
 
-    function setLanguage(lang) {
-        currentLang = lang;
-        html.setAttribute('lang', lang);
-        html.setAttribute('dir', lang === 'ar' ? 'rtl' : 'ltr');
-        document.querySelectorAll('[data-ar]').forEach(applyI18nElement);
-        document.querySelectorAll('[data-ar-title]').forEach(el => {
-            el.title = lang === 'ar' ? el.dataset.arTitle : el.dataset.enTitle;
-        });
-        syncPrintHeader();
-        try { localStorage.setItem('hio-lang', lang); } catch (err) {}
-    }
-
-    langBtn.addEventListener('click', () => setLanguage(currentLang === 'ar' ? 'en' : 'ar'));
-
-    document.addEventListener('blur', (e) => {
-        const el = e.target;
-        if (el && el.nodeType === 1 && el.isContentEditable && el.dataset.ar !== undefined) {
-            const txt = el.textContent.trim();
-            el.dataset.dirty = (txt === (el.dataset.ar || '').trim() || txt === (el.dataset.en || '').trim()) ? '0' : '1';
+    const mfunc = maskFunc(maskPattern);
+    let inc = -1, row = n - 1, bitIndex = 7, byteIndex = 0;
+    const dataLen = data.length;
+    for (let colBase = n - 1; colBase > 0; colBase -= 2) {
+      let col = colBase;
+      if (col <= 6) col--;
+      const colRange = [col, col - 1];
+      while (true) {
+        for (const c of colRange) {
+          if (modules[row][c] === null) {
+            let dark = false;
+            if (byteIndex < dataLen) dark = ((data[byteIndex] >> bitIndex) & 1) === 1;
+            if (mfunc(row, c)) dark = !dark;
+            modules[row][c] = dark;
+            bitIndex--;
+            if (bitIndex === -1) { byteIndex++; bitIndex = 7; }
+          }
         }
-    }, true);
-    function syncPrintHeader() {
-        const nameEl = document.querySelector('.doctor-name');
-        const gradeEl = document.querySelector('.grade-text');
-        const phName = document.querySelector('.ph-name');
-        const phSub = document.querySelector('.ph-sub');
-        if (!nameEl || !phName) return;
-        phName.textContent = nameEl.textContent.trim();
-        const label = currentLang === 'ar' ? 'مواعيد الحجز' : 'Booking Schedule';
-        const grade = gradeEl ? gradeEl.textContent.trim() : '';
-        phSub.textContent = grade ? (currentLang === 'ar' ? `${label} — ${grade}` : `${label} — ${grade}`) : label;
+        row += inc;
+        if (row < 0 || n <= row) { row -= inc; inc = -inc; break; }
+      }
     }
-    document.querySelector('.doctor-name').addEventListener('blur', syncPrintHeader);
-    document.querySelector('.grade-text').addEventListener('blur', syncPrintHeader);
-    printBtn.addEventListener('click', () => {
-        syncPrintHeader();
-        html.classList.remove('print-wysiwyg');
-        window.print();
-    });
+    return modules;
+  }
 
-    function printWysiwyg() {
-        syncPrintHeader();
-        const card = document.querySelector('.announcement-card');
-        html.classList.add('print-wysiwyg');
-        requestAnimationFrame(() => {
-            requestAnimationFrame(() => {
-                const pxPerMm = 96 / 25.4;
-                const pageWidthPx = (210 - 20) * pxPerMm;
-                const pageHeightPx = (297 - 20) * pxPerMm;
-                const rect = card.getBoundingClientRect();
-                const scale = Math.min(pageWidthPx / rect.width, pageHeightPx / rect.height, 1);
-                card.style.setProperty('--print-scale', scale);
-                window.print();
-                html.classList.remove('print-wysiwyg');
-                card.style.removeProperty('--print-scale');
-            });
-        });
+  function lostPoint(modules) {
+    const n = modules.length;
+    let lost = 0;
+    for (let row = 0; row < n; row++) {
+      let prev = modules[row][0], len = 0;
+      for (let col = 0; col < n; col++) {
+        if (modules[row][col] === prev) { len++; }
+        else { if (len >= 5) lost += len - 5 + 3; len = 1; prev = modules[row][col]; }
+      }
+      if (len >= 5) lost += len - 5 + 3;
     }
-    printWysiwygBtn.addEventListener('click', printWysiwyg);
-
-    window.addEventListener('afterprint', () => {
-        html.classList.remove('print-wysiwyg');
-        document.querySelector('.announcement-card').style.removeProperty('--print-scale');
-    });
-    imageInput.addEventListener('change', function (e) {
-        const file = e.target.files[0];
-        if (!file) return;
-        const reader = new FileReader();
-        reader.onload = function (event) {
-            let existingImg = imageWrapper.querySelector('img');
-            if (!existingImg) {
-                existingImg = document.createElement('img');
-                imageWrapper.appendChild(existingImg);
-            }
-            existingImg.src = event.target.result;
-            if (imagePlaceholder) imagePlaceholder.style.display = 'none';
-            removeImageBtn.classList.add('visible');
-        };
-        reader.readAsDataURL(file);
-    });
-
-    removeImageBtn.addEventListener('click', (e) => {
-        e.preventDefault();
-        const existingImg = imageWrapper.querySelector('img');
-        if (existingImg) existingImg.remove();
-        imageInput.value = '';
-        if (imagePlaceholder) imagePlaceholder.style.display = '';
-        removeImageBtn.classList.remove('visible');
-    });
-
-    /* ---------- Schedule rows ---------- */
-    function newTranslatable(el, ar, en) {
-        el.dataset.ar = ar;
-        el.dataset.en = en;
-        el.textContent = currentLang === 'ar' ? ar : en;
-        return el;
+    for (let col = 0; col < n; col++) {
+      let prev = modules[0][col], len = 0;
+      for (let row = 0; row < n; row++) {
+        if (modules[row][col] === prev) { len++; }
+        else { if (len >= 5) lost += len - 5 + 3; len = 1; prev = modules[row][col]; }
+      }
+      if (len >= 5) lost += len - 5 + 3;
     }
-
-    function newTranslatableAttrs(el, ar, en, target) {
-        el.dataset.ar = ar;
-        el.dataset.en = en;
-        el.dataset.i18nTarget = target;
-        target.split(',').forEach(t => { t = t.trim(); if (t !== 'text') el.setAttribute(t, currentLang === 'ar' ? ar : en); });
-        return el;
+    for (let row = 0; row < n - 1; row++) {
+      for (let col = 0; col < n - 1; col++) {
+        const c = modules[row][col];
+        if (c === modules[row][col + 1] && c === modules[row + 1][col] && c === modules[row + 1][col + 1]) lost += 3;
+      }
     }
-
-    function createTimePill() {
-        const pill = document.createElement('div');
-        pill.className = 'time-pill';
-        const span = document.createElement('span');
-        span.className = 'time-text';
-        span.contentEditable = 'true';
-        span.spellcheck = false;
-        newTranslatable(span, '12:00 - 1:30 م', '12:00 - 1:30 PM');
-        const btn = document.createElement('button');
-        btn.className = 'remove-time';
-        newTranslatableAttrs(btn, 'حذف الوقت', 'Remove time', 'aria-label,title');
-        btn.textContent = '×';
-        pill.appendChild(span);
-        pill.appendChild(btn);
-        return pill;
+    const shortLen = n - 10;
+    for (let row = 0; row < n; row++) {
+      const r = modules[row];
+      for (let col = 0; col < shortLen; col++) {
+        if (
+          !r[col+1] && r[col+4] && !r[col+5] && r[col+6] && !r[col+9] &&
+          (
+            (r[col+0] && r[col+2] && r[col+3] && !r[col+7] && !r[col+8] && !r[col+10]) ||
+            (!r[col+0] && !r[col+2] && !r[col+3] && r[col+7] && r[col+8] && r[col+10])
+          )
+        ) lost += 40;
+      }
     }
-
-    function createRow() {
-        const row = document.createElement('div');
-        row.className = 'schedule-row';
-
-        const rowTop = document.createElement('div');
-        rowTop.className = 'row-top';
-        const dayName = document.createElement('span');
-        dayName.className = 'day-name';
-        dayName.contentEditable = 'true';
-        dayName.spellcheck = false;
-        newTranslatable(dayName, 'أيام جديدة', 'New days');
-        const delBtn = document.createElement('button');
-        delBtn.className = 'delete-row-btn';
-        newTranslatableAttrs(delBtn, 'حذف المجموعة', 'Delete group', 'aria-label,title');
-        delBtn.textContent = '×';
-        rowTop.appendChild(dayName);
-        rowTop.appendChild(delBtn);
-
-        const timesWrapper = document.createElement('div');
-        timesWrapper.className = 'times-wrapper';
-        timesWrapper.appendChild(createTimePill());
-        const addTimeBtn = document.createElement('button');
-        addTimeBtn.className = 'add-time-btn';
-        newTranslatable(addTimeBtn, '+ إضافة وقت', '+ Add time');
-        timesWrapper.appendChild(addTimeBtn);
-
-        row.appendChild(rowTop);
-        row.appendChild(timesWrapper);
-        return row;
+    for (let col = 0; col < n; col++) {
+      for (let row = 0; row < shortLen; row++) {
+        if (
+          !modules[row+1][col] && modules[row+4][col] && !modules[row+5][col] && modules[row+6][col] && !modules[row+9][col] &&
+          (
+            (modules[row+0][col] && modules[row+2][col] && modules[row+3][col] && !modules[row+7][col] && !modules[row+8][col] && !modules[row+10][col]) ||
+            (!modules[row+0][col] && !modules[row+2][col] && !modules[row+3][col] && modules[row+7][col] && modules[row+8][col] && modules[row+10][col])
+          )
+        ) lost += 40;
+      }
     }
+    let dark = 0;
+    for (let row = 0; row < n; row++) for (let col = 0; col < n; col++) if (modules[row][col]) dark++;
+    const ratio = Math.abs(100 * dark / (n * n) - 50) / 5;
+    lost += Math.floor(ratio) * 10;
+    return lost;
+  }
 
-    function refreshEmptyState() {
-        const hasRows = scheduleGrid.querySelector('.schedule-row');
-        let empty = scheduleGrid.querySelector('.empty-schedule');
-        if (!hasRows && !empty) {
-            empty = document.createElement('div');
-            empty.className = 'empty-schedule';
-            newTranslatable(empty, 'لا توجد مجموعات بعد — أضف أول مجموعة لك', 'No groups yet — add your first one');
-            scheduleGrid.appendChild(empty);
-        } else if (hasRows && empty) {
-            empty.remove();
-        }
+  function encode(text) {
+    const bytes = utf8Bytes(text);
+    const version = chooseVersion(bytes.length);
+    if (!version) throw new Error('Data too long for QR code');
+    const data = createData(version, bytes);
+    let bestMask = 0, bestLoss = Infinity;
+    for (let m = 0; m < 8; m++) {
+      const loss = lostPoint(buildMatrix(version, m, data, true));
+      if (loss < bestLoss) { bestLoss = loss; bestMask = m; }
     }
+    const modules = buildMatrix(version, bestMask, data, false);
+    return { version, size: version * 4 + 17, modules, mask: bestMask };
+  }
 
-    addDayBtn.addEventListener('click', () => {
-        const empty = scheduleGrid.querySelector('.empty-schedule');
-        if (empty) empty.remove();
-        scheduleGrid.appendChild(createRow());
-    });
-
-    function focusAndSelect(el) {
-        el.focus();
-        const range = document.createRange();
-        range.selectNodeContents(el);
-        const sel = window.getSelection();
-        sel.removeAllRanges();
-        sel.addRange(range);
-    }
-    function showToast(message, withUndo) {
-        clearTimeout(toastTimer);
-        toastMessage.textContent = message;
-        toastUndoBtn.style.display = withUndo ? 'inline' : 'none';
-        toast.classList.add('visible');
-        toastTimer = setTimeout(() => { toast.classList.remove('visible'); }, withUndo ? 5000 : 1800);
-    }
-
-    function removeWithUndo(el, container) {
-        const parent = el.parentNode;
-        const nextSibling = el.nextSibling;
-        el.classList.add('removing');
-        clearTimeout(undoTimer);
-        setTimeout(() => {
-            if (el.parentNode) el.remove();
-            if (container === scheduleGrid) refreshEmptyState();
-        }, 350);
-        pendingUndo = { el, parent, nextSibling, container };
-        const msg = currentLang === 'ar' ? 'تم الحذف' : 'Deleted';
-        showToast(msg, true);
-        undoTimer = setTimeout(() => { pendingUndo = null; }, 5000);
-    }
-
-    toastUndoBtn.addEventListener('click', () => {
-        if (!pendingUndo) return;
-        const { el, parent, nextSibling, container } = pendingUndo;
-        el.classList.remove('removing');
-        parent.insertBefore(el, nextSibling);
-        if (container === scheduleGrid) refreshEmptyState();
-        pendingUndo = null;
-        clearTimeout(undoTimer);
-        toast.classList.remove('visible');
-    });
-
-    scheduleGrid.addEventListener('click', (e) => {
-        if (e.target.classList.contains('delete-row-btn')) {
-            const row = e.target.closest('.schedule-row');
-            if (row) removeWithUndo(row, scheduleGrid);
-        }
-        if (e.target.classList.contains('remove-time')) {
-            const pill = e.target.closest('.time-pill');
-            if (pill) removeWithUndo(pill, pill.closest('.times-wrapper'));
-        }
-        if (e.target.classList.contains('add-time-btn')) {
-            const wrapper = e.target.closest('.times-wrapper');
-            const newPill = createTimePill();
-            wrapper.insertBefore(newPill, e.target);
-            focusAndSelect(newPill.querySelector('.time-text'));
-        }
-    });
-    copyPhoneBtn.addEventListener('click', async () => {
-        const phoneText = document.querySelector('.phone-editable').textContent.trim();
-        try {
-            await navigator.clipboard.writeText(phoneText);
-        } catch (err) {
-            const temp = document.createElement('textarea');
-            temp.value = phoneText;
-            document.body.appendChild(temp);
-            temp.select();
-            document.execCommand('copy');
-            document.body.removeChild(temp);
-        }
-        showToast(currentLang === 'ar' ? 'تم نسخ الرقم' : 'Number copied', false);
-    });
-
-    document.addEventListener('keydown', (e) => {
-        if (e.key === 'Enter' && e.target.isContentEditable && !e.shiftKey) {
-            e.preventDefault();
-            e.target.blur();
-        }
-    });
-    try {
-        const savedTheme = localStorage.getItem('hio-theme');
-        if (savedTheme) setTheme(savedTheme);
-    } catch (err) {}
-
-    try {
-        const savedLang = localStorage.getItem('hio-lang');
-        if (savedLang === 'en') setLanguage('en');
-    } catch (err) {}
-
-    syncPrintHeader();
-    refreshEmptyState();
+  return { encode };
 })();
+
+function qrSvg(text){
+  if (!text) return '';
+  let q;
+  try { q = QR.encode(text); } catch(e){ return ''; }
+  const quiet = 4;
+  const dim = q.size + quiet * 2;
+  let rects = '';
+  for (let y = 0; y < q.size; y++){
+    let x = 0;
+    while (x < q.size){
+      if (q.modules[y][x]){
+        let x2 = x;
+        while (x2 < q.size && q.modules[y][x2]) x2++;
+        rects += `<rect x="${x + quiet}" y="${y + quiet}" width="${x2 - x}" height="1"/>`;
+        x = x2;
+      } else x++;
+    }
+  }
+  return `<svg viewBox="0 0 ${dim} ${dim}" xmlns="http://www.w3.org/2000/svg" shape-rendering="crispEdges"><rect width="${dim}" height="${dim}" fill="#fff"/><g fill="#000">${rects}</g></svg>`;
+}
+
+function base64UrlEncode(bytes){
+  let binary = '';
+  bytes.forEach(b => { binary += String.fromCharCode(b); });
+  return btoa(binary).replace(/\+/g, '-').replace(/\//g, '_').replace(/=+$/, '');
+}
+function base64UrlDecode(str){
+  str = str.replace(/-/g, '+').replace(/_/g, '/');
+  while (str.length % 4) str += '=';
+  const binary = atob(str);
+  const bytes = new Uint8Array(binary.length);
+  for (let i = 0; i < binary.length; i++) bytes[i] = binary.charCodeAt(i);
+  return bytes;
+}
+async function compressState(state){
+  const bytes = new TextEncoder().encode(JSON.stringify(state));
+  const cs = new CompressionStream('deflate-raw');
+  const writer = cs.writable.getWriter();
+  writer.write(bytes); writer.close();
+  const buf = await new Response(cs.readable).arrayBuffer();
+  return base64UrlEncode(new Uint8Array(buf));
+}
+async function decompressState(str){
+  const bytes = base64UrlDecode(str);
+  const ds = new DecompressionStream('deflate-raw');
+  const writer = ds.writable.getWriter();
+  writer.write(bytes); writer.close();
+  const buf = await new Response(ds.readable).arrayBuffer();
+  const json = new TextDecoder().decode(buf);
+  const normalized = normalize(JSON.parse(json));
+  if (normalized) return normalized;
+  throw new Error('bad state');
+}
+
+const PAPER_MM = {
+  A4: { w: 210, h: 297 },
+  A5: { w: 148, h: 210 },
+  Letter: { w: 215.9, h: 279.4 }
+};
+const MARGIN_MM = { normal: 14, narrow: 8, none: 0 };
+
+function pageDimsMm(paper, orientation){
+  const base = PAPER_MM[paper] || PAPER_MM.A4;
+  return orientation === 'landscape' ? { w: base.h, h: base.w } : { w: base.w, h: base.h };
+}
+
+function injectPageRules(paper, orientation){
+  const dims = pageDimsMm(paper, orientation);
+  const styleEl = document.getElementById('pageRules');
+  styleEl.textContent = `@page { size: ${dims.w}mm ${dims.h}mm; margin: 0; }`;
+}
+
+function fitToPage(scaleTargetEl, measureEl, minScale, maxScale, availableHeightPx){
+  let lo = minScale, hi = maxScale, best = minScale;
+  for (let i = 0; i < 8; i++){
+    const mid = (lo + hi) / 2;
+    scaleTargetEl.style.setProperty('--type-scale', mid.toFixed(3));
+    const h = measureEl.scrollHeight;
+    if (h <= availableHeightPx){ best = mid; lo = mid; }
+    else { hi = mid; }
+  }
+  scaleTargetEl.style.setProperty('--type-scale', best.toFixed(3));
+  return best;
+}
+
+function makePageEl(state, widthMm, heightMm){
+  const el = document.createElement('div');
+  el.className = 'pv-page';
+  el.dataset.ink = state.print.ink;
+  el.dataset.theme = state.theme;
+  el.style.width = widthMm + 'mm';
+  el.style.height = heightMm + 'mm';
+  el.style.setProperty('--pg-margin', MARGIN_MM[state.print.margin] + 'mm');
+  el.dir = state.dir;
+  el.lang = state.lang;
+  return el;
+}
+
+function headerStripHtml(state){
+  const L = LABELS[state.lang];
+  const share = primaryShareUrl(state);
+  return `<div class="pp-header-strip">
+    <b>${escapeHtml(state.profile.name)}</b>
+    <bdi class="tabular">${share ? escapeHtml(state.contacts.find(c=>contactHref(c.type,c.value))?.value || '') : ''}</bdi>
+  </div>`;
+}
+function footerStripHtml(state){
+  return `<div class="pp-footer-strip">${escapeHtml(state.footer.text)}</div>`;
+}
+
+function groupBlockHtml(state, g){
+  const L = LABELS[state.lang];
+  return `<div class="group-block">
+    <div class="group-head"><span class="group-label">${escapeHtml(g.label)}</span></div>
+    <div class="slot-list">
+      ${g.slots.map(s => `
+        <div class="slot-pill">
+          <bdi class="slot-time tabular">${escapeHtml(formatTimeRange(s.from, s.to, state.timeFormat, state.numerals, state.lang))}</bdi>
+          ${s.note ? `<span class="slot-note">${escapeHtml(s.note)}</span>` : ''}
+          ${s.full ? `<span class="slot-full">${escapeHtml(L.full)}</span>` : ''}
+        </div>
+      `).join('')}
+    </div>
+  </div>`;
+}
+
+function posterCardHtml(state){
+  const L = LABELS[state.lang];
+  const shareUrl = primaryShareUrl(state);
+  return `<div class="sheet-card">
+    <span class="sheet-eyebrow">${escapeHtml(state.profile.eyebrow)}</span>
+    <div class="sheet-profile">
+      ${safePhotoSrc(state.profile.photo) ? `<div class="profile-photo"><img src="${escapeHtml(safePhotoSrc(state.profile.photo))}" alt=""></div>` : ''}
+      <div class="profile-text">
+        <span class="profile-name">${escapeHtml(state.profile.name)}</span>
+        <span class="profile-subtitle">${escapeHtml(state.profile.subtitle)}</span>
+      </div>
+    </div>
+    <div class="sheet-headline">
+      ${state.headline.badge ? `<span class="headline-badge">${escapeHtml(state.headline.badge)}</span>` : ''}
+      <span class="headline-title">${escapeHtml(state.headline.title)}</span>
+      ${state.headline.note ? `<span class="headline-note">${escapeHtml(state.headline.note)}</span>` : ''}
+    </div>
+    <div class="sheet-groups">${state.groups.map(g => groupBlockHtml(state, g)).join('')}</div>
+    <div class="sheet-contacts">${state.contacts.filter(c=>c.value.trim()).map(c => `
+      <span class="contact-chip"><svg class="icon-sm"><use href="#i-${contactIcon(c.type)}"></use></svg><bdi class="tabular">${escapeHtml(c.value)}</bdi></span>
+    `).join('')}</div>
+    <div class="sheet-footer">
+      ${state.footer.text ? `<span class="footer-text">${escapeHtml(state.footer.text)}</span>` : ''}
+      ${state.footer.showQr && shareUrl ? `<div class="footer-qr" style="width:30mm;height:30mm">${qrSvg(shareUrl)}</div>` : ''}
+    </div>
+  </div>`;
+}
+
+function mountOffscreenForMeasure(el){
+  el.style.position = 'fixed';
+  el.style.left = '-99999px';
+  el.style.top = '0';
+  document.body.appendChild(el);
+}
+function unmountAfterMeasure(el){
+  document.body.removeChild(el);
+  el.style.position = '';
+  el.style.left = '';
+  el.style.top = '';
+}
+
+function cropMarksSvg(wMm, hMm){
+  const m = 4, len = 6;
+  const lines = [
+    `M${m},0 L${m},${len}`, `M0,${m} L${len},${m}`,
+    `M${wMm - m},0 L${wMm - m},${len}`, `M${wMm - len},${m} L${wMm},${m}`,
+    `M${m},${hMm - len} L${m},${hMm}`, `M0,${hMm - m} L${len},${hMm - m}`,
+    `M${wMm - m},${hMm - len} L${wMm - m},${hMm}`, `M${wMm - len},${hMm - m} L${wMm},${hMm - m}`
+  ];
+  return `<svg viewBox="0 0 ${wMm} ${hMm}" xmlns="http://www.w3.org/2000/svg" style="position:absolute;inset:0;width:100%;height:100%;pointer-events:none;">
+    <path d="${lines.join(' ')}" stroke="#000" stroke-width=".25" fill="none"/>
+  </svg>`;
+}
+
+function buildPosterPages(state, dims){
+  const page = makePageEl(state, dims.w, dims.h);
+  const inner = document.createElement('div');
+  inner.className = 'pp-inner pp-poster-body';
+  inner.innerHTML = posterCardHtml(state);
+  page.appendChild(inner);
+  if (state.print.cropMarks) page.insertAdjacentHTML('beforeend', cropMarksSvg(dims.w, dims.h));
+  mountOffscreenForMeasure(page);
+  const card = inner.querySelector('.sheet-card');
+  const marginPx = mmToPx(MARGIN_MM[state.print.margin]);
+  const availPx = mmToPx(dims.h) - marginPx * 2;
+  fitToPage(inner, card, 0.72, 1.0, availPx);
+  unmountAfterMeasure(page);
+  return [page];
+}
+
+function buildSheetPages(state, dims){
+  const marginPx = mmToPx(MARGIN_MM[state.print.margin]);
+  const availPx = mmToPx(dims.h) - marginPx * 2;
+  const contentWidthPx = mmToPx(dims.w) - marginPx * 2;
+
+  const probe = document.createElement('div');
+  probe.className = 'pp-inner pp-sheet-body';
+  probe.style.position = 'fixed';
+  probe.style.left = '-9999px';
+  probe.style.width = contentWidthPx + 'px';
+  probe.style.setProperty('--type-scale', '1');
+  document.body.appendChild(probe);
+
+  probe.innerHTML = headerStripHtml(state);
+  const headerH = probe.scrollHeight;
+  probe.innerHTML = footerStripHtml(state);
+  const footerH = probe.scrollHeight;
+
+  const groupHeights = state.groups.map(g => {
+    probe.innerHTML = groupBlockHtml(state, g);
+    return probe.scrollHeight;
+  });
+  document.body.removeChild(probe);
+
+  const pagesGroups = [];
+  let cur = [], curH = headerH + footerH;
+  state.groups.forEach((g, i) => {
+    const h = groupHeights[i] + 12;
+    if (cur.length && curH + h > availPx){ pagesGroups.push(cur); cur = []; curH = headerH + footerH; }
+    cur.push(g); curH += h;
+  });
+  if (cur.length) pagesGroups.push(cur);
+  if (!pagesGroups.length) pagesGroups.push([]);
+
+  return pagesGroups.map(groupList => {
+    const page = makePageEl(state, dims.w, dims.h);
+    const inner = document.createElement('div');
+    inner.className = 'pp-inner pp-sheet-body';
+    inner.innerHTML = headerStripHtml(state) +
+      `<div class="sheet-groups">${groupList.map(g => groupBlockHtml(state, g)).join('')}</div>` +
+      footerStripHtml(state);
+    page.appendChild(inner);
+    return page;
+  });
+}
+
+function miniCardHtml(state){
+  const L = LABELS[state.lang];
+  const shareUrl = primaryShareUrl(state);
+  const lines = state.groups.map(g => {
+    const times = g.slots.map(s => formatTimeRange(s.from, s.to, state.timeFormat, state.numerals, state.lang)).join(' / ');
+    return `<div class="mini-line"><b>${escapeHtml(g.label)}</b> <bdi class="tabular">${escapeHtml(times)}</bdi></div>`;
+  }).join('');
+  const contactLine = state.contacts.find(c => c.value.trim());
+  return `
+    <div class="mini-name">${escapeHtml(state.profile.name)}</div>
+    ${state.profile.subtitle ? `<div class="mini-sub">${escapeHtml(state.profile.subtitle)}</div>` : ''}
+    ${lines}
+    ${contactLine ? `<div class="mini-line"><bdi class="tabular">${escapeHtml(contactLine.value)}</bdi></div>` : ''}
+    ${state.footer.showQr && shareUrl ? `<div class="mini-qr">${qrSvg(shareUrl)}</div>` : ''}
+  `;
+}
+
+function buildCardsPages(state, dims){
+  const n = state.print.nUp;
+  const cols = 2;
+  const rows = Math.ceil(n / cols);
+  const marginPx = mmToPx(MARGIN_MM[state.print.margin]);
+  const availH = mmToPx(dims.h) - marginPx * 2;
+
+  const page = makePageEl(state, dims.w, dims.h);
+  const inner = document.createElement('div');
+  inner.className = 'pp-inner';
+  const grid = document.createElement('div');
+  grid.className = 'pp-cards-grid';
+  grid.style.gridTemplateColumns = `repeat(${cols}, 1fr)`;
+  grid.style.gridTemplateRows = `repeat(${rows}, 1fr)`;
+  const cellInners = [];
+  for (let i = 0; i < n; i++){
+    const cell = document.createElement('div');
+    cell.className = 'pp-card-cell';
+    const cellInner = document.createElement('div');
+    cellInner.className = 'pp-card-inner';
+    cellInner.innerHTML = miniCardHtml(state);
+    cell.appendChild(cellInner);
+    grid.appendChild(cell);
+    cellInners.push(cellInner);
+  }
+  inner.appendChild(grid);
+  page.appendChild(inner);
+  mountOffscreenForMeasure(page);
+  const cellPaddingPx = mmToPx(12);
+  const cellAvailH = availH / rows - cellPaddingPx;
+  fitToPage(grid, cellInners[0], 0.5, 1.3, cellAvailH);
+  unmountAfterMeasure(page);
+  return [page];
+}
+
+function currentDims(){ return pageDimsMm(state.print.paper, state.print.orientation); }
+
+function buildRuler(dims){
+  const top = document.getElementById('rulerTop');
+  const side = document.getElementById('rulerSide');
+  top.innerHTML = ''; side.innerHTML = '';
+  top.style.width = dims.w + 'mm';
+  side.style.height = dims.h + 'mm';
+  for (let mm = 0; mm <= dims.w; mm += 10){
+    const major = mm % 50 === 0;
+    const tick = document.createElement('div');
+    tick.className = 'ruler-tick' + (major ? ' major' : '');
+    Object.assign(tick.style, { left: mm + 'mm', bottom: '0', width: '0.6px', height: major ? '5mm' : '2.5mm' });
+    top.appendChild(tick);
+    if (major && mm > 0){
+      const label = document.createElement('div');
+      label.className = 'ruler-label';
+      Object.assign(label.style, { left: (mm - 3) + 'mm', top: '0' });
+      label.textContent = String(mm / 10);
+      top.appendChild(label);
+    }
+  }
+  for (let mm = 0; mm <= dims.h; mm += 10){
+    const major = mm % 50 === 0;
+    const tick = document.createElement('div');
+    tick.className = 'ruler-tick' + (major ? ' major' : '');
+    tick.style.top = mm + 'mm';
+    tick.style.insetInlineEnd = '0';
+    tick.style.height = '0.6px';
+    tick.style.width = major ? '5mm' : '2.5mm';
+    side.appendChild(tick);
+  }
+}
+
+function updatePreviewFieldVisibility(){
+  const mode = state.print.mode;
+  const L = LABELS[state.lang];
+  document.getElementById('paperField').hidden = mode === 'image';
+  document.getElementById('orientationField').hidden = mode === 'image';
+  document.getElementById('marginField').hidden = mode === 'image';
+  document.getElementById('nUpField').hidden = mode !== 'cards';
+  document.getElementById('imageSizeField').hidden = mode !== 'image';
+  document.getElementById('bleedField').hidden = mode !== 'poster';
+  document.getElementById('commitPrintLabel').textContent = mode === 'image' ? L.downloadImage : L.print;
+}
+
+function renderPreview(){
+  const dims = currentDims();
+  injectPageRules(state.print.paper, state.print.orientation);
+  const container = document.getElementById('previewPages');
+  container.innerHTML = '';
+
+  if (state.print.mode === 'image'){
+    document.getElementById('pvGrid').hidden = true;
+    const canvas = document.getElementById('imagePreviewCanvas');
+    canvas.hidden = false;
+    const size = state.print.imageSize === 'story' ? { w: 1080, h: 1920 } : { w: 1080, h: 1080 };
+    drawShareImage(canvas, state, size);
+    document.getElementById('pageCountLabel').textContent = '';
+    updatePreviewFieldVisibility();
+    return;
+  }
+  document.getElementById('imagePreviewCanvas').hidden = true;
+  document.getElementById('pvGrid').hidden = false;
+
+  let pages = [];
+  if (state.print.mode === 'poster') pages = buildPosterPages(state, dims);
+  else if (state.print.mode === 'sheet') pages = buildSheetPages(state, dims);
+  else if (state.print.mode === 'cards') pages = buildCardsPages(state, dims);
+  pages.forEach(p => container.appendChild(p));
+  buildRuler(dims);
+
+  const L = LABELS[state.lang];
+  document.getElementById('pageCountLabel').textContent = L.pageCount(pages.length);
+  updatePreviewFieldVisibility();
+}
+
+function wrapCanvasText(ctx, text, x, y, maxWidth, lineHeight){
+  const words = String(text || '').split(' ').filter(Boolean);
+  let line = '';
+  const lines = [];
+  words.forEach(w => {
+    const test = line ? line + ' ' + w : w;
+    if (ctx.measureText(test).width > maxWidth && line){ lines.push(line); line = w; }
+    else line = test;
+  });
+  if (line) lines.push(line);
+  lines.forEach((l, i) => ctx.fillText(l, x, y + i * lineHeight));
+  return lines.length;
+}
+
+function drawQrToCanvas(ctx, text, x, y, size){
+  let q;
+  try { q = QR.encode(text); } catch(e){ return; }
+  const quiet = 4;
+  const dim = q.size + quiet * 2;
+  const cell = size / dim;
+  ctx.fillStyle = '#fff'; ctx.fillRect(x, y, size, size);
+  ctx.fillStyle = '#000';
+  for (let ry = 0; ry < q.size; ry++) for (let rx = 0; rx < q.size; rx++){
+    if (q.modules[ry][rx]) ctx.fillRect(x + (rx + quiet) * cell, y + (ry + quiet) * cell, cell + 0.5, cell + 0.5);
+  }
+}
+
+const THEME_RAW = {
+  classic: { bg: '#F3EEE7', text: '#2B2620', accent: '#C2603C' },
+  modern:  { bg: '#EDF3F1', text: '#122420', accent: '#0B6B5C' },
+  gazette: { bg: '#EDE9DD', text: '#231F1B', accent: '#8B1E1E' },
+  luxury:  { bg: '#0a0906', text: '#F3EEDF', accent: '#C9A227' }
+};
+
+function drawShareImage(canvas, state, size){
+  canvas.width = size.w; canvas.height = size.h;
+  const ctx = canvas.getContext('2d');
+  ctx.direction = state.dir;
+  const c = THEME_RAW[state.theme] || THEME_RAW.classic;
+
+  ctx.fillStyle = c.bg; ctx.fillRect(0, 0, size.w, size.h);
+  const pad = size.w * 0.1;
+  const xCenter = size.w / 2;
+  let y = pad + 30;
+  ctx.textAlign = 'center';
+
+  if (state.profile.eyebrow){
+    ctx.fillStyle = c.accent; ctx.font = '700 26px sans-serif';
+    ctx.fillText(state.profile.eyebrow, xCenter, y); y += 56;
+  }
+  if (state.profile.name){
+    ctx.fillStyle = c.text; ctx.font = '700 54px serif';
+    y += wrapCanvasText(ctx, state.profile.name, xCenter, y, size.w - pad * 2, 60) * 60 + 20;
+  }
+  if (state.headline.title){
+    ctx.fillStyle = c.accent; ctx.font = '400 30px sans-serif';
+    y += wrapCanvasText(ctx, state.headline.title, xCenter, y, size.w - pad * 2, 38) * 38 + 30;
+  }
+  ctx.fillStyle = c.text; ctx.font = '400 25px sans-serif';
+  state.groups.forEach(g => {
+    const line = g.label + ':  ' + g.slots.map(s => formatTimeRange(s.from, s.to, state.timeFormat, state.numerals, state.lang)).join(' / ');
+    y += wrapCanvasText(ctx, line, xCenter, y, size.w - pad * 2, 34) * 34 + 10;
+  });
+
+  const shareUrl = state.footer.showQr ? primaryShareUrl(state) : '';
+  if (shareUrl) drawQrToCanvas(ctx, shareUrl, xCenter - 90, size.h - pad - 190, 180);
+}
+
+function exportImage(){
+  const size = state.print.imageSize === 'story' ? { w: 1080, h: 1920 } : { w: 1080, h: 1080 };
+  const canvas = document.getElementById('workCanvas');
+  drawShareImage(canvas, state, size);
+  canvas.toBlob(blob => {
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url; a.download = 'sheet.png';
+    document.body.appendChild(a); a.click(); document.body.removeChild(a);
+    setTimeout(() => URL.revokeObjectURL(url), 4000);
+  }, 'image/png');
+}
+
+function toast(msg){
+  const host = document.getElementById('toastHost');
+  const el = document.createElement('div');
+  el.className = 'toast';
+  el.textContent = msg;
+  host.appendChild(el);
+  requestAnimationFrame(() => el.classList.add('show'));
+  setTimeout(() => { el.classList.remove('show'); setTimeout(() => el.remove(), 300); }, 2200);
+}
+
+function applyI18n(){
+  const L = LABELS[state.lang];
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    const v = L[el.dataset.i18n];
+    if (typeof v === 'string') el.textContent = v;
+  });
+  document.querySelectorAll('[data-i18n-title]').forEach(el => {
+    const v = L[el.dataset.i18nTitle];
+    if (typeof v === 'string') el.title = v;
+  });
+  document.getElementById('brandLabel').textContent = L.appTitle;
+  document.title = L.appTitle;
+}
+
+function buildThemeSwatches(){
+  const group = document.getElementById('themeGroup');
+  group.innerHTML = THEMES.map(th => {
+    const c = THEME_RAW[th];
+    return `<button type="button" class="theme-swatch" data-theme="${th}" style="--sw-bg:${c.bg};--sw-accent:${c.accent}" title="${th}" aria-pressed="false"></button>`;
+  }).join('');
+}
+
+function buildPresetSelect(){
+  const sel = document.getElementById('presetSelect');
+  sel.innerHTML = Object.keys(PRESETS).map(key =>
+    `<option value="${key}">${escapeHtml(PRESETS[key].label[state.lang])}</option>`
+  ).join('');
+  sel.value = state.preset;
+  const iconUse = document.querySelector('#presetIcon use');
+  if (iconUse) iconUse.setAttribute('href', '#' + (PRESETS[state.preset].icon || 'i-calendar'));
+}
+
+function applyDocAttrs(){
+  const html = document.documentElement;
+  html.lang = state.lang;
+  html.dir = state.dir;
+  html.dataset.theme = state.theme;
+  const meta = document.querySelector('meta[name="theme-color"]');
+  if (meta) meta.setAttribute('content', THEME_RAW[state.theme].accent);
+}
+
+function refreshToolbar(){
+  document.getElementById('undoBtn').disabled = !EditHistory.canUndo();
+  document.getElementById('redoBtn').disabled = !EditHistory.canRedo();
+  document.getElementById('numeralGlyph').textContent = state.numerals === 'arabic' ? '١٢' : '12';
+  document.querySelectorAll('.theme-swatch').forEach(sw =>
+    sw.setAttribute('aria-pressed', sw.dataset.theme === state.theme ? 'true' : 'false')
+  );
+  buildPresetSelect();
+  applyI18n();
+  applyDocAttrs();
+}
+
+function roundRect(ctx, x, y, w, h, r){
+  ctx.beginPath();
+  ctx.moveTo(x + r, y);
+  ctx.arcTo(x + w, y, x + w, y + h, r);
+  ctx.arcTo(x + w, y + h, x, y + h, r);
+  ctx.arcTo(x, y + h, x, y, r);
+  ctx.arcTo(x, y, x + w, y, r);
+  ctx.closePath();
+}
+
+function setupManifestAndIcons(){
+  try {
+    const manifest = {
+      name: LABELS[state.lang].appTitle, short_name: LABELS[state.lang].appTitle,
+      start_url: '.', display: 'standalone',
+      background_color: THEME_RAW.classic.bg, theme_color: THEME_RAW[state.theme].accent,
+      icons: []
+    };
+    const c = document.createElement('canvas');
+    c.width = 180; c.height = 180;
+    const ctx = c.getContext('2d');
+    ctx.fillStyle = THEME_RAW.classic.bg; ctx.fillRect(0, 0, 180, 180);
+    ctx.strokeStyle = '#2B2620'; ctx.lineWidth = 9; ctx.lineCap = 'round'; ctx.lineJoin = 'round';
+    roundRect(ctx, 22, 34, 136, 122, 26); ctx.stroke();
+    ctx.beginPath(); ctx.moveTo(22, 66); ctx.lineTo(158, 66); ctx.stroke();
+    ctx.beginPath(); ctx.moveTo(58, 18); ctx.lineTo(58, 42); ctx.stroke();
+    ctx.beginPath(); ctx.moveTo(122, 18); ctx.lineTo(122, 42); ctx.stroke();
+    ctx.beginPath(); ctx.arc(90, 118, 28, 0, Math.PI * 2); ctx.stroke();
+    ctx.beginPath(); ctx.moveTo(90, 104); ctx.lineTo(90, 118); ctx.lineTo(101, 126); ctx.stroke();
+    document.getElementById('appleTouchIcon').setAttribute('href', c.toDataURL('image/png'));
+
+    const manifestJson = JSON.stringify(manifest);
+    document.getElementById('manifestLink').setAttribute('href', 'data:application/manifest+json,' + encodeURIComponent(manifestJson));
+  } catch(e){ /* manifest/icon generation is a non-critical enhancement */ }
+}
+
+function wireToolbar(){
+  document.getElementById('themeGroup').addEventListener('click', e => {
+    const btn = e.target.closest('.theme-swatch');
+    if (!btn) return;
+    state.theme = btn.dataset.theme;
+    EditHistory.commit(state); persistLive(); refreshToolbar();
+  });
+
+  document.getElementById('presetSelect').addEventListener('change', e => {
+    applyPreset(state, e.target.value);
+    structuralChange();
+  });
+
+  document.getElementById('langBtn').addEventListener('click', () => {
+    state.lang = state.lang === 'ar' ? 'en' : 'ar';
+    state.dir = state.lang === 'ar' ? 'rtl' : 'ltr';
+    render(state);
+    EditHistory.commit(state); persistLive(); refreshToolbar();
+  });
+
+  document.getElementById('numeralBtn').addEventListener('click', () => {
+    state.numerals = state.numerals === 'arabic' ? 'latin' : 'arabic';
+    EditHistory.commit(state); persistLive(); refreshToolbar();
+  });
+
+  document.getElementById('undoBtn').addEventListener('click', () => {
+    const s = EditHistory.undo();
+    if (s){ state = applyHistoryState(s, state.profile.photo); render(state); saveStateDebounced(state); refreshToolbar(); }
+  });
+  document.getElementById('redoBtn').addEventListener('click', () => {
+    const s = EditHistory.redo();
+    if (s){ state = applyHistoryState(s, state.profile.photo); render(state); saveStateDebounced(state); refreshToolbar(); }
+  });
+  window.addEventListener('keydown', e => {
+    const meta = e.ctrlKey || e.metaKey;
+    if (meta && e.key.toLowerCase() === 'z'){
+      e.preventDefault();
+      const s = e.shiftKey ? EditHistory.redo() : EditHistory.undo();
+      if (s){ state = applyHistoryState(s, state.profile.photo); render(state); saveStateDebounced(state); refreshToolbar(); }
+    } else if (meta && e.key.toLowerCase() === 'y'){
+      e.preventDefault();
+      const s = EditHistory.redo();
+      if (s){ state = applyHistoryState(s, state.profile.photo); render(state); saveStateDebounced(state); refreshToolbar(); }
+    }
+  });
+
+  document.getElementById('importBtn').addEventListener('click', () => document.getElementById('importFile').click());
+  document.getElementById('importFile').addEventListener('change', e => {
+    const file = e.target.files && e.target.files[0];
+    if (!file) return;
+    const reader = new FileReader();
+    reader.onload = () => {
+      try {
+        const normalized = normalize(JSON.parse(reader.result));
+        if (!normalized) throw new Error('bad');
+        state = normalized;
+        EditHistory.init(state);
+        render(state); saveStateDebounced(state); refreshToolbar();
+        toast(t('toastImported'));
+      } catch(err){ toast(t('invalidFile')); }
+    };
+    reader.readAsText(file);
+    e.target.value = '';
+  });
+
+  document.getElementById('exportBtn').addEventListener('click', () => {
+    const blob = new Blob([JSON.stringify(state, null, 2)], { type: 'application/json' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url; a.download = 'sheet.json';
+    document.body.appendChild(a); a.click(); document.body.removeChild(a);
+    setTimeout(() => URL.revokeObjectURL(url), 4000);
+  });
+
+  document.getElementById('shareBtn').addEventListener('click', async () => {
+    try {
+      const shareState = JSON.parse(JSON.stringify(state));
+      const hadPhoto = !!shareState.profile.photo;
+      shareState.profile.photo = null;
+      const compressed = await compressState(shareState);
+      const url = location.origin + location.pathname + '#' + compressed;
+      if (navigator.clipboard && navigator.clipboard.writeText){
+        await navigator.clipboard.writeText(url);
+      } else {
+        const ta = document.createElement('textarea');
+        ta.value = url; ta.style.position = 'fixed'; ta.style.opacity = '0';
+        document.body.appendChild(ta); ta.select();
+        document.execCommand('copy'); document.body.removeChild(ta);
+      }
+      toast(hadPhoto ? LABELS[state.lang].toastShareTooLarge : LABELS[state.lang].toastCopied);
+    } catch(e){ toast(t('toastShareFailed')); }
+  });
+
+  let lastFocusedBeforeDialog = null;
+  function openPrintPreview(){
+    lastFocusedBeforeDialog = document.activeElement;
+    document.getElementById('printPreview').hidden = false;
+    document.getElementById('printModeSelect').value = state.print.mode;
+    document.getElementById('paperSelect').value = state.print.paper;
+    document.getElementById('orientationSelect').value = state.print.orientation;
+    document.getElementById('marginSelect').value = state.print.margin;
+    document.getElementById('nUpSelect').value = String(state.print.nUp);
+    document.getElementById('imageSizeSelect').value = state.print.imageSize;
+    document.getElementById('inkSaverToggle').checked = state.print.ink === 'saver';
+    document.getElementById('bleedToggle').checked = !!state.print.cropMarks;
+    document.getElementById('showQrToggle').checked = state.footer.showQr;
+    document.getElementById('timeFormatToggle').checked = state.timeFormat === '12h';
+    renderPreview();
+    document.getElementById('closePreviewBtn').focus();
+  }
+  function closePrintPreview(){
+    document.getElementById('printPreview').hidden = true;
+    if (lastFocusedBeforeDialog && document.body.contains(lastFocusedBeforeDialog)) lastFocusedBeforeDialog.focus();
+    lastFocusedBeforeDialog = null;
+  }
+  document.getElementById('printBtn').addEventListener('click', openPrintPreview);
+  document.getElementById('closePreviewBtn').addEventListener('click', closePrintPreview);
+  document.getElementById('printPreview').addEventListener('click', e => {
+    if (e.target.id === 'printPreview') closePrintPreview();
+  });
+  window.addEventListener('keydown', e => {
+    const dialog = document.getElementById('printPreview');
+    if (dialog.hidden) return;
+    if (e.key === 'Escape'){ closePrintPreview(); return; }
+    if (e.key === 'Tab'){
+      const focusable = Array.from(dialog.querySelectorAll('button, a[href], input, select, textarea, [tabindex]:not([tabindex="-1"])'))
+        .filter(el => !el.disabled && el.offsetParent !== null);
+      if (!focusable.length) return;
+      const first = focusable[0], last = focusable[focusable.length - 1];
+      if (e.shiftKey && document.activeElement === first){ e.preventDefault(); last.focus(); }
+      else if (!e.shiftKey && document.activeElement === last){ e.preventDefault(); first.focus(); }
+    }
+  });
+
+  document.getElementById('startOverBtn').addEventListener('click', () => {
+    if (!confirm(LABELS[state.lang].confirmStartOver)) return;
+    state = defaultState(state.preset, state.lang);
+    EditHistory.init(state);
+    render(state); saveStateDebounced(state); refreshToolbar();
+    toast(LABELS[state.lang].toastStartOver);
+  });
+
+  const pc = id => document.getElementById(id);
+  pc('printModeSelect').addEventListener('change', e => { state.print.mode = e.target.value; persistLive(); renderPreview(); });
+  pc('paperSelect').addEventListener('change', e => { state.print.paper = e.target.value; persistLive(); renderPreview(); });
+  pc('orientationSelect').addEventListener('change', e => { state.print.orientation = e.target.value; persistLive(); renderPreview(); });
+  pc('marginSelect').addEventListener('change', e => { state.print.margin = e.target.value; persistLive(); renderPreview(); });
+  pc('nUpSelect').addEventListener('change', e => { state.print.nUp = +e.target.value; persistLive(); renderPreview(); });
+  pc('imageSizeSelect').addEventListener('change', e => { state.print.imageSize = e.target.value; persistLive(); renderPreview(); });
+  pc('inkSaverToggle').addEventListener('change', e => { state.print.ink = e.target.checked ? 'saver' : 'color'; persistLive(); renderPreview(); });
+  pc('showQrToggle').addEventListener('change', e => { state.footer.showQr = e.target.checked; EditHistory.commit(state); persistLive(); renderPreview(); });
+  pc('timeFormatToggle').addEventListener('change', e => { state.timeFormat = e.target.checked ? '12h' : '24h'; EditHistory.commit(state); persistLive(); renderPreview(); });
+  pc('bleedToggle').addEventListener('change', e => { state.print.cropMarks = e.target.checked; persistLive(); renderPreview(); });
+
+  document.getElementById('commitPrintBtn').addEventListener('click', () => {
+    if (state.print.mode === 'image') exportImage();
+    else window.print();
+  });
+}
+
+async function init(){
+  buildThemeSwatches();
+  wireSheetRoot();
+  wireToolbar();
+
+  let loaded = null;
+  if (location.hash && location.hash.length > 1){
+    try { loaded = await decompressState(location.hash.slice(1)); }
+    catch(e){ loaded = null; }
+  }
+  if (!loaded) loaded = loadStateFromStorage();
+  if (!loaded) loaded = defaultState('tutor', 'ar');
+
+  state = loaded;
+  EditHistory.init(state);
+  applyDocAttrs();
+  render(state);
+  refreshToolbar();
+  setupManifestAndIcons();
+  if (location.hash) history.replaceState(null, '', location.pathname + location.search);
+}
+
+function populatePrintMount(){
+  const mount = document.getElementById('printMount');
+  mount.innerHTML = '';
+  const dims = currentDims();
+  injectPageRules(state.print.paper, state.print.orientation);
+  const mode = state.print.mode === 'image' ? 'poster' : state.print.mode;
+  let pages = [];
+  if (mode === 'poster') pages = buildPosterPages(state, dims);
+  else if (mode === 'sheet') pages = buildSheetPages(state, dims);
+  else if (mode === 'cards') pages = buildCardsPages(state, dims);
+  pages.forEach(p => mount.appendChild(p));
+}
+window.addEventListener('beforeprint', populatePrintMount);
+window.addEventListener('afterprint', () => { document.getElementById('printMount').innerHTML = ''; });
+
+document.addEventListener('DOMContentLoaded', init);
+
 </script>
 </body>
 </html>
